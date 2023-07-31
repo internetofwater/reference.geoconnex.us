@@ -34,7 +34,7 @@
     <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
 
       <!-- Sidebar Toggle (Topbar) -->
-      <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3" onclick="toggleNav()">
+      <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-1 d-sm-inline d-md-none" onclick="toggleNav()">
         <i class="fa fa-bars"></i>
       </button>
 
@@ -88,14 +88,12 @@
               Collections</a>
         </li>
 
-        {% if data['stac'] %}
-          <!-- Nav Item -->
-          <li class="nav-item">
-          <a class="nav-link" href="{{ config['server']['url'] }}/stac">
-              <i class="fas fa-fw fa-image"></i>
-              SpatioTemporal Assets</a>
-          </li>
-        {% endif %}
+        <!-- Nav Item -->
+        <li class="nav-item">
+        <a class="nav-link" href="{{ config['server']['url'] }}/stac/sitemap">
+            <i class="fas fa-fw fa-image"></i>
+            Sitemap</a>
+        </li>
 
         <!-- Nav Item -->
         <li class="nav-item">

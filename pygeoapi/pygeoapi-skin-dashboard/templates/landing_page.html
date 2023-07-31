@@ -19,6 +19,14 @@
         </p>
       </section>
    {% endif %}
+   {% if data['stac'] %}
+    <section id="collections">
+      <h2>{% trans %}Sitemap{% endtrans %}</h2>
+      <p>
+        <a href="{{ config['server']['url'] }}/stac/sitemap?f=html">{% trans %}View the Geoconnex sitemap{% endtrans %}</a>
+      </p>
+    </section>
+   {% endif %}
    {% if data['processes'] %}
     <section id="processes">
         <h2>{% trans %}Processes{% endtrans %}</h2>

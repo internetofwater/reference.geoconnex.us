@@ -20,16 +20,17 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-12">
           <div class="row">
             <div class="col-sm-12">
-              <div id="items-map"></div>
               <div id="assets">
                 <h4>Assets</h4>
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th>URL</th>
+                      <th>{% trans %}URL{% endtrans %}</th>
+                      <th>{% trans %}Last Modified{% endtrans %}</th>
+                      <th>{% trans %}Size{% endtrans %}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -39,6 +40,8 @@
                       <a title="{{ link['href'] }}" href="{{ link['href'] }}">
                       <span>{{ link['href'] | get_path_basename }}</span></a>
                     </td>
+                    <td data-label="created">{{ link['created'] }}</td>
+                    <td data-label="size">{{ link['file:size'] | human_size }}</td>
                   </tr>
                   {% endfor %}
                   </tbody>
@@ -47,59 +50,33 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-12">
             <table class="table table-striped">
               <thead>
               <tr>
-                <th>Property</th>
-                <th>Value</th>
+                <th>{% trans %}Locations{% endtrans %}</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>id</td>
-                <td>{{ data.id }}</td>
-              </tr>
               {% for k, v in data['properties'].items() %}
-              <tr>
-                <td>{{ k }}</td>
                 {% if k == 'links' %}
-                <td>
-                    <ul>
-                        {% for l in v %}
-                        <li><a href="{{ l['href'] }}">{{ l['title'] }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </td>
+                  {% for l in v %}
+                    <tr>
+                      <td>
+                        <a href="{{ l['href'] }}">{{ l['href'] }}</a>
+                      </td>
+                    </tr>
+                  {% endfor %}
                 {% else %}
-                  <td>{{ v }}</td>
+                  <tr>
+                    <td>{{ k }}</td>
+                    <td>{{ v }}</td>
+                  </tr>
                 {% endif %}
-              </tr>
               {% endfor %}
             </tbody>
             </table>
         </div>
       </div>
     </section>
-{% endblock %}
-
-{% block extrafoot %}
-    <script>
-    //var map = L.map('items-map').setView([{{ 45 }}, {{ -75 }}], 2);
-    var map = L.map('items-map').setView([{{ 0 }}, {{ 0 }}], 1);
-    map.addLayer(new L.TileLayer(
-        '{{ config['server']['map']['url'] }}', {
-            maxZoom: 18,
-            attribution: '{{ config['server']['map']['attribution'] }}'
-        }
-    ));
-    var bbox_layer = L.polygon([
-        [{{ data['extent']['spatial']['bbox'][1] }}, {{ data['extent']['spatial']['bbox'][0] }}],
-        [{{ data['extent']['spatial']['bbox'][3] }}, {{ data['extent']['spatial']['bbox'][0] }}],
-        [{{ data['extent']['spatial']['bbox'][3] }}, {{ data['extent']['spatial']['bbox'][2] }}],
-        [{{ data['extent']['spatial']['bbox'][1] }}, {{ data['extent']['spatial']['bbox'][2] }}],
-    ]);
-    map.addLayer(bbox_layer);
-    map.fitBounds(bbox_layer.getBounds(), {maxZoom: 10});
-    </script>
 {% endblock %}

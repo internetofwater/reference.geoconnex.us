@@ -664,3 +664,37 @@ resources:
         type: process
         processor:
             name: Intersector
+    sitemap-generator:
+        type: process
+        processor:
+            name: SitemapGenerator
+    sitemap:
+        type: stac-collection
+        title:
+            en: sitemap
+        description:
+            en: geoconnex.us sitemap
+        keywords:
+            en:
+                - geoconnex
+                - sitemap
+                - iow
+        links:
+            - type: text/html
+              rel: canonical
+              title: information
+              href: https://geoconnex.us
+            - type: text/html
+              rel: canonical
+              title: sitemap
+              href: https://geoconnex.us/sitemap.xml
+        extents:
+            spatial:
+                bbox: [-180,-90,180,90]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+        providers:
+            - type: stac
+              name: FileSystem
+              data: /sitemap
+              file_types:
+                  - .xml
