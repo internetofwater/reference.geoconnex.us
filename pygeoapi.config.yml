@@ -664,10 +664,6 @@ resources:
         type: process
         processor:
             name: Intersector
-    sitemap-generator:
-        type: process
-        processor:
-            name: SitemapGenerator
     sitemap:
         type: stac-collection
         title:

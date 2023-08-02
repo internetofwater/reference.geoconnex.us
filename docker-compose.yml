@@ -3,8 +3,8 @@
 version: '3'
 
 services:
-  reference-geoconnex-us:
-    build: pygeoapi
+  pygeoapi:
+    build: .
     container_name: reference-geoconnex-us
     ports:
       - "5000:80"

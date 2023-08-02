@@ -1,84 +1,80 @@
-# https://reference.geoconnex.us pygeoapi configuration
+# https://reference.geoconnex.us
 
-The geoconnex reference data server is a work in progress based on the [pygeoapi project.](https://pygeoapi.io/)
-
-The server configuration can be found in [pygeoapi.config.yml](pygeoapi.config.yml)
-
-Data hosted by the server can be found [Hydroshare](https://www.hydroshare.org/resource/3295a17b4cc24d34bd6a5c5aaf753c50/) 
+The geoconnex reference data server is an implementation of OGC API - Features using [pygeoapi.](https://pygeoapi.io/)
+The server configuration exists at [pygeoapi.config.yml](pygeoapi.config.yml), using data hosted on [Hydroshare](https://www.hydroshare.org/resource/3295a17b4cc24d34bd6a5c5aaf753c50/)
+This server provides permanent identifiers and HTML representations of real world things that multiple agencies may be collecting and publishing data about.
 
 ## Contributing new content
 
-Four pieces of information are required for a new contribution:  
-1. spatial feature geometry and attributes in the [Hydroshare resource](https://www.hydroshare.org/resource/3295a17b4cc24d34bd6a5c5aaf753c50/) 
-1. a pygeoapi resource configuration in [pygeoapi.config.yml](pygeoapi.config.yml). Any time you update your pygeoapi config for a reference collection contributiom or jsut the file in the hydroshare resource, please add a comment indicating the date of the udpate to trigger an update to the reference features database. eg.
+Three pieces of information are required for a new contribution:
+
+1. [Spatial Features](#spatial-features): Contribution of spatial feature geometry and attributes in the [Hydroshare resource](https://www.hydroshare.org/resource/3295a17b4cc24d34bd6a5c5aaf753c50/) as a GeoPackage.
+2. [pygeoapi Configuration](#pygeoapi-configuration): Creation of the corresponding pygeoapi resource configuration in [pygeoapi.config.yml](pygeoapi.config.yml). 
+3. [Permanent Identifiers](#permanent-identifiers): PIDs registered within the `ref` namespace in `geoconnex.us`.
+
+### Spatial Features
+
+Spatial feature data should be contributed in `SQLite GeoPackage` (preferably) and be optimized for simple web-preview. This means the geometry should be simplified as much as is practical and attributes should be useful to a general audience.
+
+At a minimum, the features should include attributes containing a name for the features and the PIDs of the features. The PIDs should be in an attribute titled `uri`.
+
+### pygeoapi Configuration
+
+Once the spatial feature has been contributed to Hydroshare, the next step is creating a pygeoapi configuration. 
+Any time a change is made to the resource in Hydroshare or to the pygeoapi configuration, update the comment to the date of last modification.
 
 ```
-    dams: #updated 2023-04-11
+    mainstems: # updated 2023-04-11
         type: collection
-        title: Reference Dams
-        description: US Reference Dams
+        title: Reference Mainstems
+        description: US Reference Mainstem Rivers
         keywords:
-            - Dams
+            - Mainstem
         linked-data:
+            item_template: jsonld/mainstems.jsonld
             context:
                 - schema: https://schema.org/
-                  name: schema:name
-                  description: schema:description
-                  provider:
-                      "@id": schema:provider
-                      "@type": schema:url
-                  subjectOf: 
-                      "@id": schema:subjectOf
-                      "@type": schema:url
-```
-
-Note that in the configuration, the `providers` configuration entry should specify in `table` the same string as the name of the GeoPackage in Hydroshare, minus `.gpkg`. For example, the configuration for collection ref/pws, which is `ref_pws.gpkg` in Hydroshare, would include the provider configuration block:
-
-```
-providers:
+                  name_at_outlet: schema:name
+        links:
+            - type: application/html
+              rel: canonical
+              title: data source
+              href: https://github.com/internetofwater/ref_rivers
+              hreflang: en-US
+        extents: *extents
+        providers:
             - type: feature
               name: PostgreSQL
               data: *provider-data
-              id_field: pwsid
-              table: ref_pws
+              id_field: id
+              table: mainstems
               uri_field: uri
               geom_field: geom
 ```
-3. PIDs registered with the `geoconnex.us` pid server for the features
 
+The configuration should include linked data context that associate attributes of the data to JSON-LD properties.
 
-### Spatial Features
-Spatial feature data should be contributed in `SQLite GeoPackage` (preferably) or `geojson` format and be optimized for simple web-preview. This means the geometry should be simplified as much as is practical and attributes should be useful to a general audience.
-
-At a minimum, the features should include attributes containing a name for the features and the PIDs of the features. The PIDs should be in an attribute titled `uri`. 
-
-### pygeoapi configuration
-
-See existing datasets for sample configuration. The configuration should include some JSON context configuration that associate attributes of the data to JSON-ld properties. This might look like:
-
-```
-        context:
-            - name: https://schema.org/name
-            - url: https://schema.org/subjectOf
-            - description: https://schema.org/description
-            - uri: "@id"
-```
-
+Note that in the configuration, the `providers` configuration entry should specify in `table` the same string as the lowercase name of the GeoPackage in Hydroshare, minus `.gpkg`.
+For example, the configuration for collection mainstems, is `mainstems.gpkg` in Hydroshare.
 The `uri` element is required and ensures that the attributes get associated with the feature's PID rather than the URL of the https://reference.geoconnex.us reference data server.
 
 Many other context elements are possible. The [ELFIE project](https://opengeospatial.github.io/ELFIE/) has focused on that topic and can be a source of inspiration.
 
 It is expected that the attributes and richness of these contexts will expand over time but getting some basic content in the system is better than nothing, so please don't hesitate to get something started and open a pull request. The geoconnex crew is more than happy to help get things across the finish line!
 
-### PIDs for features
+### Permanent Identifiers
 
 The features hosed in the https://reference.geoconnex.us are intended to provide landing pages for PIDs registered in the `https://geoconnex.us/ref/` namespace, more info on those features can be found [here](https://github.com/internetofwater/geoconnex.us/tree/master/namespaces/ref)
 
 These reference features are intended to be ["community reference locations"](https://github.com/internetofwater/geoconnex.us/wiki/Community-Reference-Locations) and will be created based on broadly-recognized reference data or by a community group interested in registering a wholistic set of reference identifiers that unify multiple organization's identifiers of a similar type. Please [open a new general issue](https://github.com/internetofwater/geoconnex.us/issues/new?template=general.md&title=%5Bgeneral%5D) to discuss an idea for a new set of reference identifiers.
 
 ## Install
-Installation is quite simple
+
+Generate a SQL Dump of the Hydroshare resource using [Hydrodump Action](https://github.com/cgs-earth/hydrodump-action).
+
+Then use docker compose to bring up the containers:
+
 ```
-docker run -d -p 5000:80 --restart always internetofwater/pygeoapi-geoconnex:latest
-docker run -d --name watchtower -v /var/run/docker.sock:/var/run/docker.sock --restart always containrrr/watchtower -i 30 --cleanup
+docker compose up -d database
+docker compose up -d pygeoapi
 ```
