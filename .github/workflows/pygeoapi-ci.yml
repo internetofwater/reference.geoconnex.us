@@ -2,11 +2,10 @@ name: reference.geoconnex.us pygeoapi build
 
 on:
   push:
-    # branches:
-    #   - "master"
-    # paths:
-    #   - "pygeoapi.config.yml"
-    #   - "sitemap/**"
+    branches:
+      - "master"
+    paths:
+      - "pygeoapi.config.yml"
 
 env:
   REGISTRY: reference-features
@@ -32,20 +31,20 @@ jobs:
         with:
           credentials_json: ${{ secrets.GCP_SA_TOKEN }}
 
-    #   - name: Upload backup to GCP Bucket
-    #     id: upload-files
-    #     uses: google-github-actions/upload-cloud-storage@v0
-    #     with:
-    #       path: .
-    #       destination: ${{ env.REGISTRY }}
-    #       gzip: false
-    #       parent: false
-    #       glob: "**/*.sql.gz"
-    #       headers: |-
-    #         content-type: application/x-gzip
+      - name: Upload backup to GCP Bucket
+        id: upload-files
+        uses: google-github-actions/upload-cloud-storage@v0
+        with:
+          path: .
+          destination: ${{ env.REGISTRY }}
+          gzip: false
+          parent: false
+          glob: "**/*.sql.gz"
+          headers: |-
+            content-type: application/x-gzip
 
-    #   - name: Push to mysql
-    #     run: |-
-    #       gcloud sql import sql ${{ env.REGISTRY }} gs://${{ env.REGISTRY }}/${{ env.DATABASE }}.sql.gz \
-    #         --database=${{ env.DATABASE }} \
-    #         --user=${{ env.DBUSER }}
+      - name: Push to mysql
+        run: |-
+          gcloud sql import sql ${{ env.REGISTRY }} gs://${{ env.REGISTRY }}/${{ env.DATABASE }}.sql.gz \
+            --database=${{ env.DATABASE }} \
+            --user=${{ env.DBUSER }}
