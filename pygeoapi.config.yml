@@ -83,7 +83,7 @@ resources:
     hu02:
         type: collection
         title: HU02
-        description: Two-digit Hydrologic Regions
+        description: Two-digit Hydrologic Regions from USGS NHDPlus High Resolution
         keywords:
             - Hydrologic Regions
         linked-data:
@@ -121,7 +121,7 @@ resources:
     hu04:
         type: collection
         title: HU04
-        description: Four-digit Hydrologic Subregion
+        description: Four-digit Hydrologic Subregion from USGS NHDPlus High Resolution
         keywords:
             - Hydrologic Subregions
         linked-data:
@@ -149,7 +149,7 @@ resources:
     hu06:
         type: collection
         title: HU06
-        description: Six-digit Hydrologic Basins
+        description: Six-digit Hydrologic Basins from USGS NHDPlus High Resolution
         keywords:
             - Hydrologic Basins
         linked-data:
@@ -177,7 +177,7 @@ resources:
     hu08:
         type: collection
         title: HU08
-        description: Eight-digit Hydrologic Subbasins
+        description: Eight-digit Hydrologic Subbasins from USGS NHDPlus High Resolution
         keywords:
             - Hydrologic Subbasins
         linked-data:
@@ -205,7 +205,7 @@ resources:
     hu10:
         type: collection
         title: HU10
-        description: Ten-digit Watersheds
+        description: Ten-digit Watersheds from USGS NHDPlus High Resolution
         keywords:
             - Watersheds
         linked-data:
@@ -233,7 +233,7 @@ resources:
     nat_aq:
         type: collection
         title: USGS National Aquifers
-        description: National Aquifers of the United States from USGS National Water Information System National Aquifer code list.
+        description: National Aquifers of the United States from USGS National Water Information System National Aquifer code list
         keywords:
             - National Aquifers
             - Principal Aquifers
@@ -350,7 +350,7 @@ resources:
     gages:
         type: collection
         title: Reference Gages
-        description: US Reference Stream Gage Monitoring Locations
+        description: United States community contributed reference Stream Gage Monitoring Locations
         keywords:
             - Stream Gage
         linked-data:
@@ -373,7 +373,7 @@ resources:
     mainstems:
         type: collection
         title: Reference Mainstems
-        description: US Reference Mainstem Rivers
+        description: United States community ontributed reference Mainstem Rivers
         keywords:
             - Mainstem
         linked-data:
@@ -396,196 +396,42 @@ resources:
               table: mainstems
               uri_field: uri
               geom_field: geom
-    states:
+    dams: #updated 2023-04-11
         type: collection
-        title: States
-        description: U.S. States
+        title: Reference Dams
+        description: United States Community Contributed Reference Dams
         keywords:
-            - States
-            - Census
+            - Dams
         linked-data:
             context:
                 - schema: https://schema.org/
                   name: schema:name
-                  census_profile:
+                  description: schema:description
+                  provider:
+                      "@id": schema:provider
+                      "@type": schema:url
+                  subjectOf: 
                       "@id": schema:subjectOf
-                      "@type": "@id"
+                      "@type": schema:url
         links:
             - type: application/html
               rel: canonical
-              title: geographic data source
-              href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-              hreflang: en-US
-            - type: application/html
-              rel: canonical
-              title: Census data source
-              href: https://data.census.gov/cedsci
+              title: data source
+              href: https://github.com/internetofwater/ref_dams
               hreflang: en-US
         extents: *extents
         providers:
             - type: feature
               name: PostgreSQL
               data: *provider-data
-              id_field: geoid
-              table: states
-              uri_field: uri
-              geom_field: geom
-    counties:
-        type: collection
-        title: Counties
-        description: U.S. Counties
-        keywords:
-            - Counties
-            - Census
-        linked-data:
-            context:
-                - schema: https://schema.org/
-                  name: schema:name
-                  census_profile:
-                      "@id": schema:subjectOf
-                      "@type": "@id"
-        links:
-            - type: application/html
-              rel: canonical
-              title: geographic data source
-              href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-              hreflang: en-US
-            - type: application/html
-              rel: canonical
-              title: Census data source
-              href: https://data.census.gov/cedsci
-              hreflang: en-US
-        extents: *extents
-        providers:
-            - type: feature
-              name: PostgreSQL
-              data: *provider-data
-              id_field: geoid
-              table: counties
-              uri_field: uri
-              geom_field: geom
-    aiannh:
-        type: collection
-        title: American Indian/Alaska Native Areas/Hawaiian Home Lands (AIANNH)
-        description: Native American Lands
-        keywords:
-            - American Indian Areas
-            - Alaska Native Areas
-            - Hawaiian Home Lands
-            - Census
-        linked-data:
-            context:
-                - name: https://schema.org/name
-        links:
-            - type: application/html
-              rel: canonical
-              title: geographic data source
-              href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-              hreflang: en-US
-        extents: *extents
-        providers:
-            - type: feature
-              name: PostgreSQL
-              data: *provider-data
-              id_field: geoid
-              table: aiannh
-              uri_field: uri
-              geom_field: geom
-    cbsa:
-        type: collection
-        title: Core-based statistical areas (CBSA)
-        description: U.S. Metropolitan and Micropolitan Statistical Areas
-        keywords:
-            - Core-based statistical areas
-            - Metropolitan Statistical Areas
-            - Micropolitan Statistical Areas
-            - Census
-        linked-data:
-            context:
-                - name: https://schema.org/name
-        links:
-            - type: application/html
-              rel: canonical
-              title: geographic data source
-              href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-              hreflang: en-US
-        extents: *extents
-        providers:
-            - type: feature
-              name: PostgreSQL
-              data: *provider-data
-              id_field: geoid
-              table: cbsa
-              uri_field: uri
-              geom_field: geom
-    ua10:
-        type: collection
-        title: Urban Areas
-        description: Urbanized Areas and Urban Clusters (2010 Census)
-        keywords:
-            - Urban Areas
-            - Census
-        linked-data:
-            context:
-                - name10: https://schema.org/name
-        links:
-            - type: application/html
-              rel: canonical
-              title: geographic data source
-              href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-              hreflang: en-US
-            - type: application/html
-              rel: canonical
-              title: descriptive data source
-              href: https://www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural/2010-urban-rural.html
-              hreflang: en-US
-        extents: *extents
-        providers:
-            - type: feature
-              name: PostgreSQL
-              data: *provider-data
-              id_field: geoid10
-              table: ua10
-              uri_field: uri
-              geom_field: geom
-    places:
-        type: collection
-        title: Places
-        description: U.S. legally incorporated and Census designated places
-        keywords:
-            - Places
-            - Census
-        linked-data:
-            context:
-                - schema: https://schema.org/
-                  name: schema:name
-                  census_profile:
-                      "@id": schema:subjectOf
-                      "@type": "@id"
-        links:
-            - type: application/html
-              rel: canonical
-              title: geographic data source
-              href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-              hreflang: en-US
-            - type: application/html
-              rel: canonical
-              title: Census data source
-              href: https://data.census.gov/cedsci
-              hreflang: en-US
-        extents: *extents
-        providers:
-            - type: feature
-              name: PostgreSQL
-              data: *provider-data
-              id_field: geoid
-              table: places
+              id_field: id
+              table: ref_dams
               uri_field: uri
               geom_field: geom
     pws:
         type: collection
         title: Public Water Systems
-        description: U.S. Public Water Systems
+        description: Public Water Systems from United States EPA Safe Drinking Water Information System
         keywords:
             - Public Water Systems
         linked-data:
@@ -628,36 +474,190 @@ resources:
               table: ref_pws
               uri_field: uri
               geom_field: geom
-    dams: #updated 2023-04-11
+    states:
         type: collection
-        title: Reference Dams
-        description: US Reference Dams
+        title: States
+        description: States from United States Census Bureau Cartographic Boundaries
         keywords:
-            - Dams
+            - States
+            - Census
         linked-data:
             context:
                 - schema: https://schema.org/
                   name: schema:name
-                  description: schema:description
-                  provider:
-                      "@id": schema:provider
-                      "@type": schema:url
-                  subjectOf: 
+                  census_profile:
                       "@id": schema:subjectOf
-                      "@type": schema:url
+                      "@type": "@id"
         links:
             - type: application/html
               rel: canonical
-              title: data source
-              href: https://github.com/internetofwater/ref_dams
+              title: geographic data source
+              href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
+              hreflang: en-US
+            - type: application/html
+              rel: canonical
+              title: Census data source
+              href: https://data.census.gov/cedsci
               hreflang: en-US
         extents: *extents
         providers:
             - type: feature
               name: PostgreSQL
               data: *provider-data
-              id_field: id
-              table: ref_dams
+              id_field: geoid
+              table: states
+              uri_field: uri
+              geom_field: geom
+    counties:
+        type: collection
+        title: Counties
+        description: Counties from United States Census Bureau Cartographic Boundaries
+        keywords:
+            - Counties
+            - Census
+        linked-data:
+            context:
+                - schema: https://schema.org/
+                  name: schema:name
+                  census_profile:
+                      "@id": schema:subjectOf
+                      "@type": "@id"
+        links:
+            - type: application/html
+              rel: canonical
+              title: geographic data source
+              href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
+              hreflang: en-US
+            - type: application/html
+              rel: canonical
+              title: Census data source
+              href: https://data.census.gov/cedsci
+              hreflang: en-US
+        extents: *extents
+        providers:
+            - type: feature
+              name: PostgreSQL
+              data: *provider-data
+              id_field: geoid
+              table: counties
+              uri_field: uri
+              geom_field: geom
+    aiannh:
+        type: collection
+        title: American Indian/Alaska Native Areas/Hawaiian Home Lands (AIANNH)
+        description: Federally recognized American Indian/Alaska Native Areas/Hawaiian Home Lands (AIANNH)
+        keywords:
+            - American Indian Areas
+            - Alaska Native Areas
+            - Hawaiian Home Lands
+            - Census
+        linked-data:
+            context:
+                - name: https://schema.org/name
+        links:
+            - type: application/html
+              rel: canonical
+              title: geographic data source
+              href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
+              hreflang: en-US
+        extents: *extents
+        providers:
+            - type: feature
+              name: PostgreSQL
+              data: *provider-data
+              id_field: geoid
+              table: aiannh
+              uri_field: uri
+              geom_field: geom
+    cbsa:
+        type: collection
+        title: Core-based statistical areas (CBSA)
+        description: United States Metropolitan and Micropolitan Statistical Areas
+        keywords:
+            - Core-based statistical areas
+            - Metropolitan Statistical Areas
+            - Micropolitan Statistical Areas
+            - Census
+        linked-data:
+            context:
+                - name: https://schema.org/name
+        links:
+            - type: application/html
+              rel: canonical
+              title: geographic data source
+              href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
+              hreflang: en-US
+        extents: *extents
+        providers:
+            - type: feature
+              name: PostgreSQL
+              data: *provider-data
+              id_field: geoid
+              table: cbsa
+              uri_field: uri
+              geom_field: geom
+    ua10:
+        type: collection
+        title: Urban Areas
+        description: United States Urbanized Areas and Urban Clusters from the 2010 Census
+        keywords:
+            - Urban Areas
+            - Census
+        linked-data:
+            context:
+                - name10: https://schema.org/name
+        links:
+            - type: application/html
+              rel: canonical
+              title: geographic data source
+              href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
+              hreflang: en-US
+            - type: application/html
+              rel: canonical
+              title: descriptive data source
+              href: https://www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural/2010-urban-rural.html
+              hreflang: en-US
+        extents: *extents
+        providers:
+            - type: feature
+              name: PostgreSQL
+              data: *provider-data
+              id_field: geoid10
+              table: ua10
+              uri_field: uri
+              geom_field: geom
+    places:
+        type: collection
+        title: Places
+        description: United States legally incorporated and Census designated places
+        keywords:
+            - Places
+            - Census
+        linked-data:
+            context:
+                - schema: https://schema.org/
+                  name: schema:name
+                  census_profile:
+                      "@id": schema:subjectOf
+                      "@type": "@id"
+        links:
+            - type: application/html
+              rel: canonical
+              title: geographic data source
+              href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
+              hreflang: en-US
+            - type: application/html
+              rel: canonical
+              title: Census data source
+              href: https://data.census.gov/cedsci
+              hreflang: en-US
+        extents: *extents
+        providers:
+            - type: feature
+              name: PostgreSQL
+              data: *provider-data
+              id_field: geoid
+              table: places
               uri_field: uri
               geom_field: geom
     intersector:
