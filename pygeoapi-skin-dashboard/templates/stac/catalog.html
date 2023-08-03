@@ -10,7 +10,7 @@
 {% block body %}
 
   <section id="links">
-    <h2>Links</h2>
+    <h2>Locations</h2>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -26,7 +26,11 @@
         <tr>
           <td data-label="Name">
             {% if link['title'] %}
-            <a title="{{ link['href'] }}" href="{{ link['href'] }}"><span>{{ link['title'] | get_path_basename }}</span></a>
+              {% if link['title'].endswith('.xml') %}
+              <a title="{{ link['href'] }}" href="{{ link['href'] }}"><span>{{ link['title'] | get_path_basename | replace('.xml', '') }}</span></a>
+              {% else %}
+              <a title="{{ link['href'] }}" href="{{ link['href'] }}"><span>{{ link['title'] | get_path_basename }}</span></a>
+              {% endif %}
             {% else %}
             <a title="{{ link['href'] }}" href="{{ link['href'] }}"><span>{{ link['href'] | get_path_basename }}</span></a>
             {% endif %}
