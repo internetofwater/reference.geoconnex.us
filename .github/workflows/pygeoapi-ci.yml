@@ -3,7 +3,7 @@ name: reference.geoconnex.us pygeoapi build
 on:
   push:
     branches:
-      - "master"
+      - "main"
     paths:
       - "pygeoapi.config.yml"
 
