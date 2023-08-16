@@ -54,21 +54,21 @@ logging:
 
 metadata:
     identification:
-        title: geoconnex reference features
-        description: Provides reference features for geoconnex.us.
+        title: Geoconnex Reference Service
+        description: Provides reference for community features in geoconnex.us
         keywords:
-            - geospatial
-            - data
-            - api
+            - Geospatial
+            - Geoconnex
+            - Reference
         keywords_type: theme
         terms_of_service: https://creativecommons.org/licenses/by/4.0/
-        url: https://github.com/internetofwater/geoconnex.us
+        url: https://github.com/internetofwater/reference.geoconnex.us
     license:
         name: CC-BY 4.0 license
         url: https://creativecommons.org/licenses/by/4.0/
     provider:
-        name: Team geoconnex
-        url: https://github.com/internetofwater/geoconnex.us
+        name: Internet of Water
+        url: https://github.com/internetofwater/reference.geoconnex.us
     contact:
         address: 113 Brattle St
         city: Cambridge
@@ -86,6 +86,7 @@ resources:
         description: Two-digit Hydrologic Regions from USGS NHDPlus High Resolution
         keywords:
             - Hydrologic Regions
+            - USGS
         linked-data:
             context:
                 - schema: https://schema.org/
@@ -124,6 +125,7 @@ resources:
         description: Four-digit Hydrologic Subregion from USGS NHDPlus High Resolution
         keywords:
             - Hydrologic Subregions
+            - USGS
         linked-data:
             context:
                 - schema: https://schema.org/
@@ -152,6 +154,7 @@ resources:
         description: Six-digit Hydrologic Basins from USGS NHDPlus High Resolution
         keywords:
             - Hydrologic Basins
+            - USGS
         linked-data:
             context:
                 - schema: https://schema.org/
@@ -180,6 +183,7 @@ resources:
         description: Eight-digit Hydrologic Subbasins from USGS NHDPlus High Resolution
         keywords:
             - Hydrologic Subbasins
+            - USGS
         linked-data:
             context:
                 - schema: https://schema.org/
@@ -208,6 +212,7 @@ resources:
         description: Ten-digit Watersheds from USGS NHDPlus High Resolution
         keywords:
             - Watersheds
+            - USGS
         linked-data:
             context:
                 - schema: https://schema.org/
@@ -236,7 +241,7 @@ resources:
         description: National Aquifers of the United States from USGS National Water Information System National Aquifer code list
         keywords:
             - National Aquifers
-            - Principal Aquifers
+            - USGS
         linked-data:
             context:
                 - schema: https://schema.org/
@@ -278,8 +283,8 @@ resources:
         title: USGS Principal Aquifers
         description: Principal Aquifers of the United States from 2003 USGS data release
         keywords:
-            - National Aquifers
             - Principal Aquifers
+            - USGS
         linked-data:
             context:
                 - schema: https://schema.org/
@@ -313,9 +318,8 @@ resources:
         title: USGS Secondary Hydrogeologic Regions
         description: Secondary Hydrogeologic Regions of the Conterminous United States from 2018 USGS data release
         keywords:
-            - National Aquifers
-            - Principal Aquifers
             - Hydrogeologic Regions
+            - USGS
         linked-data:
             context:
                 - schema: https://schema.org/
@@ -352,7 +356,8 @@ resources:
         title: Reference Gages
         description: United States community contributed reference Stream Gage Monitoring Locations
         keywords:
-            - Stream Gage
+            - Stream Gages
+            - USGS
         linked-data:
             item_template: jsonld/ref-gages.jsonld
         links:
@@ -376,6 +381,7 @@ resources:
         description: United States community ontributed reference Mainstem Rivers
         keywords:
             - Mainstem
+            - Community
         linked-data:
             item_template: jsonld/mainstems.jsonld
             context:
@@ -402,6 +408,7 @@ resources:
         description: United States Community Contributed Reference Dams
         keywords:
             - Dams
+            - Community
         linked-data:
             context:
                 - schema: https://schema.org/
@@ -434,6 +441,7 @@ resources:
         description: Public Water Systems from United States EPA Safe Drinking Water Information System
         keywords:
             - Public Water Systems
+            - EPA
         linked-data:
             context:
                 - pws_name: https://schema.org/name
@@ -666,15 +674,12 @@ resources:
             name: Intersector
     sitemap:
         type: stac-collection
-        title:
-            en: sitemap
-        description:
-            en: geoconnex.us sitemap
+        title: sitemap
+        description: geoconnex.us sitemap
         keywords:
-            en:
-                - geoconnex
-                - sitemap
-                - iow
+            - Geoconnex
+            - Sitemap
+            - Internet of Water
         links:
             - type: text/html
               rel: canonical
