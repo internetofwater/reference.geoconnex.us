@@ -172,7 +172,11 @@
 
   var items = new L.GeoJSON(geojson_data, {
       onEachFeature: function (feature, layer) {
+          {% if data.get('uri_field') -%}
+          var url = feature['properties']['{{ data['uri_field'] }}'];
+          {%- else -%}
           var url = '{{ data['items_path'] }}/' + feature.id + '?f=html';
+          {%- endif %}
           var html = '<span><a href="' + url + '">' + {% if data['title_field'] %} feature['properties']['{{ data['title_field'] }}'] {% else %} feature.id {% endif %} + '</a></span>';
           layer.bindPopup(html);
       }

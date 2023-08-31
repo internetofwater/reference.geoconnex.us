@@ -116,6 +116,7 @@ resources:
                   user: ${POSTGRES_USER}
                   password: ${POSTGRES_PASSWORD}
               id_field: huc2
+              title_field: name
               table: hu02
               uri_field: uri
               geom_field: geom
@@ -145,6 +146,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: huc4
+              title_field: name
               table: hu04
               uri_field: uri
               geom_field: geom
@@ -174,6 +176,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: huc6
+              title_field: name
               table: hu06
               uri_field: uri
               geom_field: geom
@@ -203,6 +206,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: huc8
+              title_field: name
               table: hu08
               uri_field: uri
               geom_field: geom
@@ -232,6 +236,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: huc10
+              title_field: name
               table: hu10
               uri_field: uri
               geom_field: geom
@@ -275,6 +280,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: nat_aqfr_cd
+              title_field: aq_name
               table: nat_aq
               uri_field: uri
               geom_field: geom
@@ -310,6 +316,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: aq_code
+              title_field: aq_name
               table: princi_aq
               uri_field: uri
               geom_field: geom
@@ -348,6 +355,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: id
+              title_field: shr
               table: sec_hydrg_reg
               uri_field: uri
               geom_field: geom
@@ -372,6 +380,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: id
+              title_field: description
               table: ref_gages
               uri_field: uri
               geom_field: geom
@@ -399,6 +408,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: id
+              title_field: name_at_outlet
               table: mainstems
               uri_field: uri
               geom_field: geom
@@ -432,6 +442,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: id
+              title_field: description
               table: ref_dams
               uri_field: uri
               geom_field: geom
@@ -479,6 +490,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: pwsid
+              title_field: pws_name
               table: ref_pws
               uri_field: uri
               geom_field: geom
@@ -513,6 +525,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: geoid
+              title_field: name
               table: states
               uri_field: uri
               geom_field: geom
@@ -547,6 +560,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: geoid
+              title_field: name
               table: counties
               uri_field: uri
               geom_field: geom
@@ -574,6 +588,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: geoid
+              title_field: name
               table: aiannh
               uri_field: uri
               geom_field: geom
@@ -601,6 +616,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: geoid
+              title_field: name
               table: cbsa
               uri_field: uri
               geom_field: geom
@@ -631,6 +647,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: geoid10
+              title_field: name10
               table: ua10
               uri_field: uri
               geom_field: geom
@@ -665,6 +682,7 @@ resources:
               name: PostgreSQL
               data: *provider-data
               id_field: geoid
+              title_field: name
               table: places
               uri_field: uri
               geom_field: geom
