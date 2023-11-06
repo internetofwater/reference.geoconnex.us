@@ -96,7 +96,7 @@
                     <td>id</td>
                     <td>{{ data.id }}</td>
                   </tr>
-                  {% for k, v in data['properties'].items() %}
+                  {% for k, v in data['properties'] | dictsort %}
                     {% if k != data['id_field'] %}
                     <tr>
                       <td>{{ k }}</td>
