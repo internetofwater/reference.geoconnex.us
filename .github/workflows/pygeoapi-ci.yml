@@ -6,6 +6,7 @@ on:
       - "main"
     paths:
       - "pygeoapi.config.yml"
+  workflow_dispatch:
 
 env:
   REGISTRY: reference-features
