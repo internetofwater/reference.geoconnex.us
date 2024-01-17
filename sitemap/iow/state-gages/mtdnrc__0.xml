@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<ns0:urlset xmlns:ns0="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
     <loc>https://geoconnex.us/mtdnrc/gages/40A10000</loc>
     <lastmod>2023-11-02T12:30:26Z</lastmod>
@@ -759,4 +759,4 @@
 </url><url>
     <loc>https://geoconnex.us/mtdnrc/gages/SR007</loc>
     <lastmod>2023-11-02T12:30:26Z</lastmod>
-</url></ns0:urlset>
+</url></urlset>

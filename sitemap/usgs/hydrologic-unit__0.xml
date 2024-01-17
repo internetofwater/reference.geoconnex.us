@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<ns0:urlset xmlns:ns0="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
     <loc>https://geoconnex.us/usgs/hydrologic-unit/01</loc>
     <lastmod>2020-05-02T07:25:35Z</lastmod>
@@ -8796,4 +8796,4 @@
 </url><url>
     <loc>https://geoconnex.us/usgs/hydrologic-unit/21020001</loc>
     <lastmod>2020-05-02T07:25:35Z</lastmod>
-</url></ns0:urlset>
+</url></urlset>

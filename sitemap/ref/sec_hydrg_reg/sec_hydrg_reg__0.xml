@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<ns0:urlset xmlns:ns0="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
     <loc>https://geoconnex.us/ref/sec_hydrg_reg/S53</loc>
     <lastmod>2022-04-08T14:10:01Z</lastmod>
@@ -204,4 +204,4 @@
 </url><url>
     <loc>https://geoconnex.us/ref/sec_hydrg_reg/S62</loc>
     <lastmod>2022-04-08T14:10:01Z</lastmod>
-</url></ns0:urlset>
+</url></urlset>

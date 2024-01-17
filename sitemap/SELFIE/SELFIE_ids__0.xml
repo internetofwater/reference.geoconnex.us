@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<ns0:urlset xmlns:ns0="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
     <loc>https://geoconnex.us/SELFIE/usgs/huc/huc12obs/070900020601</loc>
     <lastmod>2020-05-02T07:25:35Z</lastmod>
@@ -57,4 +57,4 @@
 </url><url>
     <loc>https://geoconnex.us/SELFIE/usgs/wqp/huc12obs/WIDNR_WQX-10001223</loc>
     <lastmod>2020-05-02T07:25:35Z</lastmod>
-</url></ns0:urlset>
+</url></urlset>
