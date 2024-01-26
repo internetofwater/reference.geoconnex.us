@@ -21,9 +21,6 @@
 			"image": {
 				"@id": "schema:image",
 				"@type": "@id"
-			},
-                        "hyf:linearElement": {
-				"@type": "@id"
 			}
 		}
 	],
