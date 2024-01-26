@@ -58,7 +58,7 @@
 					"hyf:HY_DistanceDescription": "upstream"
 				},
 {% endif %} 
-				"hyf:linearElement": "https://geoconnex.us/nhdplusv2/reachcode/{{ data.nhdpv2_reachcode }}"
+				"hyf:linearElement": {"@id": "https://geoconnex.us/nhdplusv2/reachcode/{{ data.nhdpv2_reachcode }}"}
 			}
 		}
 {% if data.mainstem_uri %} 
