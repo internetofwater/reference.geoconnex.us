@@ -111,6 +111,11 @@ pip3 install -e .
 Note: Ensure the location you install hydrodump-action is on your `$PATH`, otherwise you
 won't be able to use the hydrodump-action CLI.
 
+```bash
+echo $PATH
+find $HOME -name hydrodump -type f
+```
+
 # Running Hydrodump Action
 
 To run Sitemap Generator, use the CLI:
