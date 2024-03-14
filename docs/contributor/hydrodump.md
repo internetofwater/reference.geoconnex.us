@@ -33,7 +33,7 @@ git --version
 ```
 
 ## Docker
-Docker is used here to launch YOURLS developer runtime service dependencies YOURLS and its database (MySQL). 
+Docker is used here to launch the database (PostGIS) for Hydrodump Action. 
 
 ### Installation
 Docker can be downloaded and installed from the official Docker website. Follow the installation instructions for your specific operating system.
