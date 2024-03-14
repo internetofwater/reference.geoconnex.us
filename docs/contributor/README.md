@@ -7,8 +7,8 @@ The system works as follows:
 
 ## Topics
 For specific contributor documentation on a particular software, follow the contributor spepcific documentation:
-- [Hydrodump Action](./hydrodump/)
-- [pygeoapi](./pygeoapi/)
+- [Hydrodump Action](./hydrodump.md)
+- [pygeoapi](./pygeoapi.md)
 
 # Prerequisite Knowledge
 
@@ -59,7 +59,8 @@ Builds the Postgres database from GeoPackages location in the [Geconnex Refereen
 
 ### Dependent (Cloud) Services 
 
-See Also [PID Server](https://github.com/internetofwater/pids.geoconnex.us)
+See also [PID Server](https://github.com/internetofwater/pids.geoconnex.us)
+See also [Harvest Service](https://github.com/internetofwater/harvest.geoconnex.us)
 
 #### [pygeoapi](/pygeoapi.config.yml) on Cloud Run
 
@@ -67,4 +68,4 @@ Used by [pygeoapi](https://pygeoapi.io/) to serve OGC API - Features to all [Pub
 
 #### Postgres Database on Cloud SQL
 
-Used by [pygeoapi](https://yourls.org/) to host all Reference Features in Geoconnex. Built using [Hydrodump Action](#hydrodump-action).
+Used by [pygeoapi](https://pygeoapi.io/) to host all Reference Features in Geoconnex. Built using [Hydrodump Action](#hydrodump-action).
