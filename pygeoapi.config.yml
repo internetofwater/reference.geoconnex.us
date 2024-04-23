@@ -412,7 +412,7 @@ resources:
               table: mainstems
               uri_field: uri
               geom_field: geom
-    dams: #updated 2023-04-11
+    dams: #updated 2024-04-23
         type: collection
         title: Reference Dams
         description: United States Community Contributed Reference Dams
