@@ -67,15 +67,15 @@ metadata:
         name: CC-BY 4.0 license
         url: https://creativecommons.org/licenses/by/4.0/
     provider:
-        name: Internet of Water
-        url: https://github.com/internetofwater/reference.geoconnex.us
+        name: Center for Geospatial Solutions
+        url: https://cgsearth.org/
     contact:
         address: 113 Brattle St
         city: Cambridge
         stateorprovince: Massachussetts
         postalcode: 02138
         country: USA
-        email: konda@lincolninst.edu
+        email: internetofwater@lincolninst.edu
         url: https://internetofwater.org
         role: pointOfContact
 
