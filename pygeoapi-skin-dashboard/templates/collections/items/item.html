@@ -24,7 +24,17 @@
 {% block crumbs %}{{ super() }}
 {% if data.get('uri_field') -%}
 {% set uri = data.properties[data.uri_field] %}
-/ <a href="{{ uri }}">{{ uri }}</a>
+<script>
+  function copy(){
+    navigator.clipboard.writeText("{{ uri }}");
+  };
+</script>
+<span style="font-size: 120%;">
+/ <a href="{{ uri }}" style="padding-right: 2px;" >{{ uri }}</a>
+<a style="padding-left: 0px;" href="javascript:copy();">
+  <i class="far fa-copy"></i>
+</a>
+</span>
 {%- else -%}
 / <a href="./{{ data['id'] }}">{{ ptitle | truncate( 25 ) }}</a>
 {%- endif %}
