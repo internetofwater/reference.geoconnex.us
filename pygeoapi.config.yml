@@ -446,7 +446,7 @@ resources:
               table: ref_dams
               uri_field: uri
               geom_field: geom
-    pws:
+    pws: #updated 2024-06-03
         type: collection
         title: Public Water Systems
         description: Public Water Systems from United States EPA Safe Drinking Water Information System
