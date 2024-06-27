@@ -77,6 +77,10 @@ git clone git@github.com:<GH_USER>/hydrodump-action.git
 ### Setup Environment Variables:
 
 Create a file called ``.env`` based on [default.env](/default.env) with Hydroshare credentials, and save this to your local env
+
+> **_NOTE:_**  When running hydrodump as a container, `POSTGRES_HOST` will be the name of the docker container for the database. 
+When running hydrodump in a local build environment, `POSTGRES_HOST` will be localhost.
+
 ```bash
 vi $SRC_BASE_DIR/.env
 ```
