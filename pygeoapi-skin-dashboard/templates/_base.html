@@ -154,6 +154,16 @@
                     <div class="my-auto">
                       <div class="row">
                         <div class="col-md-3">
+                          {% if config['metadata']['contact']['hours'] %}
+                          <b>Hours</b><br/>
+                          {{ config['metadata']['contact']['hours'] }}<br/>
+                          {% endif %}
+                          {% if config['metadata']['contact']['instructions'] %}
+                            <b>Contact instructions</b><br/>
+                            {{ config['metadata']['contact']['instructions'] }}
+                          {% endif %}
+                        </div>
+                        <div class="col-md-3">
                           <b>Service provided by:</b><br/>
                           <a itemprop="url" href="{{ config['metadata']['provider']['url'] }}">{{ config['metadata']['provider']['name'] }}</a><br/>
 
@@ -180,16 +190,6 @@
                             <a href="{{ config['metadata']['contact']['url'] }}">{{ config['metadata']['contact']['url'] }}</a><br/>
                             {% endif %}
                           </div>
-                          <div class="col-md-3">
-                            {% if config['metadata']['contact']['hours'] %}
-                            <b>Hours</b><br/>
-                            {{ config['metadata']['contact']['hours'] }}<br/>
-                            {% endif %}
-                            {% if config['metadata']['contact']['instructions'] %}
-                              <b>Contact instructions</b><br/>
-                              {{ config['metadata']['contact']['instructions'] }}
-                            {% endif %}
-                        </div>
                         <div class="col-md-3">
                             {% if config['metadata']['identification']['terms_of_service'] %}
                             <p>

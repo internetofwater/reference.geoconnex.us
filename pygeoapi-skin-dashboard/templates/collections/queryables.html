@@ -11,21 +11,34 @@
       <p>
         For this collection these queryable parameters are available.
       </p>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Queryable</th>
-            <th>Type</th>
-          </tr>
-        </thead>  
-        <tbody>
-        {% for queryable in data['queryables'] %}
-        <tr>
-            <td>{{ queryable['queryable'] }} </td>
-            <td>{{ queryable['type'] }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-      </table>
+      <div class="row">
+      <div class="col-lg-6">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Queryable</th>
+              <th>Type</th>
+            </tr>
+          </thead>  
+          <tbody>
+            {% for qname, qinfo in data['properties'].items() %}
+            <tr>
+              {% if qname == 'geometry' %}
+                <th>geometry</th>
+                <td><a href="{{ qinfo['$ref'] }}">{{ qname }} </a></td>
+              {% else %}
+                <th>{{ qname }} </th>
+                <td><code>{{ qinfo['type'] }}</code></td>
+                {% if 'format' in qinfo %}
+                (<code>{{ qinfo['format'] }}</code>)
+                {% endif %}
+              {% endif %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      </div>  
     </section>
 {% endblock %}
+
