@@ -387,7 +387,7 @@ resources:
     mainstems:
         type: collection
         title: Reference Mainstems
-        description: United States community ontributed reference Mainstem Rivers
+        description: United States community contributed reference Mainstem Rivers
         keywords:
             - Mainstem
             - Community
