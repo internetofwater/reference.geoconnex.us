@@ -41,7 +41,7 @@
       <!-- Topbar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color:white"
       href="{{ config['server']['url'] }}" class="logo" role="button">
-        <img src="{{ config['server']['url'] }}/static/img/logo.png" title="{{ config['metadata']['identification']['title'] }}" style="height:40px;vertical-align: middle;" /></a>
+        <img src="{{ config['server']['url'] }}/static/img/logo.png" title="{{ config['metadata']['identification']['title'] }}" style="height:60px;vertical-align: middle;justify-self: center;" /></a>
       </a>
 
       <div class="crumbs">
@@ -66,15 +66,6 @@
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-        <li class="nav-item">
-        <a class="nav-link" href="{{ config['server']['url'] }}">
-            <i class="fas fa-fw fa-home"></i>
-            Home</a>
-
-        </li>
-        <!-- Divider -->
         <hr class="sidebar-divider"/>
 
         <div class="sidebar-heading">
@@ -85,21 +76,21 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ config['server']['url'] }}/collections">
               <i class="fas fa-fw fa-table"></i>
-              Collections</a>
+              <b>Collections</b></a>
         </li>
 
         <!-- Nav Item -->
         <li class="nav-item">
         <a class="nav-link" href="{{ config['server']['url'] }}/stac/sitemap">
             <i class="fas fa-fw fa-image"></i>
-            Sitemap</a>
+            <b>Sitemap</b></a>
         </li>
 
         <!-- Nav Item -->
         <li class="nav-item">
         <a class="nav-link" href="{{ config['server']['url'] }}/processes">
             <i class="fas fa-fw fa-wrench"></i>
-          Processes</a>
+            <b>Processes</b></a>
         </li>
 
         <!-- Divider -->
@@ -111,16 +102,22 @@
 
         <!-- Nav Item -->
         <li class="nav-item">
+          <a class="nav-link" href="https://docs.geoconnex.us">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <b>Geoconnex Docs</b></a>
+        </li>
+
+        <li class="nav-item">
         <a class="nav-link" href="{{ config['server']['url'] }}/openapi">
             <i class="fas fa-fw fa-cog"></i>
-            API Definition</a>
+            <b>API Definition</b></a>
         </li>
 
         <!-- Nav Item -->
         <li class="nav-item">
         <a class="nav-link" href="{{ config['server']['url'] }}/conformance">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            Conformance</a>
+            <b>Conformance</b></a>
         </li>
 
       </ul>
@@ -153,7 +150,7 @@
                   <div class="container my-auto">
                     <div class="my-auto">
                       <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                           {% if config['metadata']['contact']['hours'] %}
                           <b>Hours</b><br/>
                           {{ config['metadata']['contact']['hours'] }}<br/>
@@ -163,48 +160,28 @@
                             {{ config['metadata']['contact']['instructions'] }}
                           {% endif %}
                         </div>
-                        <div class="col-md-3">
-                          <b>Service provided by:</b><br/>
-                          <a itemprop="url" href="{{ config['metadata']['provider']['url'] }}">{{ config['metadata']['provider']['name'] }}</a><br/>
-
-                          <b>Address</b><br/>
-                          {{ config['metadata']['contact']['address'] }}<br/>
-                          {{ config['metadata']['contact']['city'] }},
-                          {{ config['metadata']['contact']['stateorprovince'] }}<br/>
-                          {{ config['metadata']['contact']['postalcode'] }}<br/>
-                          {{ config['metadata']['contact']['country'] }}
-                        </div>
-                        <div class="col-md-3">
-                          <b>Email</b><br/>
-                          <a href="mailto:{{ config['metadata']['contact']['email'] }}">{{ config['metadata']['contact']['email'] }}</a><br/>
-                            {% if config['metadata']['contact']['phone'] %}
-                              <b>Telephone</b><br/>
-                            <a href="tel:{{ config['metadata']['contact']['phone'] }}">{{ config['metadata']['contact']['phone'] }}</a><br/>
-                            {% endif %}
-                            {% if config['metadata']['contact']['fax'] %}
-                              <b>Fax</b><br/>
-                            <a href="tel:{{ config['metadata']['contact']['fax'] }}">{{ config['metadata']['contact']['fax'] }}</a><br/>
-                            {% endif %}
-                            {% if config['metadata']['contact']['url'] %}
-                            <b>Web</b><br/>
-                            <a href="{{ config['metadata']['contact']['url'] }}">{{ config['metadata']['contact']['url'] }}</a><br/>
-                            {% endif %}
-                          </div>
-                        <div class="col-md-3">
-                            {% if config['metadata']['identification']['terms_of_service'] %}
+                        <div class="col-md-4" style="text-align: right;">
+                          {% if config['metadata']['identification']['terms_of_service'] %}
+                          <p>
+                            <b>Terms of service</b><br/>
+                            {{ config['metadata']['identification']['terms_of_service'] | urlize() }}
+                          </p>
+                          {% endif %}
+                          {% if config['metadata']['license']['url'] %}
                             <p>
-                              <b>Terms of service</b><br/>
-                              {{ config['metadata']['identification']['terms_of_service'] | urlize() }}
+                              <b>License</b><br/>
+                              <a href="{{ config['metadata']['license']['url'] }}">
+                              {{ config['metadata']['license']['name'] or config['metadata']['license']['url'] }}</a>
                             </p>
-                            {% endif %}
-                            {% if config['metadata']['license']['url'] %}
-                              <p>
-                                <b>License</b><br/>
-                                <a href="{{ config['metadata']['license']['url'] }}">
-                                {{ config['metadata']['license']['name'] or config['metadata']['license']['url'] }}</a>
-                              </p>
-                            {% endif %}
-                            <p>Powered by <a title="pygeoapi" href="https://pygeoapi.io">pygeoapi</a> {{ version }}.</p>
+                          {% endif %}
+                          <p>Powered by <a title="pygeoapi" href="https://pygeoapi.io">pygeoapi</a> {{ version }}.</p>
+                        </div>
+                        <div class="col-md-4" style="text-align: right;">
+                          <p><b>Service provided by:</b><br/></p>
+                          <a itemprop="url" href="{{ config['metadata']['provider']['url'] }}">
+                            <img src="{{ config['server']['url'] }}/static/img/cgs.png" title="{{ config['metadata']['provider']['name'] }}" style="height:60px;vertical-align: middle;" /></a>
+                          <a itemprop="url" href="{{ config['metadata']['contact']['url'] }}">
+                            <img src="{{ config['server']['url'] }}/static/img/iow.png" title="{{ config['metadata']['contact']['name'] }}" style="height:60px;vertical-align: middle;margin-left: 16px;" /></a>
                         </div>
                       </div>
                     </div>
