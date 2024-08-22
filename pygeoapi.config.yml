@@ -377,13 +377,18 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              name: PostgreSQL
+              name: SPARQL
               data: *provider-data
               id_field: id
               title_field: description
               table: ref_gages
               uri_field: uri
               geom_field: geom
+              sparql_provider: PostgreSQL
+              sparql_endpoint: https://graph.geoconnex.us/repositories/iow
+              sparql_subject: uri
+              sparql_predicates:
+                objects: '?predicates'
     mainstems:
         type: collection
         title: Reference Mainstems
@@ -405,13 +410,18 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              name: PostgreSQL
+              name: SPARQL
               data: *provider-data
               id_field: id
               title_field: name_at_outlet
               table: mainstems
               uri_field: uri
               geom_field: geom
+              sparql_provider: PostgreSQL
+              sparql_endpoint: https://graph.geoconnex.us/repositories/iow
+              sparql_subject: uri
+              sparql_predicates:
+                objects: '?predicates'
     dams: #updated 2024-04-23
         type: collection
         title: Reference Dams
