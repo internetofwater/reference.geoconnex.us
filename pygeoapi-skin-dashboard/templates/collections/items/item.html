@@ -10,11 +10,14 @@
         {{ val | urlize() }}
     {% elif v is mapping %}
       {% for i,j in v.items() %}
-        <i>{{ i }}:</i> {{ render_item_value(j, 60) }}<br/>
+      <span style="white-space: nowrap;"><i>{{ i }}:</i> {{ render_item_value(j, 60) }}</span><br/>
       {% endfor %}
     {% elif v is iterable %}
       {% for i in v %}
         {{ render_item_value(i, 60) }}
+        {% if not loop.last %}
+            <hr/> {# Divider between items #}
+        {% endif %}
       {% endfor %}
     {% else %}
       {{ val | urlize() }}
@@ -93,7 +96,7 @@
                 </h6>
             </div>
             <!-- Card Body -->
-            <div>
+            <div style="overflow-x: scroll;">
               <table class="table table-striped">
                   <thead>
                   <tr>

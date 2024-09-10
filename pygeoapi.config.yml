@@ -337,7 +337,6 @@ resources:
               title: data source
               href: https://doi.org/10.5066/F7F76BSS
               hreflang: en-US
-        links:
             - type: application/html
               rel: canonical
               title: report documenting data
@@ -377,18 +376,13 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              name: SPARQL
+              name: PostgreSQL
               data: *provider-data
               id_field: id
               title_field: description
               table: ref_gages
               uri_field: uri
               geom_field: geom
-              sparql_provider: PostgreSQL
-              sparql_endpoint: https://graph.geoconnex.us/repositories/iow
-              sparql_subject: uri
-              sparql_predicates:
-                objects: '?predicates'
     mainstems:
         type: collection
         title: Reference Mainstems
@@ -410,7 +404,7 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              name: SPARQL
+              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
               data: *provider-data
               id_field: id
               title_field: name_at_outlet
@@ -418,11 +412,62 @@ resources:
               uri_field: uri
               geom_field: geom
               sparql_provider: PostgreSQL
-              sparql_endpoint: https://graph.geoconnex.us/repositories/iow
-              sparql_subject: uri
-              sparql_predicates:
-                objects: '?predicates'
-    dams: #updated 2024-04-23
+              sparql_query:
+                convert: false
+                endpoint: https://graph.geoconnex.us/repositories/iow
+                prefixes:
+                  schema: <https://schema.org/>
+                  gsp: <http://www.opengis.net/ont/geosparql#>
+                  wiki: <https://www.wikidata.org/wiki/>
+                  hyf: <https://www.opengis.net/def/schema/hy_features/hyf/>
+                  xsd: <http://www.w3.org/2001/XMLSchema#>
+                bind:
+                  name: uri
+                  variable: '?mainstem'
+                select: '?mainstem ?monitoringLocation ?siteName ?datasetProvider ?provider_url ?url ?measurementTechnique ?variableMeasured ?unitText ?temporalCoverage'
+                where:
+                  - subject: '?monitoringLocation'
+                    predicate: hyf:referencedPosition/hyf:HY_IndirectPosition/hyf:linearElement
+                    object: '?mainstem'
+                  - subject: '?monitoringLocation'
+                    predicate: schema:name
+                    object: '?siteName'
+                  - subject: '?monitoringLocation'
+                    predicate: schema:subjectOf
+                    object: '?dataset'
+                  - subject: '?dataset'
+                    predicate: schema:url
+                    object: '?url'
+                  - subject: '?dataset'
+                    predicate: 'schema:variableMeasured'
+                    object: '?variableMeasured_'
+                  - subject: '?variableMeasured_'
+                    predicate: 'schema:name'
+                    object: '?variableMeasured'
+                  - subject: '?variableMeasured_'
+                    predicate: 'schema:unitText'
+                    object: '?unitText'
+                  - subject: '?variableMeasured_'
+                    predicate: 'schema:measurementTechnique'
+                    object: '?measurementTechnique'
+                  - subject: '?variableMeasured_'
+                    predicate: 'schema:name'
+                    object: '?variableMeasured'
+                  - subject: '?dataset'
+                    predicate: 'schema:temporalCoverage'
+                    object: '?temporalCoverage'
+                  - subject: '?dataset'
+                    predicate: 'schema:provider'
+                    object: '?provider'
+                  - subject: '?provider'
+                    predicate: 'schema:name'
+                    object: '?datasetProvider'
+                  - subject: '?provider'
+                    predicate: 'schema:url'
+                    object: '?provider_url'
+                filter:
+                  - 'FILTER(REGEX(?variableMeasured, "stream(flow)?|discharge|flow", "i"))'
+    dams: # updated 2024-04-23
         type: collection
         title: Reference Dams
         description: United States Community Contributed Reference Dams
@@ -696,10 +741,10 @@ resources:
               table: places
               uri_field: uri
               geom_field: geom
-    intersector:
-        type: process
-        processor:
-            name: Intersector
+    # intersector:
+    #     type: process
+    #     processor:
+    #         name: Intersector
     sitemap:
         type: stac-collection
         title: sitemap

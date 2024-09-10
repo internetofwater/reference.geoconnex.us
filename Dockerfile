@@ -1,4 +1,4 @@
-FROM internetofwater/pygeoapi:latest
+FROM webbben/pygeoapi-plugins:sparql
 #pygeoapi last updated 2023-07-31
 
 #add requirements and mods
