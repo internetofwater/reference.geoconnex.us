@@ -70,11 +70,11 @@ These reference features are intended to be ["community reference locations"](ht
 
 ## Install
 
-Generate a SQL Dump of the Hydroshare resource using [Hydrodump Action](https://github.com/cgs-earth/hydrodump-action).
-
-Then use docker compose to bring up the containers:
+Use docker compose to bring up the containers:
 
 ```
 docker compose up -d database
 docker compose up -d pygeoapi
 ```
+
+Then generate a SQL Dump of the Hydroshare resource using [Hydrodump Action](https://github.com/cgs-earth/hydrodump-action).

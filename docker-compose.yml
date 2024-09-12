@@ -6,6 +6,8 @@ services:
     container_name: reference-geoconnex-us
     ports:
       - 5000:80
+    volumes:
+      - ./pygeoapi.config.yml:/pygeoapi/local.config.yml
     env_file:
       - .env
 
@@ -14,6 +16,12 @@ services:
     image: postgis/postgis:14-3.2-alpine
     env_file:
       - .env
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - db_data:/var/lib/postgresql/data
 
   hydrodump:
     container_name: hydrodump
@@ -21,3 +29,27 @@ services:
     command: ["hydrodump", "run"]
     env_file:
       - .env
+
+  local:
+  # Instead of using a remote hydrodump, source a local database dump
+    container_name: local
+    image: postgis/postgis:14-3.2-alpine
+    depends_on:
+      - database
+    volumes:
+      - ./reference.sql.gz:/docker-entrypoint-initdb.d/reference.sql.gz
+    entrypoint: >
+      sh -c "
+      export PGPASSWORD=${POSTGRES_PASSWORD} && \
+      echo 'Waiting for database to be ready...' && \
+      while ! pg_isready -h ${POSTGRES_HOST} -U ${POSTGRES_USER} -d ${POSTGRES_DB}; do
+        sleep 1
+      done && \
+      echo 'Database is ready. Starting migration...' && \
+      gunzip -c /docker-entrypoint-initdb.d/reference.sql.gz | psql -h ${POSTGRES_HOST} -U ${POSTGRES_USER} -d ${POSTGRES_DB}
+      "
+    env_file:
+      - .env
+
+volumes:
+  db_data:
