@@ -7,7 +7,7 @@
         {# Ends with image extension: render img element with link to image #}
         <a href="{{ val }}"><img src="{{ val }}" alt="{{ val.split('/') | last }}" width="{{ width }}"/></a>
     {% elif v is string or v is number %}
-        {{ val | urlize() }}
+      <span style="white-space: nowrap;">{{ val | urlize() }}</span>
     {% elif v is mapping %}
       {% for i,j in v.items() %}
         <i>{{ i }}:</i> {{ render_item_value(j, 60) }}<br/>
@@ -17,7 +17,7 @@
         {{ render_item_value(i, 60) }}
       {% endfor %}
     {% else %}
-      {{ val | urlize() }}
+      <span style="white-space: nowrap;">{{ val | urlize() }}</span>  
     {% endif %}
 {%- endmacro %}
 {% block title %}{{ ptitle }} - {{ super() }}{% endblock %}
@@ -93,12 +93,12 @@
                 </h6>
             </div>
             <!-- Card Body -->
-            <div>
-              <table class="table table-striped">
+            <div style="overflow-x: scroll;">
+              <table class="table">
                   <thead>
                   <tr>
-                    <th>Property</th>
-                    <th>Value</th>
+                    <th style="width: 30%;">Property</th>
+                    <th style="width: 70%;">Value</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -107,7 +107,8 @@
                     <td>{{ data.id }}</td>
                   </tr>
                   {% for k, v in data['properties'] | dictsort %}
-                    {% if k != data['id_field'] %}
+                    {% if k == 'datasets' %}
+                    {% elif k != data['id_field'] %}
                     <tr>
                       <td>{{ k }}</td>
                       {% if k in ['links', 'associations'] %}
@@ -136,6 +137,21 @@
                 </table>
               </div>
             </div>
+            {% if data['properties']['datasets'] %} 
+            <h2 class="mx-auto">Datasets</h2>
+            {% for dataset in data['properties']['datasets'] %}
+            <div class="card border-left-info shadow mb-1" style="overflow-x: scroll;">
+              <table class="table">
+                {% for k, v in dataset.items() %}
+                <tr>
+                  <th>{{ k }}</th>
+                  <td>{{ render_item_value(v, 80) }}</td>
+                </tr>
+                {% endfor %}
+                </table>
+            </div> 
+            {% endfor %}
+            {% endif %}  
         </div>
       </div>
     </section>
