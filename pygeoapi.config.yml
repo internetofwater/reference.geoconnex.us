@@ -756,10 +756,10 @@ resources:
               table: places
               uri_field: uri
               geom_field: geom
-    # intersector:
-    #     type: process
-    #     processor:
-    #         name: Intersector
+    intersector:
+        type: process
+        processor:
+            name: Intersector
     sitemap:
         type: stac-collection
         title: sitemap
