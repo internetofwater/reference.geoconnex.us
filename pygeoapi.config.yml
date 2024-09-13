@@ -759,7 +759,7 @@ resources:
     intersector:
         type: process
         processor:
-            name: Intersector
+            name: pygeoapi_plugins.process.intersect.IntersectionProcessor
     sitemap:
         type: stac-collection
         title: sitemap
