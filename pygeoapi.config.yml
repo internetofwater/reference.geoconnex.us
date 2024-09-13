@@ -460,8 +460,6 @@ resources:
                   - subject: '?provider'
                     predicate: 'schema:name'
                     object: '?datasetProvider'
-                filter:
-                  - 'FILTER(REGEX(?variableMeasured, "stream(flow)?|discharge|flow", "i"))'
     dams: # updated 2024-04-23
         type: collection
         title: Reference Dams
