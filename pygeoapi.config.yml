@@ -337,7 +337,6 @@ resources:
               title: data source
               href: https://doi.org/10.5066/F7F76BSS
               hreflang: en-US
-        links:
             - type: application/html
               rel: canonical
               title: report documenting data
@@ -405,14 +404,85 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              name: PostgreSQL
+              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
               data: *provider-data
               id_field: id
               title_field: name_at_outlet
               table: mainstems
               uri_field: uri
               geom_field: geom
-    dams: #updated 2024-04-23
+              sparql_provider: PostgreSQL
+              sparql_query:
+                convert: false
+                endpoint: https://graph.geoconnex.us/repositories/iow
+                prefixes:
+                  schema: <https://schema.org/>
+                  gsp: <http://www.opengis.net/ont/geosparql#>
+                  wiki: <https://www.wikidata.org/wiki/>
+                  hyf: <https://www.opengis.net/def/schema/hy_features/hyf/>
+                  xsd: <http://www.w3.org/2001/XMLSchema#>
+                bind:
+                  name: uri
+                  variable: '?mainstem'
+                select: '?mainstem ?monitoringLocation ?siteName ?datasetDescription ?type ?url ?variableMeasured ?variableUnit ?measurementTechnique ?temporalCoverage ?wkt'
+                where:
+                  - subject: '?monitoringLocation'
+                    predicate: hyf:referencedPosition/hyf:HY_IndirectPosition/hyf:linearElement
+                    object: '?mainstem'
+                  - subject: '?monitoringLocation'
+                    predicate: schema:name
+                    object: '?siteName'
+                  - subject: '?monitoringLocation'
+                    predicate: schema:subjectOf
+                    object: '?dataset'
+                  - subject: '?dataset'
+                    predicate: schema:url
+                    object: '?url'
+                  - subject: '?dataset'
+                    predicate: schema:distribution
+                    object: '?distribution'
+                  - subject: '?distribution'
+                    predicate: schema:name
+                    object: '?distributionName'
+                  - subject: '?distribution'
+                    predicate: schema:contentUrl
+                    object: '?distributionURL'
+                  - subject: '?distribution'
+                    predicate: schema:encodingFormat
+                    object: '?distributionFormat'
+                  - subject: '?dataset'
+                    predicate: schema:description
+                    object: '?datasetDescription'
+                  - subject: '?monitoringLocation'
+                    predicate: hyf:HydroLocationType
+                    object: '?type'
+                  - subject: '?dataset'
+                    predicate: 'schema:variableMeasured'
+                    object: '?variableMeasured_'
+                  - subject: '?variableMeasured_'
+                    predicate: 'schema:name'
+                    object: '?variableMeasured'
+                  - subject: '?variableMeasured_'
+                    predicate: 'schema:unitText'
+                    object: '?variableUnit'
+                  - subject: '?variableMeasured_'
+                    predicate: 'schema:measurementTechnique'
+                    object: '?measurementTechnique'
+                  - subject: '?variableMeasured_'
+                    predicate: 'schema:name'
+                    object: '?variableMeasured'
+                  - subject: '?dataset'
+                    predicate: 'schema:temporalCoverage'
+                    object: '?temporalCoverage'
+                  - subject: '?dataset'
+                    predicate: 'schema:provider'
+                    object: '?provider'
+                  - subject: '?provider'
+                    predicate: 'schema:name'
+                    object: '?datasetProvider'
+                filter:
+                  - 'FILTER(REGEX(?variableMeasured, "stream(flow)?|discharge|flow", "i"))'
+    dams: # updated 2024-04-23
         type: collection
         title: Reference Dams
         description: United States Community Contributed Reference Dams
