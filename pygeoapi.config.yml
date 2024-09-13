@@ -128,12 +128,7 @@ resources:
             - Hydrologic Subregions
             - USGS
         linked-data:
-            context:
-                - schema: https://schema.org/
-                  name: schema:name
-                  gnis_url:
-                      "@id": schema:subjectOf
-                      "@type": "@id"
+            item_template: jsonld/hu04.jsonld
         links:  
             - type: application/html
               rel: canonical
@@ -158,12 +153,7 @@ resources:
             - Hydrologic Basins
             - USGS
         linked-data:
-            context:
-                - schema: https://schema.org/
-                  name: schema:name
-                  gnis_url:
-                      "@id": schema:subjectOf
-                      "@type": "@id"
+            item_template: jsonld/hu06.jsonld
         links:
             - type: application/html
               rel: canonical
@@ -188,12 +178,7 @@ resources:
             - Hydrologic Subbasins
             - USGS
         linked-data:
-            context:
-                - schema: https://schema.org/
-                  name: schema:name
-                  gnis_url:
-                      "@id": schema:subjectOf
-                      "@type": "@id"
+            item_template: jsonld/hu08.jsonld
         links:
             - type: application/html
               rel: canonical
@@ -218,12 +203,7 @@ resources:
             - Watersheds
             - USGS
         linked-data:
-            context:
-                - schema: https://schema.org/
-                  name: schema:name
-                  gnis_url:
-                      "@id": schema:subjectOf
-                      "@type": "@id"
+            item_template: jsonld/hu10.jsonld
         links:
             - type: application/html
               rel: canonical
