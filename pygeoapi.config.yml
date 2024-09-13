@@ -424,7 +424,7 @@ resources:
                 bind:
                   name: uri
                   variable: '?mainstem'
-                select: '?mainstem ?monitoringLocation ?siteName ?datasetProvider ?provider_url ?url ?measurementTechnique ?variableMeasured ?unitText ?temporalCoverage'
+                select: '?mainstem ?monitoringLocation ?siteName ?datasetDescription ?type ?url ?variableMeasured ?variableUnit ?measurementTechnique ?temporalCoverage ?wkt'
                 where:
                   - subject: '?monitoringLocation'
                     predicate: hyf:referencedPosition/hyf:HY_IndirectPosition/hyf:linearElement
@@ -439,6 +439,24 @@ resources:
                     predicate: schema:url
                     object: '?url'
                   - subject: '?dataset'
+                    predicate: schema:distribution
+                    object: '?distribution'
+                  - subject: '?distribution'
+                    predicate: schema:name
+                    object: '?distributionName'
+                  - subject: '?distribution'
+                    predicate: schema:contentUrl
+                    object: '?distributionURL'
+                  - subject: '?distribution'
+                    predicate: schema:encodingFormat
+                    object: '?distributionFormat'
+                  - subject: '?dataset'
+                    predicate: schema:description
+                    object: '?datasetDescription'
+                  - subject: '?monitoringLocation'
+                    predicate: hyf:HydroLocationType
+                    object: '?type'
+                  - subject: '?dataset'
                     predicate: 'schema:variableMeasured'
                     object: '?variableMeasured_'
                   - subject: '?variableMeasured_'
@@ -446,7 +464,7 @@ resources:
                     object: '?variableMeasured'
                   - subject: '?variableMeasured_'
                     predicate: 'schema:unitText'
-                    object: '?unitText'
+                    object: '?variableUnit'
                   - subject: '?variableMeasured_'
                     predicate: 'schema:measurementTechnique'
                     object: '?measurementTechnique'
@@ -462,9 +480,6 @@ resources:
                   - subject: '?provider'
                     predicate: 'schema:name'
                     object: '?datasetProvider'
-                  - subject: '?provider'
-                    predicate: 'schema:url'
-                    object: '?provider_url'
                 filter:
                   - 'FILTER(REGEX(?variableMeasured, "stream(flow)?|discharge|flow", "i"))'
     dams: # updated 2024-04-23
