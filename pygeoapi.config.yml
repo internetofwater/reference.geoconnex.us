@@ -587,6 +587,7 @@ resources:
             - Counties
             - Census
         linked-data:
+            item_template: jsonld/counties.jsonld
             context:
                 - schema: https://schema.org/
                   name: schema:name
