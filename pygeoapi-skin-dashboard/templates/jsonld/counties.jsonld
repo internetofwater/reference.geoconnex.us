@@ -12,7 +12,7 @@
     "@type": "schema:Place",
     "schema:name": "{{ data['name'] }}",
     "census_profile": "{{ data['census_profile'] }}",
-    "geosparql:sfWithin": {
+    "gsp:sfWithin": {
         "@id": "https://geoconnex.us/ref/states/{{ data['statefp'] }}"
     },
     "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }},
