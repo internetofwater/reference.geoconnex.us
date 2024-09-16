@@ -4,6 +4,8 @@ FROM geopython/pygeoapi:latest
 # COPY ./schemas.opengis.net /opt/schemas.opengis.net
 COPY ./pygeoapi-skin-dashboard /skin-dashboard
 
+COPY ./pygeoapi.config.yml /pygeoapi/local.config.yml
+
 RUN pip3 install https://github.com/cgs-earth/pygeoapi-plugins/archive/refs/heads/master.zip
 
 COPY ./sitemap /sitemap

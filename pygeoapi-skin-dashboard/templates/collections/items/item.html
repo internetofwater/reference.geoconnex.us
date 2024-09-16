@@ -10,14 +10,11 @@
       <span style="white-space: nowrap;">{{ val | urlize() }}</span>
     {% elif v is mapping %}
       {% for i,j in v.items() %}
-      <span style="white-space: nowrap;"><i>{{ i }}:</i> {{ render_item_value(j, 60) }}</span><br/>
+        <i>{{ i }}:</i> {{ render_item_value(j, 60) }}<br/>
       {% endfor %}
     {% elif v is iterable %}
       {% for i in v %}
         {{ render_item_value(i, 60) }}
-        {% if not loop.last %}
-            <hr/> {# Divider between items #}
-        {% endif %}
       {% endfor %}
     {% else %}
       <span style="white-space: nowrap;">{{ val | urlize() }}</span>  

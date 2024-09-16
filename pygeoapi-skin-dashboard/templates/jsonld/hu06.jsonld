@@ -1,0 +1,21 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "gsp": "http://www.opengis.net/ont/geosparql#",
+        "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/",
+        "gnis_url": {
+            "@id": "schema:subjectOf",
+            "@type": "@id"
+        }
+    },
+    "@id": "{{ data['@id'] }}",
+    "@type": "schema:Place",
+    "schema:name": "{{ data['name'] }}",
+    "gnis_url": "{{ data['gnis_url'] }}",
+    "hyf:containingCatchment": [
+        {"@id": "https://geoconnex.us/ref/hu04/{{ data['id'][0:4] }}"},
+        {"@id": "https://geoconnex.us/ref/hu02/{{ data['id'][0:2] }}"}
+    ],
+    "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }},
+    "geo": {{ data['schema:geo'] | to_json | safe }}
+}
