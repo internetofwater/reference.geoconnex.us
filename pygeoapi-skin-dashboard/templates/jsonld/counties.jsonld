@@ -1,0 +1,20 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "gsp": "http://www.opengis.net/ont/geosparql#",
+        "name": "schema:name",
+        "census_profile": {
+            "@id": "schema:subjectOf",
+            "@type": "@id"
+        }
+    },
+    "@id": "{{ data['@id'] }}",
+    "@type": "schema:Place",
+    "schema:name": "{{ data['name'] }}",
+    "census_profile": "{{ data['census_profile'] }}",
+    "schema:geoWithin": {
+        "@id": "https://geoconnex.us/ref/states/{{ data['statefp'] }}"
+    },
+    "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }},
+    "geo": {{ data['schema:geo'] | to_json | safe }}
+}

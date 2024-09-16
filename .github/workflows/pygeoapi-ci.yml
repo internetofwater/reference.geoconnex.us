@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Generate sql data
-        uses: cgs-earth/hydrodump-action@0.3.0
+        uses: cgs-earth/hydrodump-action@0.3.1
         with:
           username: ${{ secrets.HYDRO_USERNAME }}
           password: ${{ secrets.HYDRO_PASSWORD }}
