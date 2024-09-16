@@ -1,5 +1,3 @@
-# dont need this anymore, but useful for test deployment
-# requires separate service providing postgres database
 services:
   pygeoapi:
     build: .
@@ -31,7 +29,7 @@ services:
       - .env
 
   local:
-  # Instead of using a remote hydrodump, source a local database dump
+  # Instead of using a remote hydrodump, you can source a local database dump, reference.sql.gz
     container_name: local
     image: postgis/postgis:14-3.2-alpine
     depends_on:
