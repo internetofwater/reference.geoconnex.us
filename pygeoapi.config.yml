@@ -383,76 +383,76 @@ resources:
               hreflang: en-US
         extents: *extents
         providers:
-          - type: feature
-            name: pygeoapi_plugins.provider.sparql.SPARQLProvider
-            data: *provider-data
-            id_field: id
-            title_field: siteName
-            table: mainstems
-            uri_field: uri
-            geom_field: geom
-            sparql_provider: PostgreSQL
-            sparql_query:
-              convert: false
-              endpoint: https://graph.geoconnex.us/repositories/iow
-              prefixes:
-                schema: <https://schema.org/>
-                gsp: <http://www.opengis.net/ont/geosparql#>
-                wiki: <https://www.wikidata.org/wiki/>
-                hyf: <https://www.opengis.net/def/schema/hy_features/hyf/>
-                xsd: <http://www.w3.org/2001/XMLSchema#>
-              bind:
-                name: uri
-                variable: '?mainstem'
-              select: '?mainstem ?monitoringLocation ?siteName ?datasetDescription ?type ?url ?variableMeasured ?variableUnit ?measurementTechnique ?temporalCoverage ?distributionName ?distributionURL ?distributionFormat ?wkt'
-              where:
-                - subject: '?monitoringLocation'
-                  predicate: hyf:referencedPosition/hyf:HY_IndirectPosition/hyf:linearElement
-                  object: '?mainstem'
-                - subject: '?monitoringLocation'
-                  predicate: schema:subjectOf
-                  object: '?item'
-                - subject: '?item'
-                  predicate: schema:variableMeasured/schema:description
-                  object: '?datasetDescription'
-                - subject: '?item'
-                  predicate: schema:temporalCoverage
-                  object: '?temporalCoverage'
-                - subject: '?item'
-                  predicate: schema:name
-                  object: '?siteName'
-                - subject: '?monitoringLocation'
-                  predicate: hyf:HydroLocationType
-                  object: '?type'
-                - subject: '?monitoringLocation'
-                  predicate: hyf:referencedPosition
-                  object: '?position'
-                - subject: '?monitoringLocation'
-                  predicate: schema:subjectOf/schema:url
-                  object: '?url'
-                - subject: '?monitoringLocation'
-                  predicate: schema:subjectOf/schema:variableMeasured/schema:name
-                  object: '?variableMeasured'
-                - subject: '?monitoringLocation'
-                  predicate: schema:subjectOf/schema:variableMeasured/schema:unitText
-                  object: '?variableUnit'
-                - subject: '?monitoringLocation'
-                  predicate: schema:subjectOf/schema:variableMeasured/schema:measurementTechnique
-                  object: '?measurementTechnique'
-                - subject: '?monitoringLocation'
-                  predicate: schema:subjectOf/schema:distribution/schema:name
-                  object: '?distributionName'
-                - subject: '?monitoringLocation'
-                  predicate: schema:subjectOf/schema:distribution/schema:contentUrl
-                  object: '?distributionURL'
-                - subject: '?monitoringLocation'
-                  predicate: schema:subjectOf/schema:distribution/schema:encodingFormat
-                  object: '?distributionFormat'
-                - subject: '?monitoringLocation'
-                  predicate: gsp:hasGeometry/gsp:asWKT
-                  object: '?wkt'
-              filter:
-                - 'FILTER(REGEX(?variableMeasured, "stream(flow)?|discharge|flow", "i"))'
+            - type: feature
+              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              data: *provider-data
+              id_field: id
+              title_field: siteName
+              table: mainstems
+              uri_field: uri
+              geom_field: geom
+              sparql_provider: PostgreSQL
+              sparql_query:
+                convert: false
+                endpoint: https://graph.geoconnex.us/repositories/iow
+                prefixes:
+                  schema: <https://schema.org/>
+                  gsp: <http://www.opengis.net/ont/geosparql#>
+                  wiki: <https://www.wikidata.org/wiki/>
+                  hyf: <https://www.opengis.net/def/schema/hy_features/hyf/>
+                  xsd: <http://www.w3.org/2001/XMLSchema#>
+                bind:
+                  name: uri
+                  variable: '?mainstem'
+                select: '?mainstem ?monitoringLocation ?siteName ?datasetDescription ?type ?url ?variableMeasured ?variableUnit ?measurementTechnique ?temporalCoverage ?distributionName ?distributionURL ?distributionFormat ?wkt'
+                where:
+                  - subject: '?monitoringLocation'
+                    predicate: hyf:referencedPosition/hyf:HY_IndirectPosition/hyf:linearElement
+                    object: '?mainstem'
+                  - subject: '?monitoringLocation'
+                    predicate: schema:subjectOf
+                    object: '?item'
+                  - subject: '?item'
+                    predicate: schema:variableMeasured/schema:description
+                    object: '?datasetDescription'
+                  - subject: '?item'
+                    predicate: schema:temporalCoverage
+                    object: '?temporalCoverage'
+                  - subject: '?item'
+                    predicate: schema:name
+                    object: '?siteName'
+                  - subject: '?monitoringLocation'
+                    predicate: hyf:HydroLocationType
+                    object: '?type'
+                  - subject: '?monitoringLocation'
+                    predicate: hyf:referencedPosition
+                    object: '?position'
+                  - subject: '?monitoringLocation'
+                    predicate: schema:subjectOf/schema:url
+                    object: '?url'
+                  - subject: '?monitoringLocation'
+                    predicate: schema:subjectOf/schema:variableMeasured/schema:name
+                    object: '?variableMeasured'
+                  - subject: '?monitoringLocation'
+                    predicate: schema:subjectOf/schema:variableMeasured/schema:unitText
+                    object: '?variableUnit'
+                  - subject: '?monitoringLocation'
+                    predicate: schema:subjectOf/schema:variableMeasured/schema:measurementTechnique
+                    object: '?measurementTechnique'
+                  - subject: '?monitoringLocation'
+                    predicate: schema:subjectOf/schema:distribution/schema:name
+                    object: '?distributionName'
+                  - subject: '?monitoringLocation'
+                    predicate: schema:subjectOf/schema:distribution/schema:contentUrl
+                    object: '?distributionURL'
+                  - subject: '?monitoringLocation'
+                    predicate: schema:subjectOf/schema:distribution/schema:encodingFormat
+                    object: '?distributionFormat'
+                  - subject: '?monitoringLocation'
+                    predicate: gsp:hasGeometry/gsp:asWKT
+                    object: '?wkt'
+                filter:
+                  - 'FILTER(REGEX(?variableMeasured, "stream(flow)?|discharge|flow", "i"))'
     dams: # updated 2024-04-23
         type: collection
         title: Reference Dams
