@@ -78,3 +78,15 @@ docker compose up -d pygeoapi
 ```
 
 Then generate a SQL Dump of the Hydroshare resource using [Hydrodump Action](https://github.com/cgs-earth/hydrodump-action).
+
+```
+docker compose up -d hydrodump
+```
+
+If you have a local hydrodump `reference.sql.gz` file, you can use that instead of regenerating the dump using
+
+```
+docker compose up -d local
+```
+
+
