@@ -49,7 +49,7 @@ server:
         static: /skin-dashboard/static
 
 logging:
-    level: DEBUG
+    level: ERROR
     # logfile: /tmp/pygeoapi.log
 
 metadata:
