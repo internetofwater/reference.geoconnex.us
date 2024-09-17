@@ -1,11 +1,10 @@
 FROM geopython/pygeoapi:latest
 #pygeoapi last updated 2023-07-31
 
-#add requirements and mods
-COPY ./pygeoapi.config.yml /pygeoapi/local.config.yml
-
 # COPY ./schemas.opengis.net /opt/schemas.opengis.net
 COPY ./pygeoapi-skin-dashboard /skin-dashboard
+
+COPY ./pygeoapi.config.yml /pygeoapi/local.config.yml
 
 RUN pip3 install https://github.com/cgs-earth/pygeoapi-plugins/archive/refs/heads/master.zip
 
