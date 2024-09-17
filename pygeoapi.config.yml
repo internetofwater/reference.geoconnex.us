@@ -387,7 +387,7 @@ resources:
               name: pygeoapi_plugins.provider.sparql.SPARQLProvider
               data: *provider-data
               id_field: id
-              title_field: siteName
+              title_field: name_at_outlet
               table: mainstems
               uri_field: uri
               geom_field: geom
