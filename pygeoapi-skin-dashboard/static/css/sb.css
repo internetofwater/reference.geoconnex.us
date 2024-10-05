@@ -4812,8 +4812,8 @@ input[type="button"].btn-block {
 
 .badge {
   display: inline-block;
-  padding: 0.25em 0.4em;
-  font-size: 75%;
+  padding: 0.5em 0.8em;
+  font-size: 90%;
   font-weight: 700;
   line-height: 1;
   text-align: center;
@@ -4895,7 +4895,7 @@ a.badge-success:focus, a.badge-success.focus {
 
 .badge-info {
   color: #fff;
-  background-color: #00A087;
+  background-color: #1B335F;
 }
 
 a.badge-info:hover, a.badge-info:focus {
@@ -10276,7 +10276,7 @@ a:focus {
 }
 
 .topbar.navbar-light .navbar-nav .nav-item .nav-link {
-  color: #d1d3e2;
+  color: #55677F;
 }
 
 .topbar.navbar-light .navbar-nav .nav-item .nav-link:hover {
@@ -10284,7 +10284,7 @@ a:focus {
 }
 
 .topbar.navbar-light .navbar-nav .nav-item .nav-link:active {
-  color: #55677F;
+  color: #8E9CA4;
 }
 
 .sidebar {
@@ -10609,7 +10609,7 @@ a:focus {
 }
 
 .sidebar-light .nav-item .nav-link i {
-  color: #d1d3e2;
+  color: #8E9CA4;
 }
 
 .sidebar-light .nav-item .nav-link:active, .sidebar-light .nav-item .nav-link:focus, .sidebar-light .nav-item .nav-link:hover {

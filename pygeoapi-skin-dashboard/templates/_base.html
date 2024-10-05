@@ -34,12 +34,12 @@
     <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
 
       <!-- Sidebar Toggle (Topbar) -->
-      <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-1 d-sm-inline d-md-none" onclick="toggleNav()">
-        <i class="fa fa-bars"></i>
-      </button>
+    <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-1 d-sm-inline d-md-none" onclick="toggleNav()" aria-label="Toggle sidebar">
+      <i class="fa fa-bars"></i>
+    </button>
 
       <!-- Topbar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color:white"
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color:white" aria-label="Geoconnex.us Link"
       href="{{ config['server']['url'] }}" class="logo" role="button">
         <img src="{{ config['server']['url'] }}/static/img/logo.png" title="{{ config['metadata']['identification']['title'] }}" style="height:60px;vertical-align: middle;justify-self: center;" /></a>
       </a>
@@ -51,8 +51,8 @@
 
       <!-- Topbar Navbar -->
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="{{ data['links'] | map(rel='self') | attr('href') }}?f=json">JSON</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ data['links'] | map(rel='self') | attr('href') }}?f=jsonld">JSON-LD</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ data['links'] | map(rel='self') | attr('href') }}?f=json" aria-label="This document as JSON">JSON</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ data['links'] | map(rel='self') | attr('href') }}?f=jsonld" aria-label="This document as JSON-LD">JSON-LD</a></li>
       </ul>
 
     </nav>
@@ -74,21 +74,21 @@
 
         <!-- Nav Item -->
         <li class="nav-item">
-          <a class="nav-link" href="{{ config['server']['url'] }}/collections">
+          <a class="nav-link" href="{{ config['server']['url'] }}/collections" aria-label="Geoconnex Collections">
               <i class="fas fa-fw fa-table"></i>
               <b>Collections</b></a>
         </li>
 
         <!-- Nav Item -->
         <li class="nav-item">
-        <a class="nav-link" href="{{ config['server']['url'] }}/stac/sitemap">
+        <a class="nav-link" href="{{ config['server']['url'] }}/stac/sitemap" aria-label="Geoconnex Sitemap">
             <i class="fas fa-fw fa-image"></i>
             <b>Sitemap</b></a>
         </li>
 
         <!-- Nav Item -->
         <li class="nav-item">
-        <a class="nav-link" href="{{ config['server']['url'] }}/processes">
+        <a class="nav-link" href="{{ config['server']['url'] }}/processes" aria-label="Geoconnex processes">
             <i class="fas fa-fw fa-wrench"></i>
             <b>Processes</b></a>
         </li>
@@ -102,20 +102,20 @@
 
         <!-- Nav Item -->
         <li class="nav-item">
-          <a class="nav-link" href="https://docs.geoconnex.us">
+          <a class="nav-link" href="https://docs.geoconnex.us" aria-label="Geoconnex Documentation">
               <i class="fas fa-fw fa-tachometer-alt"></i>
               <b>Geoconnex Docs</b></a>
         </li>
 
         <li class="nav-item">
-        <a class="nav-link" href="{{ config['server']['url'] }}/openapi">
+        <a class="nav-link" href="{{ config['server']['url'] }}/openapi" aria-label="Swagger User Interface">
             <i class="fas fa-fw fa-cog"></i>
             <b>API Definition</b></a>
         </li>
 
         <!-- Nav Item -->
         <li class="nav-item">
-        <a class="nav-link" href="{{ config['server']['url'] }}/conformance">
+        <a class="nav-link" href="{{ config['server']['url'] }}/conformance" aria-label="Geoconnex Conformance Classes">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <b>Conformance</b></a>
         </li>
@@ -170,18 +170,18 @@
                           {% if config['metadata']['license']['url'] %}
                             <p>
                               <b>License</b><br/>
-                              <a href="{{ config['metadata']['license']['url'] }}">
+                              <a href="{{ config['metadata']['license']['url'] }}" aria-label="Geoconnex License">
                               {{ config['metadata']['license']['name'] or config['metadata']['license']['url'] }}</a>
                             </p>
                           {% endif %}
-                          <p>Powered by <a title="pygeoapi" href="https://pygeoapi.io">pygeoapi</a> {{ version }}.</p>
+                          <p>Powered by <a title="pygeoapi" href="https://pygeoapi.io" aria-label="pygeoapi url">pygeoapi</a> {{ version }}.</p>
                         </div>
                         <div class="col-md-4" style="text-align: right;">
                           <p><b>Service provided by:</b><br/></p>
-                          <a itemprop="url" href="{{ config['metadata']['provider']['url'] }}">
+                          <a itemprop="url" href="{{ config['metadata']['provider']['url'] }}" aria-label="CGS Webpage">
                             <img src="{{ config['server']['url'] }}/static/img/cgs.png" title="{{ config['metadata']['provider']['name'] }}" style="height:60px;vertical-align: middle;" /></a>
-                          <a itemprop="url" href="{{ config['metadata']['contact']['url'] }}">
-                            <img src="{{ config['server']['url'] }}/static/img/iow.png" title="{{ config['metadata']['contact']['name'] }}" style="height:60px;vertical-align: middle;margin-left: 16px;" /></a>
+                          <a itemprop="url" href="{{ config['metadata']['contact']['url'] }}" aria-label="IoW Webpage">
+                            <img src="{{ config['server']['url'] }}/static/img/iow.png" title="{{ config['metadata']['contact']['name'] }}" alt="iow logo" style="height:60px;vertical-align: middle;margin-left: 16px;" />
                         </div>
                       </div>
                     </div>
