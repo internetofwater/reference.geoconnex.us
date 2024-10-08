@@ -406,7 +406,7 @@ resources:
               table: sec_hydrg_reg
               uri_field: uri
               geom_field: geom
-    gages:  # updated 2024-04-02
+    gages:  # updated 2024-10-08
         type: collection
         title: Reference Gages
         description: United States community contributed reference Stream Gage Monitoring Locations
