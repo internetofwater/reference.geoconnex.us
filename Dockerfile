@@ -1,5 +1,5 @@
-FROM geopython/pygeoapi:latest
-#pygeoapi last updated 2023-07-31
+FROM internetofwater/pygeoapi:latest
+#pygeoapi last updated 2024-10-15
 
 # COPY ./schemas.opengis.net /opt/schemas.opengis.net
 COPY ./pygeoapi-skin-dashboard /skin-dashboard
