@@ -109,7 +109,8 @@ resources:
                 end: null
         providers: 
             - type: feature
-              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              # name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              name: PostgreSQL
               data: &provider-data
                   host: ${POSTGRES_HOST}
                   dbname: ${POSTGRES_DB}
@@ -155,7 +156,8 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              # name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              name: PostgreSQL
               data: *provider-data
               id_field: huc4
               title_field: name
@@ -197,7 +199,8 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              # name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              name: PostgreSQL
               data: *provider-data
               id_field: huc6
               title_field: name
@@ -239,7 +242,8 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              # name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              name: PostgreSQL
               data: *provider-data
               id_field: huc8
               title_field: name
@@ -452,7 +456,8 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              # name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              name: PostgreSQL
               data: *provider-data
               id_field: id
               title_field: name_at_outlet
