@@ -78,6 +78,7 @@ metadata:
         email: internetofwater@lincolninst.edu
         url: https://internetofwater.org
         role: pointOfContact
+        name: Benjamin Webb
 
 resources:
     hu02:
@@ -109,8 +110,8 @@ resources:
                 end: null
         providers: 
             - type: feature
-              # name: pygeoapi_plugins.provider.sparql.SPARQLProvider
-              name: PostgreSQL
+              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              sparql_provider: PostgreSQL
               data: &provider-data
                   host: ${POSTGRES_HOST}
                   dbname: ${POSTGRES_DB}
@@ -121,7 +122,6 @@ resources:
               table: hu02
               uri_field: uri
               geom_field: geom
-              sparql_provider: PostgreSQL
               sparql_query:
                 convert: false
                 endpoint: https://graph.geoconnex.us/repositories/iow
@@ -156,15 +156,14 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              # name: pygeoapi_plugins.provider.sparql.SPARQLProvider
-              name: PostgreSQL
+              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              sparql_provider: PostgreSQL
               data: *provider-data
               id_field: huc4
               title_field: name
               table: hu04
               uri_field: uri
               geom_field: geom
-              sparql_provider: PostgreSQL
               sparql_query:
                 convert: false
                 endpoint: https://graph.geoconnex.us/repositories/iow
@@ -199,15 +198,14 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              # name: pygeoapi_plugins.provider.sparql.SPARQLProvider
-              name: PostgreSQL
+              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              sparql_provider: PostgreSQL
               data: *provider-data
               id_field: huc6
               title_field: name
               table: hu06
               uri_field: uri
               geom_field: geom
-              sparql_provider: PostgreSQL
               sparql_query:
                 convert: false
                 endpoint: https://graph.geoconnex.us/repositories/iow
@@ -242,15 +240,14 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              # name: pygeoapi_plugins.provider.sparql.SPARQLProvider
-              name: PostgreSQL
+              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              sparql_provider: PostgreSQL
               data: *provider-data
               id_field: huc8
               title_field: name
               table: hu08
               uri_field: uri
               geom_field: geom
-              sparql_provider: PostgreSQL
               sparql_query:
                 convert: false
                 endpoint: https://graph.geoconnex.us/repositories/iow
@@ -259,7 +256,7 @@ resources:
                 bind:
                   name: uri
                   variable: '?huc'
-                select: '?huc ?hucLevel (GROUP_CONCAT(?containedCatchment; SEPARATOR="|") AS ?hucs)'
+                select: '?huc (GROUP_CONCAT(?containedCatchment; SEPARATOR="|") AS ?hucs)'
                 groupby: '?huc ?hucLevel'
                 where:
                   - subject: '?containedCatchment'
@@ -456,15 +453,14 @@ resources:
         extents: *extents
         providers:
             - type: feature
-              # name: pygeoapi_plugins.provider.sparql.SPARQLProvider
-              name: PostgreSQL
+              name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+              sparql_provider: PostgreSQL
               data: *provider-data
               id_field: id
               title_field: name_at_outlet
               table: mainstems
               uri_field: uri
               geom_field: geom
-              sparql_provider: PostgreSQL
               sparql_query:
                 convert: false
                 endpoint: https://graph.geoconnex.us/repositories/iow
