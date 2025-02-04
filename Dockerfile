@@ -10,3 +10,5 @@ RUN pip3 install --no-cache-dir --no-deps https://github.com/cgs-earth/pygeoapi-
 
 COPY ./sitemap /sitemap
 RUN mv /sitemap/_sitemap.xml /sitemap/sitemap.xml
+
+COPY ./tiles /data/tiles
