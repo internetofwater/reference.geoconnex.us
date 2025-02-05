@@ -266,6 +266,17 @@ resources:
                     object: '?huc'
                 filter: 
                   - 'BIND(REPLACE(STR(?containedCatchment), "^.*ref/(hu[0-9]+)/.*$", "$1") AS ?hucLevel)'
+            - &tile_defaults
+              type: tile
+              name: MVT-tippecanoe
+              data: https://storage.googleapis.com/reference-tiles/hu08/{z}/{x}/{y}.pbf
+              options:
+                zoom:
+                  min: 0
+                  max: 10
+              format:
+                name: pbf
+                mimetype: application/vnd.mapbox-vector-tile
     hu10:
         type: collection
         title: HU10
@@ -291,6 +302,8 @@ resources:
               table: hu10
               uri_field: uri
               geom_field: geom
+            - <<: *tile_defaults
+              data: https://storage.googleapis.com/reference-tiles/hu10/{z}/{x}/{y}.pbf
     nat_aq:
         type: collection
         title: USGS National Aquifers
@@ -525,16 +538,8 @@ resources:
                   - subject: '?distribution'
                     predicate: 'schema:encodingFormat'
                     object: '?distributionFormat'
-            - type: tile
-              name: MVT-tippecanoe
-              data: /data/tiles/mainstems/
-              options:
-                zoom:
-                  min: 0
-                  max: 10
-              format:
-                name: pbf
-                mimetype: application/vnd.mapbox-vector-tile
+            - <<: *tile_defaults
+              data: https://storage.googleapis.com/reference-tiles/mainstems/{z}/{x}/{y}.pbf
                     
     dams: # updated 2024-04-23
         type: collection
@@ -689,6 +694,8 @@ resources:
               table: counties
               uri_field: uri
               geom_field: geom
+            - <<: *tile_defaults
+              data: https://storage.googleapis.com/reference-tiles/counties/{z}/{x}/{y}.pbf
     aiannh:
         type: collection
         title: American Indian/Alaska Native Areas/Hawaiian Home Lands (AIANNH)
