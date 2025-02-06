@@ -269,7 +269,7 @@ resources:
             - &tile_defaults
               type: tile
               name: MVT-tippecanoe
-              data: https://storage.googleapis.com/reference-tiles/hu08/{z}/{x}/{y}.pbf
+              data: ${TILES_PATH}/hu08/${TILES_SUFFIX:-}
               options:
                 zoom:
                   min: 0
@@ -303,7 +303,7 @@ resources:
               uri_field: uri
               geom_field: geom
             - <<: *tile_defaults
-              data: https://storage.googleapis.com/reference-tiles/hu10/{z}/{x}/{y}.pbf
+              data: ${TILES_PATH}/hu10/${TILES_SUFFIX:-}
     nat_aq:
         type: collection
         title: USGS National Aquifers
@@ -539,7 +539,7 @@ resources:
                     predicate: 'schema:encodingFormat'
                     object: '?distributionFormat'
             - <<: *tile_defaults
-              data: https://storage.googleapis.com/reference-tiles/mainstems/{z}/{x}/{y}.pbf
+              data: ${TILES_PATH}/mainstems/${TILES_SUFFIX:-}
                     
     dams: # updated 2024-04-23
         type: collection
@@ -695,7 +695,7 @@ resources:
               uri_field: uri
               geom_field: geom
             - <<: *tile_defaults
-              data: https://storage.googleapis.com/reference-tiles/counties/{z}/{x}/{y}.pbf
+              data: ${TILES_PATH}/counties/${TILES_SUFFIX:-}
     aiannh:
         type: collection
         title: American Indian/Alaska Native Areas/Hawaiian Home Lands (AIANNH)

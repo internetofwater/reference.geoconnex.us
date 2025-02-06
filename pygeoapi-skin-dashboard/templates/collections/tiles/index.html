@@ -137,7 +137,6 @@
                     .openOn(map);
 
                 clearHighlight();
-                console.log(e)
                 highlight = e.layer.properties.id || e.layer.properties.fid;
                 tilesPbfLayer.setFeatureStyle(highlight, {
                     weight: e.layer.options.weight + 3,
