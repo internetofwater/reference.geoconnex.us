@@ -107,13 +107,13 @@
             maxZoom: {{ data['maxzoom'] }},
             indexMaxZoom: 5,
             getFeatureId: function(feat) {
-                return feat.properties.id || feat.properties.fid;
+                return feat.properties.id || feat.properties.fid || feat.properties.uri;
             },
             vectorTileLayerStyles: {
                 {{ data["id"] }}: function(properties, zoom) {
-
                     return {
                         color: '#1B335F',
+                        fillColor: '#1B335F',
                         weight: 0.25 + (zoom / 4),
                     }
                 }
@@ -137,7 +137,7 @@
                     .openOn(map);
 
                 clearHighlight();
-                highlight = e.layer.properties.id || e.layer.properties.fid;
+                highlight = e.layer.properties.id || e.layer.properties.fid || e.layer.properties.uri;
                 tilesPbfLayer.setFeatureStyle(highlight, {
                     weight: e.layer.options.weight + 3,
                     color: '#E6000B',

@@ -539,8 +539,7 @@ resources:
                     predicate: 'schema:encodingFormat'
                     object: '?distributionFormat'
             - <<: *tile_defaults
-              data: ${TILES_PATH}/mainstems/${TILES_SUFFIX:-}
-                    
+              data: ${TILES_PATH}/mainstems/${TILES_SUFFIX:-}   
     dams: # updated 2024-04-23
         type: collection
         title: Reference Dams
@@ -623,6 +622,8 @@ resources:
               table: ref_pws
               uri_field: uri
               geom_field: geom
+            - <<: *tile_defaults
+              data: ${TILES_PATH}/pws/${TILES_SUFFIX:-}
     states:
         type: collection
         title: States
