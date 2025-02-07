@@ -36,7 +36,7 @@ Any time a change is made to the resource in Hydroshare or to the pygeoapi confi
                 - schema: https://schema.org/
                   name_at_outlet: schema:name
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: data source
               href: https://github.com/internetofwater/ref_rivers

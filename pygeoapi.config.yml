@@ -98,7 +98,7 @@ resources:
                       "@id": schema:subjectOf
                       "@type": "@id"
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: data source
               href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -150,7 +150,7 @@ resources:
         linked-data:
             item_template: jsonld/hu04.jsonld
         links:  
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: data source
               href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -192,7 +192,7 @@ resources:
         linked-data:
             item_template: jsonld/hu06.jsonld
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: data source
               href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -234,7 +234,7 @@ resources:
         linked-data:
             item_template: jsonld/hu08.jsonld
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: data source
               href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -287,7 +287,7 @@ resources:
         linked-data:
             item_template: jsonld/hu10.jsonld
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: data source
               href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -322,12 +322,12 @@ resources:
                       "@id": schema:sameAs
                       "@type": "@id"
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: data source
               href: https://cida.usgs.gov/ngwmn/
               hreflang: en-US
-            - type: application/html
+            - type: text/html
               rel: alternate
               title: code list with links
               href: https://water.usgs.gov/ogw/NatlAqCode-reflist.html
@@ -363,7 +363,7 @@ resources:
                       "@id": schema:sameAs
                       "@type": "@id"
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: data source
               href: https://water.usgs.gov/GIS/metadata/usgswrd/XML/aquifers_us.xml
@@ -396,12 +396,12 @@ resources:
                 - schema: https://schema.org/
                   shr: schema:name
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: data source
               href: https://doi.org/10.5066/F7F76BSS
               hreflang: en-US
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: report documenting data
               href: https://doi.org/10.1111/gwat.12806
@@ -432,7 +432,7 @@ resources:
         linked-data:
             item_template: jsonld/ref-gages.jsonld
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: data source
               href: https://github.com/internetofwater/ref_gages
@@ -460,7 +460,7 @@ resources:
                 - schema: https://schema.org/
                   name_at_outlet: schema:name
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: data source
               href: https://github.com/internetofwater/ref_rivers
@@ -478,7 +478,7 @@ resources:
               geom_field: geom
               sparql_query:
                 convert: false
-                endpoint: https://graph.geoconnex.us/repositories/iow
+                endpoint: https://harvest.graph.test.internetofwater.app/repositories/iow
                 prefixes:
                   schema: <https://schema.org/>
                   gsp: <http://www.opengis.net/ont/geosparql#>
@@ -527,7 +527,7 @@ resources:
                       "@id": schema:subjectOf
                       "@type": schema:url
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: data source
               href: https://github.com/internetofwater/ref_dams
@@ -570,12 +570,12 @@ resources:
                       "@id": schema:geoIntersects
                       "@type": "@id"
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: EPA PWSID List source
               href: https://echo.epa.gov/tools/data-downloads/sdwa-download-summary
               hreflang: en-US
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: geographic data source
               href: https://github.com/cgs-earth/ref_pws
@@ -607,12 +607,12 @@ resources:
                       "@id": schema:subjectOf
                       "@type": "@id"
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: geographic data source
               href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
               hreflang: en-US
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: Census data source
               href: https://data.census.gov/cedsci
@@ -643,12 +643,12 @@ resources:
                       "@id": schema:subjectOf
                       "@type": "@id"
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: geographic data source
               href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
               hreflang: en-US
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: Census data source
               href: https://data.census.gov/cedsci
@@ -678,7 +678,7 @@ resources:
             context:
                 - name: https://schema.org/name
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: geographic data source
               href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
@@ -706,7 +706,7 @@ resources:
             context:
                 - name: https://schema.org/name
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: geographic data source
               href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
@@ -732,12 +732,12 @@ resources:
             context:
                 - name10: https://schema.org/name
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: geographic data source
               href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
               hreflang: en-US
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: descriptive data source
               href: https://www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural/2010-urban-rural.html
@@ -767,12 +767,12 @@ resources:
                       "@id": schema:subjectOf
                       "@type": "@id"
         links:
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: geographic data source
               href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
               hreflang: en-US
-            - type: application/html
+            - type: text/html
               rel: canonical
               title: Census data source
               href: https://data.census.gov/cedsci
