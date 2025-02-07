@@ -11,11 +11,14 @@
           <mark class="badge badge-info">{{ kw }}</mark>
         {% endfor %}
     </p>
+    <div class="row">
+    <div class="col-md-6">
     {% if data['collection'] %}
       <section id="collections">
         <h2>{% trans %}Collections{% endtrans %}</h2>
         <p>
-          <a href="{{ config['server']['url'] }}/collections?f=html">{% trans %}View the collections in this service{% endtrans %}</a>
+          <a class="browse-link" href="{{ config['server']['url'] }}/collections?f=html">
+            {% trans %}View the collections in this service{% endtrans %}</a>
         </p>
       </section>
    {% endif %}
@@ -23,7 +26,8 @@
     <section id="collections">
       <h2>{% trans %}Sitemap{% endtrans %}</h2>
       <p>
-        <a href="{{ config['server']['url'] }}/stac/sitemap?f=html">{% trans %}View the Geoconnex sitemap{% endtrans %}</a>
+        <a class="browse-link" href="{{ config['server']['url'] }}/stac/sitemap?f=html">
+          {% trans %}View the Geoconnex sitemap{% endtrans %}</a>
       </p>
     </section>
    {% endif %}
@@ -35,6 +39,8 @@
         </p>
     </section>
     {% endif %}
+    </div>
+    <div class="col-md-6">
     <section id="documentation">
       <h2>{% trans %}Documentation{% endtrans %}</h2>
       <p>
@@ -47,7 +53,13 @@
         <a href="{{ config['server']['url'] }}/openapi?f=json">{% trans %}OpenAPI Document{% endtrans %}</a>
       </p>
     </section>
-
+    </div>
+    </div>
   </div>
 </div>
+<style>
+  .browse-link {
+    font-size: 1.2em;
+  }
+</style>
 {% endblock %}

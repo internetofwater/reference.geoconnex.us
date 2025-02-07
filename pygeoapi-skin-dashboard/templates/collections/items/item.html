@@ -167,7 +167,13 @@
         }
     ));
     var geojson_data = {{ data | to_json | safe }};
-    var items = new L.GeoJSON(geojson_data);
+    var items = new L.GeoJSON(geojson_data, {
+      style: function (feature) {
+          return {
+              color: "#1B335F"
+          };
+      },
+    });
 
     map.addLayer(items);
     map.fitBounds(items.getBounds(), {maxZoom: 10});
