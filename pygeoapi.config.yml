@@ -478,7 +478,7 @@ resources:
               geom_field: geom
               sparql_query:
                 convert: false
-                endpoint: https://harvest.graph.test.internetofwater.app/repositories/iow
+                endpoint: https://graph.geoconnex.us/repositories/iow
                 prefixes:
                   schema: <https://schema.org/>
                   gsp: <http://www.opengis.net/ont/geosparql#>
