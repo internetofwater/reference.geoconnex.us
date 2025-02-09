@@ -139,7 +139,7 @@
                 clearHighlight();
                 highlight = e.layer.properties.id || e.layer.properties.fid || e.layer.properties.uri;
                 tilesPbfLayer.setFeatureStyle(highlight, {
-                    weight: e.layer.options.weight + 3,
+                    weight: 2 + e.layer.options.weight * 2,
                     color: '#E6000B',
                     opacity: 1,
                     fillColor: '#E6000B',
