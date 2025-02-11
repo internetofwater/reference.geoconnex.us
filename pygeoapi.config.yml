@@ -28,6 +28,16 @@
 # OTHER DEALINGS IN THE SOFTWARE.
 #
 # =================================================================
+tile_defaults: &tile_defaults
+  type: tile
+  name: MVT-tippecanoe
+  options:
+    zoom:
+      min: 0
+      max: 10
+  format:
+    name: pbf
+    mimetype: application/vnd.mapbox-vector-tile
 
 server:
     bind:
@@ -140,6 +150,8 @@ resources:
                     object: '?huc'
                 filter: 
                   - 'BIND(REPLACE(STR(?containedCatchment), "^.*ref/(hu[0-9]+)/.*$", "$1") AS ?hucLevel)'
+            - <<: *tile_defaults
+              data: ${TILES_PATH}/hu02/${TILES_SUFFIX:-}
     hu04:
         type: collection
         title: HU04
@@ -182,6 +194,8 @@ resources:
                     object: '?huc'
                 filter: 
                   - 'BIND(REPLACE(STR(?containedCatchment), "^.*ref/(hu[0-9]+)/.*$", "$1") AS ?hucLevel)'
+            - <<: *tile_defaults
+              data: ${TILES_PATH}/hu04/${TILES_SUFFIX:-}
     hu06:
         type: collection
         title: HU06
@@ -224,6 +238,8 @@ resources:
                     object: '?huc'
                 filter: 
                   - 'BIND(REPLACE(STR(?containedCatchment), "^.*ref/(hu[0-9]+)/.*$", "$1") AS ?hucLevel)'
+            - <<: *tile_defaults
+              data: ${TILES_PATH}/hu06/${TILES_SUFFIX:-}
     hu08:
         type: collection
         title: HU08
@@ -266,17 +282,8 @@ resources:
                     object: '?huc'
                 filter: 
                   - 'BIND(REPLACE(STR(?containedCatchment), "^.*ref/(hu[0-9]+)/.*$", "$1") AS ?hucLevel)'
-            - &tile_defaults
-              type: tile
-              name: MVT-tippecanoe
+            - <<: *tile_defaults
               data: ${TILES_PATH}/hu08/${TILES_SUFFIX:-}
-              options:
-                zoom:
-                  min: 0
-                  max: 10
-              format:
-                name: pbf
-                mimetype: application/vnd.mapbox-vector-tile
     hu10:
         type: collection
         title: HU10
