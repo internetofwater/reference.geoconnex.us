@@ -91,7 +91,7 @@ server:
   url: ${PYGEOAPI_URL} #change to host URL  if running your own instance
   mimetype: application/json; charset=UTF-8
   encoding: utf-8
-  gzip: false
+  gzip: true
   language: en-US
   cors: true
   pretty_print: true
