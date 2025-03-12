@@ -161,3 +161,8 @@ cython_debug/
 
 tiles/**
 *.sql.gz
+**/terraform.tfstate*
+**/.terraform
+**/.terraform/*
+*.tfvars
+**geoconnex*.json
