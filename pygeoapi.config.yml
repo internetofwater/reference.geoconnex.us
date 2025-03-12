@@ -176,8 +176,8 @@ resources:
     keywords:
       - Hydrologic Subregions
       - USGS
-    linked-data:
-      item_template: jsonld/hu04.jsonld
+    templates: 
+      path: /skin-dashboard/templates/jsonld/hu04
     links:
       - <<: *data-link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -196,8 +196,8 @@ resources:
     keywords:
       - Hydrologic Basins
       - USGS
-    linked-data:
-      item_template: jsonld/hu06.jsonld
+    templates: 
+      path: /skin-dashboard/templates/jsonld/hu06
     links:
       - <<: *data-link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -216,8 +216,7 @@ resources:
     keywords:
       - Hydrologic Subbasins
       - USGS
-    linked-data:
-      item_template: jsonld/hu08.jsonld
+    templates: /skin-dashboard/templates/jsonld/hu08
     links:
       - <<: *data-link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -238,8 +237,7 @@ resources:
     keywords:
       - Watersheds
       - USGS
-    linked-data:
-      item_template: jsonld/hu10.jsonld
+    templates: /skin-dashboard/templates/jsonld/hu10
     links:
       - <<: *data-link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -355,8 +353,7 @@ resources:
     keywords:
       - Stream Gages
       - USGS
-    linked-data:
-      item_template: jsonld/ref-gages.jsonld
+    templates: /skin-dashboard/templates/jsonld/gages
     links:
       - <<: *data-link
         href: https://github.com/internetofwater/ref_gages
@@ -373,8 +370,8 @@ resources:
     keywords:
       - Mainstem
       - Community
+    templates: /skin-dashboard/templates/jsonld/mainstems
     linked-data:
-      item_template: jsonld/mainstems.jsonld
       context:
         - schema: https://schema.org/
           name_at_outlet: schema:name
@@ -515,8 +512,8 @@ resources:
     keywords:
       - Counties
       - Census
+    templates: /skin-dashboard/templates/jsonld/counties
     linked-data:
-      item_template: jsonld/counties.jsonld
       context:
         - schema: https://schema.org/
           name: schema:name
