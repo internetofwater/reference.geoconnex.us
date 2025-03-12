@@ -51,7 +51,7 @@ provider_defaults: &provider_defaults
 
 sparql_query: &sparql_query
   convert: false
-  endpoint: https://graph.geoconnex.us/repositories/iow
+  endpoint: ${SPARQL_GRAPH_ENDPOINT}
   prefixes:
     schema: <https://schema.org/>
     gsp: <http://www.opengis.net/ont/geosparql#>
