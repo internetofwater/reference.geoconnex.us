@@ -101,9 +101,6 @@ server:
   map:
     url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
     attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>'
-  templates:
-    path: /skin-dashboard/templates
-    static: /skin-dashboard/static
 
 logging:
   level: ERROR
