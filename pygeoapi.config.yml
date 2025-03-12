@@ -103,7 +103,7 @@ server:
     attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>'
 
 logging:
-  level: ERROR
+  level: ${PYGEOAPI_LOGLVEL:-ERROR}
   # logfile: /tmp/pygeoapi.log
 
 metadata:
