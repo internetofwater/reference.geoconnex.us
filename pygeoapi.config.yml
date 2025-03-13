@@ -403,6 +403,7 @@ resources:
             - "?distribution schema:name ?distributionName"
             - "?distribution schema:contentUrl ?distributionURL"
             - "?distribution schema:encodingFormat ?distributionFormat"
+          limit: 100000
           filter:
             - |
               BIND(
