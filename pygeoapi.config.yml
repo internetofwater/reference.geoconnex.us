@@ -103,7 +103,7 @@ server:
     attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>'
 
 logging:
-  level: ${PYGEOAPI_LOGLVEL:-ERROR}
+  level: ${PYGEOAPI_LOGLEVEL:-ERROR}
   # logfile: /tmp/pygeoapi.log
 
 metadata:
@@ -385,7 +385,7 @@ resources:
           bind:
             name: uri
             variable: "?mainstem"
-          select: "?mainstem ?monitoringLocation ?siteName ?datasetDescription ?type ?url ?variableMeasured ?variableUnit ?measurementTechnique ?temporalCoverage ?distributionName ?distributionURL ?distributionFormat ?wkt"
+          select: "?mainstem ?datasets"
           where:
             - "?monitoringLocation hyf:HydroLocationType ?type"
             - "?monitoringLocation hyf:referencedPosition/hyf:HY_IndirectPosition/hyf:linearElement ?mainstem"
@@ -403,6 +403,25 @@ resources:
             - "?distribution schema:name ?distributionName"
             - "?distribution schema:contentUrl ?distributionURL"
             - "?distribution schema:encodingFormat ?distributionFormat"
+          filter:
+            - |
+              BIND(
+                CONCAT(
+                  '{"monitoringLocation":"', STR(?monitoringLocation),
+                  '","siteName":"', STR(?siteName),
+                  '","datasetDescription":"', STR(?datasetDescription),
+                  '","type":"', STR(?type),
+                  '","url":"', STR(?url),
+                  '","variableMeasured":"', STR(?variableMeasured),
+                  '","variableUnit":"', STR(?variableUnit),
+                  '","measurementTechnique":"', STR(?measurementTechnique),
+                  '","temporalCoverage":"', STR(?temporalCoverage),
+                  '","distributionName":"', STR(?distributionName),
+                  '","distributionURL":"', STR(?distributionURL),
+                  '","distributionFormat":"', STR(?distributionFormat),
+                  '","wkt":"', STR(?wkt), '"}'
+                ) AS ?datasets
+              )
       - <<: *tile_defaults
         data: ${TILES_PATH}/mainstems/${TILES_SUFFIX:-}
   dams: # updated 2024-04-23
