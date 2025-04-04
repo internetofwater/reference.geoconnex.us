@@ -139,8 +139,8 @@
             </div>
             {% if data['properties']['datasets'] %} 
             <h2 class="mx-auto">Graph Results</h2>
-            {% for dataset in data['properties']['datasets'] %}
-            <div class="card border-left-info shadow mb-1" style="overflow-x: scroll;">
+            {% for dataset in data['properties']['datasets'][:100] %}
+            <div class="card border-left-info shadow my-1" style="overflow-x: scroll;">
               <table class="table">
                 {% for k, v in dataset.items() %}
                 <tr>

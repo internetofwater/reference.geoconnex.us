@@ -51,7 +51,7 @@ provider_defaults: &provider_defaults
 
 sparql_query: &sparql_query
   convert: false
-  endpoint: https://graph.geoconnex.us/repositories/iow
+  endpoint: ${SPARQL_GRAPH_ENDPOINT}
   prefixes:
     schema: <https://schema.org/>
     gsp: <http://www.opengis.net/ont/geosparql#>
@@ -101,12 +101,9 @@ server:
   map:
     url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
     attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>'
-  templates:
-    path: /skin-dashboard/templates
-    static: /skin-dashboard/static
 
 logging:
-  level: ERROR
+  level: ${PYGEOAPI_LOGLEVEL:-ERROR}
   # logfile: /tmp/pygeoapi.log
 
 metadata:
@@ -176,8 +173,8 @@ resources:
     keywords:
       - Hydrologic Subregions
       - USGS
-    linked-data:
-      item_template: jsonld/hu04.jsonld
+    templates: 
+      path: /skin-dashboard/templates/jsonld/hu04
     links:
       - <<: *data-link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -196,8 +193,8 @@ resources:
     keywords:
       - Hydrologic Basins
       - USGS
-    linked-data:
-      item_template: jsonld/hu06.jsonld
+    templates: 
+      path: /skin-dashboard/templates/jsonld/hu06
     links:
       - <<: *data-link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -216,8 +213,7 @@ resources:
     keywords:
       - Hydrologic Subbasins
       - USGS
-    linked-data:
-      item_template: jsonld/hu08.jsonld
+    templates: /skin-dashboard/templates/jsonld/hu08
     links:
       - <<: *data-link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -238,8 +234,7 @@ resources:
     keywords:
       - Watersheds
       - USGS
-    linked-data:
-      item_template: jsonld/hu10.jsonld
+    templates: /skin-dashboard/templates/jsonld/hu10
     links:
       - <<: *data-link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -355,8 +350,7 @@ resources:
     keywords:
       - Stream Gages
       - USGS
-    linked-data:
-      item_template: jsonld/ref-gages.jsonld
+    templates: /skin-dashboard/templates/jsonld/gages
     links:
       - <<: *data-link
         href: https://github.com/internetofwater/ref_gages
@@ -373,8 +367,8 @@ resources:
     keywords:
       - Mainstem
       - Community
+    templates: /skin-dashboard/templates/jsonld/mainstems
     linked-data:
-      item_template: jsonld/mainstems.jsonld
       context:
         - schema: https://schema.org/
           name_at_outlet: schema:name
@@ -391,7 +385,7 @@ resources:
           bind:
             name: uri
             variable: "?mainstem"
-          select: "?mainstem ?monitoringLocation ?siteName ?datasetDescription ?type ?url ?variableMeasured ?variableUnit ?measurementTechnique ?temporalCoverage ?distributionName ?distributionURL ?distributionFormat ?wkt"
+          select: "?mainstem ?datasets"
           where:
             - "?monitoringLocation hyf:HydroLocationType ?type"
             - "?monitoringLocation hyf:referencedPosition/hyf:HY_IndirectPosition/hyf:linearElement ?mainstem"
@@ -409,6 +403,26 @@ resources:
             - "?distribution schema:name ?distributionName"
             - "?distribution schema:contentUrl ?distributionURL"
             - "?distribution schema:encodingFormat ?distributionFormat"
+          limit: 100000
+          filter:
+            - |
+              BIND(
+                CONCAT(
+                  '{"monitoringLocation":"', STR(?monitoringLocation),
+                  '","siteName":"', STR(?siteName),
+                  '","datasetDescription":"', STR(?datasetDescription),
+                  '","type":"', STR(?type),
+                  '","url":"', STR(?url),
+                  '","variableMeasured":"', STR(?variableMeasured),
+                  '","variableUnit":"', STR(?variableUnit),
+                  '","measurementTechnique":"', STR(?measurementTechnique),
+                  '","temporalCoverage":"', STR(?temporalCoverage),
+                  '","distributionName":"', STR(?distributionName),
+                  '","distributionURL":"', STR(?distributionURL),
+                  '","distributionFormat":"', STR(?distributionFormat),
+                  '","wkt":"', STR(?wkt), '"}'
+                ) AS ?datasets
+              )
       - <<: *tile_defaults
         data: ${TILES_PATH}/mainstems/${TILES_SUFFIX:-}
   dams: # updated 2024-04-23
@@ -515,8 +529,8 @@ resources:
     keywords:
       - Counties
       - Census
+    templates: /skin-dashboard/templates/jsonld/counties
     linked-data:
-      item_template: jsonld/counties.jsonld
       context:
         - schema: https://schema.org/
           name: schema:name
@@ -637,28 +651,28 @@ resources:
     type: process
     processor:
       name: pygeoapi_plugins.process.intersect.IntersectionProcessor
-  sitemap:
-    type: stac-collection
-    title: sitemap
-    description: geoconnex.us sitemap
-    keywords:
-      - Geoconnex
-      - Sitemap
-      - Internet of Water
-    links:
-      - <<: *data-link
-        title: information
-        href: https://geoconnex.us
-      - <<: *data-link
-        title: sitemap
-        href: https://geoconnex.us/sitemap.xml
-    extents:
-      spatial:
-        bbox: [-180, -90, 180, 90]
-        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-    providers:
-      - type: stac
-        name: FileSystem
-        data: /sitemap
-        file_types:
-          - .xml
+  # sitemap:
+  #   type: stac-collection
+  #   title: sitemap
+  #   description: geoconnex.us sitemap
+  #   keywords:
+  #     - Geoconnex
+  #     - Sitemap
+  #     - Internet of Water
+  #   links:
+  #     - <<: *data-link
+  #       title: information
+  #       href: https://geoconnex.us
+  #     - <<: *data-link
+  #       title: sitemap
+  #       href: https://geoconnex.us/sitemap.xml
+  #   extents:
+  #     spatial:
+  #       bbox: [-180, -90, 180, 90]
+  #       crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  #   providers:
+  #     - type: stac
+  #       name: FileSystem
+  #       data: /sitemap
+  #       file_types:
+  #         - .xml

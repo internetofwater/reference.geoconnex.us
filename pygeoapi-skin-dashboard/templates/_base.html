@@ -80,11 +80,13 @@
         </li>
 
         <!-- Nav Item -->
+        {% if "sitemap" in config["resources"] -%}
         <li class="nav-item">
         <a class="nav-link" href="{{ config['server']['url'] }}/stac/sitemap" aria-label="Geoconnex Sitemap">
             <i class="fas fa-fw fa-image"></i>
             <b>Sitemap</b></a>
         </li>
+        {% endif %}
 
         <!-- Nav Item -->
         <li class="nav-item">
