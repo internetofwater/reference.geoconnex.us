@@ -83,8 +83,8 @@
         .replace("tileMatrix", "z")
     {% if data['tile_type'] == 'raster' %}
         url = url
-            .replace("tileRow", "y")
-            .replace("tileCol", "x");
+            .replace("tileRow", "x")
+            .replace("tileCol", "y");
         map.addLayer(new L.TileLayer(
             url, {
                 maxZoom: {{ data['maxzoom'] }},
