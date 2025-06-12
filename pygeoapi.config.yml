@@ -343,7 +343,7 @@ resources:
         id_field: id
         title_field: shr
         table: sec_hydrg_reg
-  gages: # updated 2024-10-08
+  gages: # updated 2024-06-12
     type: collection
     title: Reference Gages
     description: United States community contributed reference Stream Gage Monitoring Locations
