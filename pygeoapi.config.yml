@@ -29,7 +29,7 @@
 #
 # =================================================================
 
-data_link: &data-link
+data_link: &data_link
   type: text/html
   rel: canonical
   title: data source
@@ -74,12 +74,14 @@ huc_sparql_query: &huc_sparql_query
     - 'BIND(REPLACE(STR(?containedCatchment), "^.*ref/(hu[0-9]+)/.*$", "$1") AS ?hucLevel)'
 
 tile_defaults: &tile_defaults
+  <<: *provider_defaults
   type: tile
-  name: MVT-tippecanoe
+  name: MVT-postgresql
+  storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
   options:
     zoom:
-      min: 0
-      max: 10
+      min: 1
+      max: 16
   format:
     name: pbf
     mimetype: application/vnd.mapbox-vector-tile
@@ -150,7 +152,7 @@ resources:
             "@id": schema:subjectOf
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
     extents: &extents
       spatial:
@@ -165,7 +167,8 @@ resources:
         table: hu02
         sparql_query: *huc_sparql_query
       - <<: *tile_defaults
-        data: ${TILES_PATH}/hu02/${TILES_SUFFIX:-}
+        id_field: huc2
+        table: hu02
   hu04:
     type: collection
     title: HU04
@@ -176,7 +179,7 @@ resources:
     templates: 
       path: /skin-dashboard/templates/jsonld/hu04
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
     extents: *extents
     providers:
@@ -185,7 +188,8 @@ resources:
         table: hu04
         sparql_query: *huc_sparql_query
       - <<: *tile_defaults
-        data: ${TILES_PATH}/hu04/${TILES_SUFFIX:-}
+        id_field: huc4
+        table: hu04
   hu06:
     type: collection
     title: HU06
@@ -196,7 +200,7 @@ resources:
     templates: 
       path: /skin-dashboard/templates/jsonld/hu06
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
     extents: *extents
     providers:
@@ -205,7 +209,8 @@ resources:
         table: hu06
         sparql_query: *huc_sparql_query
       - <<: *tile_defaults
-        data: ${TILES_PATH}/hu06/${TILES_SUFFIX:-}
+        id_field: huc6
+        table: hu06
   hu08:
     type: collection
     title: HU08
@@ -215,7 +220,7 @@ resources:
       - USGS
     templates: /skin-dashboard/templates/jsonld/hu08
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
     extents: *extents
     providers:
@@ -226,7 +231,8 @@ resources:
           <<: *huc_sparql_query
           select: '?huc (GROUP_CONCAT(?containedCatchment; SEPARATOR="|") AS ?hucs)'
       - <<: *tile_defaults
-        data: ${TILES_PATH}/hu08/${TILES_SUFFIX:-}
+        id_field: huc8
+        table: hu08
   hu10:
     type: collection
     title: HU10
@@ -236,7 +242,7 @@ resources:
       - USGS
     templates: /skin-dashboard/templates/jsonld/hu10
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
     extents: *extents
     providers:
@@ -245,7 +251,8 @@ resources:
         id_field: huc10
         table: hu10
       - <<: *tile_defaults
-        data: ${TILES_PATH}/hu10/${TILES_SUFFIX:-}
+        id_field: huc10
+        table: hu10
   nat_aq:
     type: collection
     title: USGS National Aquifers
@@ -264,9 +271,9 @@ resources:
             "@id": schema:sameAs
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://cida.usgs.gov/ngwmn/
-      - <<: *data-link
+      - <<: *data_link
         title: code list with links
         href: https://water.usgs.gov/ogw/NatlAqCode-reflist.html
     extents:
@@ -281,6 +288,9 @@ resources:
         name: PostgreSQL
         id_field: nat_aqfr_cd
         title_field: aq_name
+        table: nat_aq
+      - <<: *tile_defaults
+        id_field: nat_aqfr_cd
         table: nat_aq
   principal_aq:
     type: collection
@@ -297,7 +307,7 @@ resources:
             "@id": schema:sameAs
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://water.usgs.gov/GIS/metadata/usgswrd/XML/aquifers_us.xml
     extents:
       spatial:
@@ -312,6 +322,9 @@ resources:
         id_field: aq_code
         title_field: aq_name
         table: princi_aq
+      - <<: *tile_defaults
+        id_field: aq_code
+        table: princi_aq
   sec_hydrg_reg:
     type: collection
     title: USGS Secondary Hydrogeologic Regions
@@ -324,10 +337,10 @@ resources:
         - schema: https://schema.org/
           shr: schema:name
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://doi.org/10.5066/F7F76BSS
         hreflang: en-US
-      - <<: *data-link
+      - <<: *data_link
         title: report documenting data
         href: https://doi.org/10.1111/gwat.12806
     extents:
@@ -340,8 +353,9 @@ resources:
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
-        id_field: id
         title_field: shr
+        table: sec_hydrg_reg
+      - <<: *tile_defaults
         table: sec_hydrg_reg
   gages: # updated 2024-06-12
     type: collection
@@ -352,7 +366,7 @@ resources:
       - USGS
     templates: /skin-dashboard/templates/jsonld/gages
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://github.com/internetofwater/ref_gages
     extents: *extents
     providers:
@@ -373,7 +387,7 @@ resources:
         - schema: https://schema.org/
           name_at_outlet: schema:name
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://github.com/internetofwater/ref_rivers
     extents: *extents
     providers:
@@ -424,7 +438,7 @@ resources:
                 ) AS ?datasets
               )
       - <<: *tile_defaults
-        data: ${TILES_PATH}/mainstems/${TILES_SUFFIX:-}
+        table: mainstems
   dams: # updated 2024-04-23
     type: collection
     title: Reference Dams
@@ -444,13 +458,15 @@ resources:
             "@id": schema:subjectOf
             "@type": schema:url
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://github.com/internetofwater/ref_dams
     extents: *extents
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
         title_field: description
+        table: ref_dams
+      - <<: *tile_defaults
         table: ref_dams
   pws: #updated 2024-07-02
     type: collection
@@ -480,10 +496,10 @@ resources:
             "@id": schema:geoIntersects
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: EPA PWSID List source
         href: https://echo.epa.gov/tools/data-downloads/sdwa-download-summary
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://github.com/cgs-earth/ref_pws
     extents: *extents
@@ -494,7 +510,8 @@ resources:
         title_field: pws_name
         table: ref_pws
       - <<: *tile_defaults
-        data: ${TILES_PATH}/pws/${TILES_SUFFIX:-}
+        id_field: pwsid
+        table: ref_pws
   states:
     type: collection
     title: States
@@ -510,16 +527,19 @@ resources:
             "@id": schema:subjectOf
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-      - <<: *data-link
+      - <<: *data_link
         title: Census data source
         href: https://data.census.gov/cedsci
     extents: *extents
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
+        id_field: geoid
+        table: states
+      - <<: *tile_defaults
         id_field: geoid
         table: states
   counties:
@@ -538,10 +558,10 @@ resources:
             "@id": schema:subjectOf
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-      - <<: *data-link
+      - <<: *data_link
         title: Census data source
         href: https://data.census.gov/cedsci
     extents: *extents
@@ -551,7 +571,8 @@ resources:
         id_field: geoid
         table: counties
       - <<: *tile_defaults
-        data: ${TILES_PATH}/counties/${TILES_SUFFIX:-}
+        id_field: geoid
+        table: counties
   aiannh:
     type: collection
     title: American Indian/Alaska Native Areas/Hawaiian Home Lands (AIANNH)
@@ -565,13 +586,16 @@ resources:
       context:
         - name: https://schema.org/name
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
     extents: *extents
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
+        id_field: geoid
+        table: aiannh
+      - <<: *tile_defaults
         id_field: geoid
         table: aiannh
   cbsa:
@@ -587,13 +611,16 @@ resources:
       context:
         - name: https://schema.org/name
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
     extents: *extents
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
+        id_field: geoid
+        table: cbsa
+      - <<: *tile_defaults
         id_field: geoid
         table: cbsa
   ua10:
@@ -607,10 +634,10 @@ resources:
       context:
         - name10: https://schema.org/name
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-      - <<: *data-link
+      - <<: *data_link
         title: descriptive data source
         href: https://www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural/2010-urban-rural.html
     extents: *extents
@@ -619,6 +646,9 @@ resources:
         name: PostgreSQL
         id_field: geoid10
         title_field: name10
+        table: ua10
+      - <<: *tile_defaults
+        id_field: geoid10
         table: ua10
   places:
     type: collection
@@ -635,16 +665,19 @@ resources:
             "@id": schema:subjectOf
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-      - <<: *data-link
+      - <<: *data_link
         title: Census data source
         href: https://data.census.gov/cedsci
     extents: *extents
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
+        id_field: geoid
+        table: places
+      - <<: *tile_defaults
         id_field: geoid
         table: places
   intersector:
@@ -660,10 +693,10 @@ resources:
   #     - Sitemap
   #     - Internet of Water
   #   links:
-  #     - <<: *data-link
+  #     - <<: *data_link
   #       title: information
   #       href: https://geoconnex.us
-  #     - <<: *data-link
+  #     - <<: *data_link
   #       title: sitemap
   #       href: https://geoconnex.us/sitemap.xml
   #   extents:
