@@ -29,7 +29,7 @@
 #
 # =================================================================
 
-data_link: &data-link
+data_link: &data_link
   type: text/html
   rel: canonical
   title: data source
@@ -150,7 +150,7 @@ resources:
             "@id": schema:subjectOf
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
     extents: &extents
       spatial:
@@ -176,7 +176,7 @@ resources:
     templates: 
       path: /skin-dashboard/templates/jsonld/hu04
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
     extents: *extents
     providers:
@@ -196,7 +196,7 @@ resources:
     templates: 
       path: /skin-dashboard/templates/jsonld/hu06
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
     extents: *extents
     providers:
@@ -215,7 +215,7 @@ resources:
       - USGS
     templates: /skin-dashboard/templates/jsonld/hu08
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
     extents: *extents
     providers:
@@ -236,7 +236,7 @@ resources:
       - USGS
     templates: /skin-dashboard/templates/jsonld/hu10
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
     extents: *extents
     providers:
@@ -264,9 +264,9 @@ resources:
             "@id": schema:sameAs
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://cida.usgs.gov/ngwmn/
-      - <<: *data-link
+      - <<: *data_link
         title: code list with links
         href: https://water.usgs.gov/ogw/NatlAqCode-reflist.html
     extents:
@@ -297,7 +297,7 @@ resources:
             "@id": schema:sameAs
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://water.usgs.gov/GIS/metadata/usgswrd/XML/aquifers_us.xml
     extents:
       spatial:
@@ -324,10 +324,10 @@ resources:
         - schema: https://schema.org/
           shr: schema:name
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://doi.org/10.5066/F7F76BSS
         hreflang: en-US
-      - <<: *data-link
+      - <<: *data_link
         title: report documenting data
         href: https://doi.org/10.1111/gwat.12806
     extents:
@@ -352,7 +352,7 @@ resources:
       - USGS
     templates: /skin-dashboard/templates/jsonld/gages
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://github.com/internetofwater/ref_gages
     extents: *extents
     providers:
@@ -373,7 +373,7 @@ resources:
         - schema: https://schema.org/
           name_at_outlet: schema:name
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://github.com/internetofwater/ref_rivers
     extents: *extents
     providers:
@@ -444,7 +444,7 @@ resources:
             "@id": schema:subjectOf
             "@type": schema:url
     links:
-      - <<: *data-link
+      - <<: *data_link
         href: https://github.com/internetofwater/ref_dams
     extents: *extents
     providers:
@@ -480,10 +480,10 @@ resources:
             "@id": schema:geoIntersects
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: EPA PWSID List source
         href: https://echo.epa.gov/tools/data-downloads/sdwa-download-summary
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://github.com/cgs-earth/ref_pws
     extents: *extents
@@ -510,10 +510,10 @@ resources:
             "@id": schema:subjectOf
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-      - <<: *data-link
+      - <<: *data_link
         title: Census data source
         href: https://data.census.gov/cedsci
     extents: *extents
@@ -538,10 +538,10 @@ resources:
             "@id": schema:subjectOf
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-      - <<: *data-link
+      - <<: *data_link
         title: Census data source
         href: https://data.census.gov/cedsci
     extents: *extents
@@ -565,7 +565,7 @@ resources:
       context:
         - name: https://schema.org/name
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
     extents: *extents
@@ -587,7 +587,7 @@ resources:
       context:
         - name: https://schema.org/name
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
     extents: *extents
@@ -607,10 +607,10 @@ resources:
       context:
         - name10: https://schema.org/name
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-      - <<: *data-link
+      - <<: *data_link
         title: descriptive data source
         href: https://www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural/2010-urban-rural.html
     extents: *extents
@@ -635,10 +635,10 @@ resources:
             "@id": schema:subjectOf
             "@type": "@id"
     links:
-      - <<: *data-link
+      - <<: *data_link
         title: geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
-      - <<: *data-link
+      - <<: *data_link
         title: Census data source
         href: https://data.census.gov/cedsci
     extents: *extents
@@ -660,10 +660,10 @@ resources:
   #     - Sitemap
   #     - Internet of Water
   #   links:
-  #     - <<: *data-link
+  #     - <<: *data_link
   #       title: information
   #       href: https://geoconnex.us
-  #     - <<: *data-link
+  #     - <<: *data_link
   #       title: sitemap
   #       href: https://geoconnex.us/sitemap.xml
   #   extents:
