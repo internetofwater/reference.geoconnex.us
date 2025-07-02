@@ -43,6 +43,18 @@
         outline: 2px solid #55677F;
         outline-offset: 2px;
     }
+
+    select.metadata-link {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,<svg fill="white" height="10" width="10" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 10,0 5,5"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 12px bottom 12px;
+        background-size: 12px;
+        border: none; 
+        padding-right: 32px;
+    }
     </style>
 {%- endblock %}
 
@@ -50,27 +62,72 @@
     <section id="collection">
       <h1>{{ data['title'] }}</h1>
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-9">
           <div id="items-map"></div>
         </div>
-        <div class="col-md-1">
-            <a id="metadata_link" class="metadata-link" href="{{ config['server']['url'] }}/collections/{{ data['id'] }}/tiles/{{ data['tilesets'][0] }}/metadata" target="_blank">{% trans %}Metadata{% endtrans %}</a>
-          </div>
+        <div class="col-md-2">
+
+        <select class="metadata-link" id="tilingScheme">
+            {% for tileset in data['tilesets'] %}
+            <option value="{{ tileset }}">{{ tileset }}</option>
+            {% endfor %}
+        </select>
+
+        <a id="metadata_link" class="metadata-link" href="{{ config['server']['url'] }}/collections/{{ data['id'] }}/tiles/{{ data['tilesets'][0] }}/metadata" target="_blank">{% trans %}Metadata{% endtrans %}</a>
+        </div>
       </div>
     </section>
 {%- endblock %}
 
 {%- block extrafoot %}
     <script>
-    var scheme = "{{ data['tilesets'][0] }}";
-    var map = L.map('items-map').setView([{{ 45 }}, {{ -75 }}], 10);
-
-    map.addLayer(new L.TileLayer(
-        '{{ config["server"]["map"]["url"] }}', {
-            maxZoom: {{ data['maxzoom'] }},
-            attribution: '{{ config["server"]["map"]["attribution"] | safe }}'
+        var select = document.getElementById('tilingScheme');
+        let params = (new URL(document.location)).searchParams;
+        var scheme = params.get('scheme') ?? select.value;
+        if (scheme) {
+            select.value = scheme;
+            document.getElementById("metadata_link").href = "{{ config['server']['url'] }}/collections/{{ data['id'] }}/tiles/" + scheme + "/metadata";
         }
-    ));
+        select.addEventListener('change', ev => {
+          var scheme = ev.target.value;
+          console.log(scheme);
+          document.location.search = `scheme=${scheme}`;
+          document.getElementById("metadata_link").href = "{{ config['server']['url'] }}/collections/{{ data['id'] }}/tiles/" + scheme + "/metadata";
+        });
+    </script>
+    <script>
+        
+    if (scheme !== "WorldCRS84Quad"){
+        var map = L.map('items-map').setView([{{ 45 }}, {{ -75 }}], 10);
+
+        map.addLayer(new L.TileLayer(
+            '{{ config["server"]["map"]["url"] }}', {
+                maxZoom: {{ data['maxzoom'] }},
+                attribution: '{{ config["server"]["map"]["attribution"] | safe }}'
+            }
+        ));
+
+    } else {
+
+        var map = L.map('items-map',{
+            crs: L.CRS.EPSG4326
+        }).setView([{{ 45 }}, {{ -75 }}], 10);
+
+        map.addLayer(new L.TileLayer(
+            '{{ config["server"]["map"]["url"] }}', {
+                maxZoom: {{ data['maxzoom'] }},
+                attribution: '{{ config["server"]["map"]["attribution"] | safe }}',
+                tileSize: L.point(512, 256)
+            }
+        ));
+        document.getElementById('items-map').insertAdjacentHTML(
+            'afterend', 
+            '<div style="margin-top: 1rem; text-align: center;">' +
+            '{% trans %}Warning: Basemap may be in a different projection{% endtrans %}' +
+            '</div>'
+        );
+
+    }
 
     {% for link in data["links"] %}
       {% if link["rel"] == "item" %}
@@ -105,6 +162,13 @@
             },
             vectorTileLayerStyles: {
                 {{ data["id"] }}: function(properties, zoom) {
+                    return {
+                        color: '#1B335F',
+                        fillColor: '#1B335F',
+                        weight: 0.25 + (zoom / 4),
+                    }
+                },
+                'ref_{{ data["id"] }}': function(properties, zoom) {
                     return {
                         color: '#1B335F',
                         fillColor: '#1B335F',

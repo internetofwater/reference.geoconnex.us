@@ -46,7 +46,8 @@
         <div class="card border-left-info shadow py-2 mb-3">
           <div class="card-body">
             <div class="row">
-              <div id="limit" class="col-sm-12">
+              <div id="limit" class="col-sm-12 d-flex justify-content-between align-items-center">
+                <span>
                 Limit:
                 <select id="limits">
                   <option value="{{ config['server']['limit'] }}">{{ config['server']['limit'] }} ({% trans %}default{% endtrans %})</option>
@@ -54,6 +55,10 @@
                   <option value="1000">1,000</option>
                   <option value="2000">2,000</option>
                 </select>
+                </span>
+                {% if data['numberMatched'] %}
+                <span id="item-count">{% trans %}Items in this collection{% endtrans %}: {{ data['numberMatched'] }}</span>
+                {% endif %}
                 <script>
                   var select = document.getElementById('limits');
                   let params = (new URL(document.location)).searchParams;
