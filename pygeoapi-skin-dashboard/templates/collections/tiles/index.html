@@ -113,19 +113,16 @@
             crs: L.CRS.EPSG4326
         }).setView([{{ 45 }}, {{ -75 }}], 10);
 
-        map.addLayer(new L.TileLayer(
-            '{{ config["server"]["map"]["url"] }}', {
-                maxZoom: {{ data['maxzoom'] }},
-                attribution: '{{ config["server"]["map"]["attribution"] | safe }}',
-                tileSize: L.point(512, 256)
+        map.addLayer(new L.tileLayer.wms(
+            'https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer', {
+                layers: '0',
+                format: 'image/png',
+                transparent: false,
+                version: '1.3.0',
+                crs: L.CRS.EPSG4326,
+                attribution: 'USGS Imagery Topo'
             }
         ));
-        document.getElementById('items-map').insertAdjacentHTML(
-            'afterend', 
-            '<div style="margin-top: 1rem; text-align: center;">' +
-            '{% trans %}Warning: Basemap may be in a different projection{% endtrans %}' +
-            '</div>'
-        );
 
     }
 
