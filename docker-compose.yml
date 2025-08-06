@@ -9,8 +9,6 @@ services:
       - ./pygeoapi-skin-dashboard/templates/jsonld:/pygeoapi/pygeoapi/templates/jsonld
     env_file:
       - .env
-    environment:
-      - HOT_RELOAD_TEMPLATES=1
 
   database:
     container_name: database

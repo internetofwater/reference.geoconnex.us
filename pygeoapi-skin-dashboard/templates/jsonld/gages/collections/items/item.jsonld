@@ -19,7 +19,7 @@
 			"description": "schema:description",
 			"geo": "schema:geo",
 			"image": {
-				"@id": "schema:image",
+				"@id": "schema:image",fd
 				"@type": "@id"
 			}
 		}
@@ -32,10 +32,14 @@
     "name": "{{ data.name | safe  }}",
     "description": "{{ data.description | safe }}",
 {% if data.subjectOf %}  
-    "subjectOf": {
-	    "schema:url": "{{ data.subjectOf }}"
-    },
+    "subjectOf": [
+		{
+	    	"schema:url": "{{ data.subjectOf }}"
+    	},
+	
+	]
 {% endif %} 
+fdslkdsfkj
 {% if data.provider %}
     "provider": "{{ data.provider }}",
 {% endif %} 
