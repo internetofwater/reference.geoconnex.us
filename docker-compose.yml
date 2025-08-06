@@ -6,8 +6,11 @@ services:
       - 5000:80
     volumes:
       - ./pygeoapi.config.yml:/pygeoapi/local.config.yml
+      - ./pygeoapi-skin-dashboard/templates/jsonld:/pygeoapi/pygeoapi/templates/jsonld
     env_file:
       - .env
+    environment:
+      - HOT_RELOAD_TEMPLATES=1
 
   database:
     container_name: database
