@@ -219,7 +219,8 @@ resources:
     keywords:
       - Hydrologic Subbasins
       - USGS
-    templates: /skin-dashboard/templates/jsonld/hu08
+    templates: 
+      path: /skin-dashboard/templates/jsonld/hu08
     links:
       - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -241,7 +242,8 @@ resources:
     keywords:
       - Watersheds
       - USGS
-    templates: /skin-dashboard/templates/jsonld/hu10
+    templates: 
+      path: /skin-dashboard/templates/jsonld/hu10
     links:
       - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -365,7 +367,8 @@ resources:
     keywords:
       - Stream Gages
       - USGS
-    templates: /skin-dashboard/templates/jsonld/gages
+    templates: 
+      path: /skin-dashboard/templates/jsonld/gages
     links:
       - <<: *data_link
         href: https://github.com/internetofwater/ref_gages
@@ -382,7 +385,8 @@ resources:
     keywords:
       - Mainstem
       - Community
-    templates: /skin-dashboard/templates/jsonld/mainstems
+    templates: 
+      path: /skin-dashboard/templates/jsonld/mainstems
     linked-data:
       context:
         - schema: https://schema.org/
@@ -552,7 +556,8 @@ resources:
     keywords:
       - Counties
       - Census
-    templates: /skin-dashboard/templates/jsonld/counties
+    templates: 
+      path: /skin-dashboard/templates/jsonld/counties
     linked-data:
       context:
         - schema: https://schema.org/
