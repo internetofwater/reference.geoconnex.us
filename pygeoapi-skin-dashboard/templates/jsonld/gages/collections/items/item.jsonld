@@ -1,29 +1,23 @@
 {
-	"@context": [
-		{
-			"schema": "https://schema.org/",
-			"skos": "http://www.w3.org/2004/02/skos/core#",
-			"hyf": "https://www.opengis.net/def/schema/hy_features/hyf/",
-			"gsp": "http://www.opengis.net/ont/geosparql#",
-			"name": "schema:name",
-			"sameAs": "schema:sameAs",
-			"subjectOf": {
-                            "@id": "schema:subjectOf",
-                            "@type": "@id"
-                        },
-			"provider": {
-				"@id": "schema:provider",
-				"@type": "@id"
-			},
-			"related": "skos:related",
-			"description": "schema:description",
-			"geo": "schema:geo",
-			"image": {
-				"@id": "schema:image",
-				"@type": "@id"
-			}
-		}
-	],
+	"@context": {
+		"@vocab": "https://schema.org/",
+		"xsd": "https://www.w3.org/TR/xmlschema-2/#",
+		"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+		"dc": "http://purl.org/dc/terms/",
+		"dcat": "https://www.w3.org/ns/dcat#",
+		"freq": "http://purl.org/cld/freq/",
+		"qudt": "http://qudt.org/schema/qudt/",
+		"qudt-units": "http://qudt.org/vocab/unit/",
+		"qudt-quantkinds": "http://qudt.org/vocab/quantitykind/",
+		"gsp": "http://www.opengis.net/ont/geosparql#",
+		"locType": "http://vocabulary.odm2.org/sitetype",
+		"odm2var": "http://vocabulary.odm2.org/variablename/",
+		"odm2varType": "http://vocabulary.odm2.org/variabletype/",
+		"hyf": "https://www.opengis.net/def/schema/hy_features/hyf/",
+		"skos": "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocationType",
+		"ssn": "http://www.w3.org/ns/ssn/",
+		"ssn-system": "http://www.w3.org/ns/ssn/systems/"
+	},
 	"@id": "{{ data["@id"] }}",
 	"@type": [
 		"https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature",
@@ -31,11 +25,39 @@
 	],
     "name": "{{ data.name | safe  }}",
     "description": "{{ data.description | safe }}",
-{% if data.subjectOf %}  
-    "subjectOf": {
-	    "schema:url": "{{ data.subjectOf }}"
-    },
-{% endif %} 
+	{% if (data.subjectof or data.nws_url) %}
+	"subjectOf": [
+		{% if data.subjectof %}
+		{
+			"@type": "Dataset",
+			"name": "{{ data.description | safe }}",
+			"url": "{{ data.subjectof | safe }}",
+			"provider": {
+				"@id": "provider",
+				"@type": "GovernmentOrganization",
+				"name": "USGS",
+				"url": "{{data.provider}}"
+			}
+		}
+		{% endif %}
+		{% if data.subjectof and data.nws_url %}
+		,
+		{% endif %}
+		{% if data.nws_url %}
+		{
+			"@type": "Dataset",
+			"url": "{{ data.nws_url | safe }}",
+			"provider": {
+				"@id": "provider",
+				"@type": "GovernmentOrganization",
+				"name": "USGS",
+				"url": "{{data.provider}}"
+			},
+		}
+		{% endif %}
+	],
+	{% endif %}
+	
 {% if data.provider %}
     "provider": "{{ data.provider }}",
 {% endif %} 
