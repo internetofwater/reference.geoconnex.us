@@ -1,22 +1,8 @@
 {
 	"@context": {
 		"@vocab": "https://schema.org/",
-		"xsd": "https://www.w3.org/TR/xmlschema-2/#",
-		"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-		"dc": "http://purl.org/dc/terms/",
-		"dcat": "https://www.w3.org/ns/dcat#",
-		"freq": "http://purl.org/cld/freq/",
-		"qudt": "http://qudt.org/schema/qudt/",
-		"qudt-units": "http://qudt.org/vocab/unit/",
-		"qudt-quantkinds": "http://qudt.org/vocab/quantitykind/",
 		"gsp": "http://www.opengis.net/ont/geosparql#",
-		"locType": "http://vocabulary.odm2.org/sitetype",
-		"odm2var": "http://vocabulary.odm2.org/variablename/",
-		"odm2varType": "http://vocabulary.odm2.org/variabletype/",
-		"hyf": "https://www.opengis.net/def/schema/hy_features/hyf/",
-		"skos": "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocationType",
-		"ssn": "http://www.w3.org/ns/ssn/",
-		"ssn-system": "http://www.w3.org/ns/ssn/systems/"
+		"hyf": "https://www.opengis.net/def/schema/hy_features/hyf/"
 	},
 	"@id": "{{ data["@id"] }}",
 	"@type": [
@@ -47,7 +33,6 @@
 			"@type": "Dataset",
 			"url": "{{ data.nws_url | safe }}",
 			"provider": {
-				"@id": "provider",
 				"@type": "GovernmentOrganization",
 				"name": "USGS",
 				"url": "{{data.provider}}"
