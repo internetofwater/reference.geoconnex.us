@@ -1,6 +1,7 @@
 services:
   pygeoapi:
     build: .
+    command: ["run-with-hot-reload"]
     container_name: reference-geoconnex-us
     ports:
       - 5000:80
@@ -9,6 +10,8 @@ services:
       - ./pygeoapi-skin-dashboard/templates/jsonld:/pygeoapi/pygeoapi/templates/jsonld
     env_file:
       - .env
+    depends_on:
+      - database
 
   database:
     container_name: database
