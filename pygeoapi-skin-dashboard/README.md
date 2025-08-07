@@ -13,8 +13,8 @@ Point paths to relevant folders
 
 ```YML
     templates:
-      path: /tmp/skin-dashboard/templates
-      static: /tmp/skin-dashboard/static
+      path: /pygeoapi/pygeoapi/templates
+      static: /pygeoapi/pygeoapi/static
 ```
 
 (Re)start service
