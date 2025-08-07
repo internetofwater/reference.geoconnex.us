@@ -33,7 +33,6 @@
 			"name": "{{ data.description | safe }}",
 			"url": "{{ data.subjectof | safe }}",
 			"provider": {
-				"@id": "provider",
 				"@type": "GovernmentOrganization",
 				"name": "USGS",
 				"url": "{{data.provider}}"
@@ -52,7 +51,7 @@
 				"@type": "GovernmentOrganization",
 				"name": "USGS",
 				"url": "{{data.provider}}"
-			},
+			}
 		}
 		{% endif %}
 	],
