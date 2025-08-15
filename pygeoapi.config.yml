@@ -360,7 +360,7 @@ resources:
         table: sec_hydrg_reg
       - <<: *tile_defaults
         table: sec_hydrg_reg
-  gages: # updated 2024-06-12
+  gages: # updated 2025-08-15
     type: collection
     title: Reference Gages
     description: United States community contributed reference Stream Gage Monitoring Locations
