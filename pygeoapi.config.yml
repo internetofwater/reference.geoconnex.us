@@ -76,9 +76,10 @@ huc_sparql_query: &huc_sparql_query
 tile_defaults: &tile_defaults
   <<: *provider_defaults
   type: tile
-  name: MVT-PostgreSQL
+  name: MVT-PostgresCache
+  mvt_table: mvt_tiles
   storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
-  disable_at_z: 8
+  disable_cache_at_z: 8
   options:
     zoom:
       min: 1
@@ -256,6 +257,7 @@ resources:
       - <<: *tile_defaults
         id_field: huc10
         table: hu10
+        min_pixel: 1024
   nat_aq:
     type: collection
     title: USGS National Aquifers
@@ -444,7 +446,6 @@ resources:
               )
       - <<: *tile_defaults
         table: mainstems
-        tile_threshold: "outlet_drainagearea_sqkm > (5000 - ({z} * 500)) / {z}"
   dams: # updated 2024-04-23
     type: collection
     title: Reference Dams
@@ -518,7 +519,7 @@ resources:
       - <<: *tile_defaults
         id_field: pwsid
         table: ref_pws
-        tile_threshold: "population_served_count > 100000 / ({z} * 2)"
+        min_pixel: 1024
   states:
     type: collection
     title: States
@@ -606,6 +607,7 @@ resources:
       - <<: *tile_defaults
         id_field: geoid
         table: aiannh
+        disable_at_z: 0
   cbsa:
     type: collection
     title: Core-based statistical areas (CBSA)
@@ -631,6 +633,7 @@ resources:
       - <<: *tile_defaults
         id_field: geoid
         table: cbsa
+        disable_at_z: 0
   ua10:
     type: collection
     title: Urban Areas
@@ -658,6 +661,7 @@ resources:
       - <<: *tile_defaults
         id_field: geoid10
         table: ua10
+        disable_at_z: 0
   places:
     type: collection
     title: Places
@@ -688,7 +692,7 @@ resources:
       - <<: *tile_defaults
         id_field: geoid
         table: places
-        tile_limit: 2500
+        disable_at_z: 0
   intersector:
     type: process
     processor:
