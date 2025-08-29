@@ -18,9 +18,9 @@
         }
 
       #items-map {
-          max-height: 500px;
-          height: 500px;
-          max-width: 1000px;
+          max-height: 720px;
+          height: 600px;
+          max-width: 100%;
       }
       .metadata-link {
         display: inline-block;
@@ -62,10 +62,7 @@
     <section id="collection">
       <h1>{{ data['title'] }}</h1>
       <div class="row">
-        <div class="col-md-9">
-          <div id="items-map"></div>
-        </div>
-        <div class="col-md-2">
+        <div class="col-md-12">
 
         <select class="metadata-link" id="tilingScheme">
             {% for tileset in data['tilesets'] %}
@@ -74,6 +71,9 @@
         </select>
 
         <a id="metadata_link" class="metadata-link" href="{{ config['server']['url'] }}/collections/{{ data['id'] }}/tiles/{{ data['tilesets'][0] }}/metadata" target="_blank">{% trans %}Metadata{% endtrans %}</a>
+        </div>
+        <div class="col-md-12 my-2">
+          <div id="items-map"></div>
         </div>
       </div>
     </section>
@@ -163,15 +163,11 @@
                         color: '#1B335F',
                         fillColor: '#1B335F',
                         weight: 0.25 + (zoom / 4),
+                        radius: 2,
+                        fill: true,
+                        fillOpacity: 0.1
                     }
                 },
-                'ref_{{ data["id"] }}': function(properties, zoom) {
-                    return {
-                        color: '#1B335F',
-                        fillColor: '#1B335F',
-                        weight: 0.25 + (zoom / 4),
-                    }
-                }
             }
         };
 
@@ -196,11 +192,10 @@
                 tilesPbfLayer.setFeatureStyle(highlight, {
                     weight: 2 + e.layer.options.weight * 2,
                     color: '#E6000B',
-                    opacity: 1,
                     fillColor: '#E6000B',
-                    fill: false,
+                    fill: true,
                     radius: 6,
-                    fillOpacity: 1
+                    fillOpacity: 0.75
                 });
 
                 L.DomEvent.stop(e);

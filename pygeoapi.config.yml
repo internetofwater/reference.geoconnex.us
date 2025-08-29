@@ -32,7 +32,7 @@
 data_link: &data_link
   type: text/html
   rel: canonical
-  title: data source
+  title: Data source
   hreflang: en-US
 
 provider_defaults: &provider_defaults
@@ -145,6 +145,7 @@ resources:
     description: Two-digit Hydrologic Regions from USGS NHDPlus High Resolution
     keywords:
       - Hydrologic Regions
+      - HU02
       - USGS
     linked-data:
       context:
@@ -177,6 +178,7 @@ resources:
     description: Four-digit Hydrologic Subregion from USGS NHDPlus High Resolution
     keywords:
       - Hydrologic Subregions
+      - HU04
       - USGS
     templates: 
       path: /pygeoapi/pygeoapi/templates/jsonld/hu04
@@ -198,6 +200,7 @@ resources:
     description: Six-digit Hydrologic Basins from USGS NHDPlus High Resolution
     keywords:
       - Hydrologic Basins
+      - HU06
       - USGS
     templates: 
       path: /pygeoapi/pygeoapi/templates/jsonld/hu06
@@ -219,6 +222,7 @@ resources:
     description: Eight-digit Hydrologic Subbasins from USGS NHDPlus High Resolution
     keywords:
       - Hydrologic Subbasins
+      - HU08
       - USGS
     templates: 
       path: /pygeoapi/pygeoapi/templates/jsonld/hu08
@@ -242,6 +246,7 @@ resources:
     description: Ten-digit Watersheds from USGS NHDPlus High Resolution
     keywords:
       - Watersheds
+      - HU10
       - USGS
     templates: 
       path: /pygeoapi/pygeoapi/templates/jsonld/hu10
@@ -330,6 +335,7 @@ resources:
       - <<: *tile_defaults
         id_field: aq_code
         table: princi_aq
+        layer: principal_aq
   sec_hydrg_reg:
     type: collection
     title: USGS Secondary Hydrogeologic Regions
@@ -365,7 +371,7 @@ resources:
   gages: # updated 2025-08-15
     type: collection
     title: Reference Gages
-    description: United States community contributed reference Stream Gage Monitoring Locations
+    description: United States Community Contributed Reference Stream Gages
     keywords:
       - Stream Gages
       - USGS
@@ -383,10 +389,10 @@ resources:
   mainstems:
     type: collection
     title: Reference Mainstems
-    description: United States community contributed reference Mainstem Rivers
+    description: United States Community Contributed Reference Mainstem Rivers
     keywords:
       - Mainstem
-      - Community
+      - USGS
     templates: 
       path: /pygeoapi/pygeoapi/templates/jsonld/mainstems
     linked-data:
@@ -396,7 +402,13 @@ resources:
     links:
       - <<: *data_link
         href: https://github.com/internetofwater/ref_rivers
-    extents: *extents
+    extents:
+      spatial:
+        bbox: [-125, 26, -66, 50]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
     providers:
       - <<: *provider_defaults
         title_field: name_at_outlet
@@ -475,6 +487,8 @@ resources:
         table: ref_dams
       - <<: *tile_defaults
         table: ref_dams
+        layer: dams
+        disable_at_z: 1
   pws: #updated 2024-07-02
     type: collection
     title: Public Water Systems
@@ -507,7 +521,7 @@ resources:
         title: EPA PWSID List source
         href: https://echo.epa.gov/tools/data-downloads/sdwa-download-summary
       - <<: *data_link
-        title: geographic data source
+        title: Geographic data source
         href: https://github.com/cgs-earth/ref_pws
     extents: *extents
     providers:
@@ -519,6 +533,7 @@ resources:
       - <<: *tile_defaults
         id_field: pwsid
         table: ref_pws
+        layer: pws
         min_pixel: 1024
   states:
     type: collection
@@ -536,7 +551,7 @@ resources:
             "@type": "@id"
     links:
       - <<: *data_link
-        title: geographic data source
+        title: Geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
       - <<: *data_link
         title: Census data source
@@ -568,7 +583,7 @@ resources:
             "@type": "@id"
     links:
       - <<: *data_link
-        title: geographic data source
+        title: Geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
       - <<: *data_link
         title: Census data source
@@ -584,7 +599,7 @@ resources:
         table: counties
   aiannh:
     type: collection
-    title: American Indian/Alaska Native Areas/Hawaiian Home Lands (AIANNH)
+    title: American Indian/Alaska Native Areas/Hawaiian Home Lands
     description: Federally recognized American Indian/Alaska Native Areas/Hawaiian Home Lands (AIANNH)
     keywords:
       - American Indian Areas
@@ -596,7 +611,7 @@ resources:
         - name: https://schema.org/name
     links:
       - <<: *data_link
-        title: geographic data source
+        title: Geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
     extents: *extents
     providers:
@@ -610,19 +625,17 @@ resources:
         disable_at_z: 0
   cbsa:
     type: collection
-    title: Core-based statistical areas (CBSA)
+    title: Core-based statistical areas
     description: United States Metropolitan and Micropolitan Statistical Areas
     keywords:
-      - Core-based statistical areas
-      - Metropolitan Statistical Areas
-      - Micropolitan Statistical Areas
+      - CBSA
       - Census
     linked-data:
       context:
         - name: https://schema.org/name
     links:
       - <<: *data_link
-        title: geographic data source
+        title: Geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
     extents: *extents
     providers:
@@ -646,10 +659,10 @@ resources:
         - name10: https://schema.org/name
     links:
       - <<: *data_link
-        title: geographic data source
+        title: Geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
       - <<: *data_link
-        title: descriptive data source
+        title: Descriptive data source
         href: https://www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural/2010-urban-rural.html
     extents: *extents
     providers:
@@ -678,7 +691,7 @@ resources:
             "@type": "@id"
     links:
       - <<: *data_link
-        title: geographic data source
+        title: Geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
       - <<: *data_link
         title: Census data source
