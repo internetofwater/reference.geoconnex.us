@@ -400,6 +400,21 @@
     <loc>https://geoconnex.us/sitemap/usgs/monitoring-location/nwissite/nwissite__1.xml</loc>
     <lastmod>2023-07-31T16:49:46Z</lastmod>
 </sitemap><sitemap>
+    <loc>https://geoconnex.us/sitemap/wwdh/usace/usace_access_to_water__0.xml</loc>
+    <lastmod>2025-09-22T11:07:11Z</lastmod>
+</sitemap><sitemap>
+    <loc>https://geoconnex.us/sitemap/wwdh/noaa_rfc/noaa_rfc__0.xml</loc>
+    <lastmod>2025-09-22T11:07:11Z</lastmod>
+</sitemap><sitemap>
+    <loc>https://geoconnex.us/sitemap/wwdh/awdb_forecasts/awdb_forecasts__0.xml</loc>
+    <lastmod>2025-09-22T11:07:11Z</lastmod>
+</sitemap><sitemap>
+    <loc>https://geoconnex.us/sitemap/wwdh/snotel/snotel__0.xml</loc>
+    <lastmod>2025-09-22T11:07:11Z</lastmod>
+</sitemap><sitemap>
+    <loc>https://geoconnex.us/sitemap/wwdh/usbr_rise/rise__0.xml</loc>
+    <lastmod>2025-09-22T11:07:11Z</lastmod>
+</sitemap><sitemap>
     <loc>https://geoconnex.us/sitemap/epa/hmw/hmw__1.xml</loc>
     <lastmod>2021-11-04T21:45:51Z</lastmod>
 </sitemap><sitemap>
