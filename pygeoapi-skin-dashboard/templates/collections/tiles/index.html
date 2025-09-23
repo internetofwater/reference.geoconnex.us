@@ -163,7 +163,7 @@
                         color: '#1B335F',
                         fillColor: '#1B335F',
                         weight: 0.25 + (zoom / 4),
-                        radius: 2,
+                        radius: Math.min(zoom / 4, 4) 
                         fill: true,
                         fillOpacity: 0.1
                     }
