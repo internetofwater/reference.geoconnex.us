@@ -12,7 +12,7 @@
     </p>
     <div class="row">
     <div class="col-md-6">
-    <div class="landing-card card">
+    <!-- <div class="landing-card card"> -->
     {% if data['collection'] %}
       <section id="collections">
         <h2>{% trans %}Collections{% endtrans %}</h2>
@@ -40,6 +40,8 @@
         </p>
     </section>
     {% endif %}
+    </div>
+    <div class="col-md-6">
     <section id="documentation">
       <h2>{% trans %}Documentation{% endtrans %}</h2>
       <p>
@@ -65,7 +67,7 @@
   }
   .landing-card {
     width: 100%;
-    height: 500px;
+    /* height: 500px; */
     padding: 16px;
     margin-bottom: 16px;
   }
