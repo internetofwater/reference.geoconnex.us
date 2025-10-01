@@ -1,15 +1,15 @@
 {
     "@context": [
         {
-            "schema": "https://schema.org/",
+            "@vocab": "https://schema.org/",
             "gsp": "http://www.opengis.net/ont/geosparql#",
             "wiki": "https://www.wikidata.org/wiki/",
             "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/"
         },
         {
-            "name_at_outlet": "schema:name",
+            "name_at_outlet": "name",
             "superseded_by_mainstem": {
-                "@id": "schema:supersededBy",
+                "@id": "supersededBy",
                 "@type": "@id"
             },   
             "head_nhdpv2_comid": {
@@ -37,15 +37,14 @@
             "encompassing_mainstem_basin": {
                 "@id": "hyf:encompassingCatchment",
                 "@type": "@id"
-            },
-            "geo": "schema:geo"
+            }
         }
     ],
     "@id": "{{ data["@id"] }}",
 	"@type": [
 		"hyf:HY_FlowPath",
 		"hyf:HY_WaterBody",
-        "schema:Place"
+        "Place"
 	],
     "name_at_outlet": "{{ data.name_at_outlet }}",
     {% if data.downstream_mainstem_id %}
