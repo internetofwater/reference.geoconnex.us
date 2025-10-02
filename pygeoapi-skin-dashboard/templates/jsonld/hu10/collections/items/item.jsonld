@@ -1,16 +1,16 @@
 {
     "@context": {
-        "schema": "https://schema.org/",
+        "@vocab": "https://schema.org/",
         "gsp": "http://www.opengis.net/ont/geosparql#",
         "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/",
         "gnis_url": {
-            "@id": "schema:subjectOf",
+            "@id": "subjectOf",
             "@type": "@id"
         }
     },
     "@id": "{{ data['@id'] }}",
-    "@type": "schema:Place",
-    "schema:name": "{{ data['name'] }}",
+    "@type": "Place",
+    "sname": "{{ data['name'] }}",
     {%- if data['gnis_url'] %}
     "gnis_url": "{{ data['gnis_url'] }}",
     {%- endif %}

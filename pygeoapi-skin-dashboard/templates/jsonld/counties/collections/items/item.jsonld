@@ -1,18 +1,17 @@
 {
     "@context": {
-        "schema": "https://schema.org/",
+        "@vocab": "https://schema.org/",
         "gsp": "http://www.opengis.net/ont/geosparql#",
-        "name": "schema:name",
         "census_profile": {
-            "@id": "schema:subjectOf",
+            "@id": "subjectOf",
             "@type": "@id"
         }
     },
     "@id": "{{ data['@id'] }}",
-    "@type": "schema:Place",
-    "schema:name": "{{ data['name'] }}",
+    "@type": "Place",
+    "name": "{{ data['name'] }}",
     "census_profile": "{{ data['census_profile'] }}",
-    "schema:geoWithin": {
+    "geoWithin": {
         "@id": "https://geoconnex.us/ref/states/{{ data['statefp'] }}"
     },
     "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }},
