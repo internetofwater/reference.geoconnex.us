@@ -1,81 +1,83 @@
 {
-  "@context": {
-    "@vocab": "https://schema.org/",
-    "gsp": "http://www.opengis.net/ont/geosparql#",
-    "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/"
-  },
-  "@id": "{{ data['@id'] }}",
-  "@type": [
-    "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature",
-    "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation"
-  ],
-  "name": {{ data.name | to_json | safe  }},
-  "description": {{ data.description | to_json | safe }},
-{%- if (data.subjectof or data.nws_url) %}
-  "subjectOf": [
-{%- if data.subjectof %}
-    {
-      "@type": "Dataset",
-      "name": {{ data.description | to_json | safe }},
-      "url": {{ data.subjectof | to_json | safe }},
-      "provider": {
-        "@type": "GovernmentOrganization",
-        "name": "USGS",
-        "url": "{{ data.provider }}"
-      }
-    }
-{%- endif %}
-{%- if data.subjectof and data.nws_url %}
-    ,
-{%- endif %}
-{%- if data.nws_url %}
-    {
-      "@type": "Dataset",
-      "url": "{{ data.nws_url | safe }}",
-      "provider": {
-        "@type": "GovernmentOrganization",
-        "name": "USGS",
-        "url": "{{ data.provider }}"
-      }
-    }
-{%- endif %}
-  ],
-{%- endif %}
-{%- if data.provider %}
-  "provider": "{{ data.provider }}",
-{%- endif %} 
-{%- if (data.nhdpv2_reachcode or data.mainstem_uri) %}    
-  "hyf:referencedPosition": [
-{%- if data.nhdpv2_reachcode %}  
-    {
-      "hyf:HY_IndirectPosition": {
-{%- if data.nhdpv2_reach_measure is not none %} 
-        "hyf:distanceExpression": {
-          "hyf:HY_DistanceFromReferent": { 
-            "hyf:interpolative": {{ data.nhdpv2_reach_measure }}
-          }
-        },
-        "hyf:distanceDescription": {
-          "hyf:HY_DistanceDescription": "upstream"
-        },
-{%- endif %} 
-        "hyf:linearElement": {"@id": "https://geoconnex.us/nhdplusv2/reachcode/{{ data.nhdpv2_reachcode }}"}
-      }
-    }
-{%- if data.mainstem_uri %} 
-  ,
-{%- endif %} 
-{%- endif %}  
-{%- if data.mainstem_uri %}  
-  {
-    "hyf:HY_IndirectPosition": {
-      "hyf:linearElement": {"@id": "{{ data.mainstem_uri }}"}
-    }
-  }
-{%- endif %} 
-  ],     
-{%- endif %}    
-  "hyf:HY_HydroLocationType": "hydrometricStation",
-  "geo": {{ data['schema:geo'] | to_json | safe }},
-  "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }}
+	"@context": {
+		"@vocab": "https://schema.org/",
+		"gsp": "http://www.opengis.net/ont/geosparql#",
+		"hyf": "https://www.opengis.net/def/schema/hy_features/hyf/"
+	},
+	"@id": "{{ data["@id"] }}",
+	"@type": [
+		"https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature",
+		"https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation"
+	],
+    "name": "{{ data.name | safe  }}",
+    "description": "{{ data.description | safe }}",
+	{% if (data.subjectof or data.nws_url) %}
+	"subjectOf": [
+		{% if data.subjectof %}
+		{
+			"@type": "WebPage",
+			"name": "{{ data.description | safe }}",
+			"url": "{{ data.subjectof | safe }}",
+			"provider": {
+				"@type": "GovernmentOrganization",
+				"name": "USGS",
+				"url": "https://water.noaa.gov/"
+			}
+		}
+		{% endif %}
+		{% if data.subjectof and data.nws_url %}
+		,
+		{% endif %}
+		{% if data.nws_url %}
+		{
+			"@type": "WebPage",
+			"url": "{{ data.nws_url | safe }}",
+			"provider": {
+				"@type": "GovernmentOrganization",
+				"name": "NOAA",
+				"url": "{{data.provider}}"
+			}
+		}
+		{% endif %}
+	],
+	{% endif %}
+	
+{% if data.provider %}
+    "provider": "{{ data.provider }}",
+{% endif %} 
+{% if (data.nhdpv2_reachcode or data.mainstem_uri) %}    
+	"hyf:referencedPosition":   
+    [
+{% if data.nhdpv2_reachcode %}  
+		{
+			"hyf:HY_IndirectPosition": {
+{% if data.nhdpv2_reach_measure is not none %} 
+				"hyf:distanceExpression": {
+					"hyf:HY_DistanceFromReferent": { 
+						"hyf:interpolative": {{ data.nhdpv2_reach_measure }}
+					}
+				},
+				"hyf:distanceDescription": {
+					"hyf:HY_DistanceDescription": "upstream"
+				},
+{% endif %} 
+				"hyf:linearElement": {"@id": "https://geoconnex.us/nhdplusv2/reachcode/{{ data.nhdpv2_reachcode }}"}
+			}
+		}
+{% if data.mainstem_uri %} 
+,
+{% endif %} 
+{% endif %}  
+{% if data.mainstem_uri %}  
+		{
+			"hyf:HY_IndirectPosition": {
+				"hyf:linearElement": {"@id": "{{ data.mainstem_uri }}"}
+			}
+		}
+{% endif %} 
+	],     
+{% endif %}    
+	"hyf:HY_HydroLocationType": "hydrometricStation",
+    "geo": {{ data['schema:geo'] | to_json | safe }},
+    "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }}
 }
