@@ -30,12 +30,12 @@
 {%- endif %}
 {%- if data.nws_url %}
     {
-      "@type": "Dataset",
+      "@type": "WebPage",
       "url": "{{ data.nws_url | safe }}",
       "provider": {
         "@type": "GovernmentOrganization",
-        "name": "USGS",
-        "url": "{{ data.provider }}"
+        "name": "NOAA",
+        "url": "https://water.noaa.gov/"
       }
     }
 {%- endif %}

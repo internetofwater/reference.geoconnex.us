@@ -166,3 +166,5 @@ tiles/**
 **/.terraform/*
 *.tfvars
 **geoconnex*.json
+
+.vscode/
