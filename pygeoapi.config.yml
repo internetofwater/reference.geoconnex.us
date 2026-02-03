@@ -263,6 +263,31 @@ resources:
         id_field: huc10
         table: hu10
         min_pixel: 1024
+
+  hu12:
+    type: collection
+    title: HU12
+    description: Twelve-digit Subwatershed from USGS NHDPlus High Resolution
+    keywords:
+      - Subwatershed
+      - HU12
+      - USGS
+    templates: 
+      path: /pygeoapi/pygeoapi/templates/jsonld/hu12
+    links:
+      - <<: *data_link
+        href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
+    extents: *extents
+    providers:
+      - <<: *provider_defaults
+        name: PostgreSQL
+        id_field: huc12
+        table: reference_huc12
+      - <<: *tile_defaults
+        id_field: huc12
+        table: reference_huc12
+        layer: hu12
+        min_pixel: 1024
   nat_aq:
     type: collection
     title: USGS National Aquifers
