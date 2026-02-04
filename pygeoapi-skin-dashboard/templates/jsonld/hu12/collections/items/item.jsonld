@@ -11,10 +11,8 @@
     "@id": "{{ data['@id'] }}",
     "@type": "Place",
     "name": "{{ data['name'] }}",
-    {%- if data['gnis_url'] %}
-    "gnis_url": "{{ data['gnis_url'] }}",
-    {%- endif %}
     "hyf:containingCatchment": [
+        {"@id": "https://geoconnex.us/ref/hu08/{{ data['id'][0:10] }}"},
         {"@id": "https://geoconnex.us/ref/hu08/{{ data['id'][0:8] }}"},
         {"@id": "https://geoconnex.us/ref/hu06/{{ data['id'][0:6] }}"},
         {"@id": "https://geoconnex.us/ref/hu04/{{ data['id'][0:4] }}"},
