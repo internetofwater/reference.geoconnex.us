@@ -10,7 +10,7 @@
     },
     "@id": "{{ data['@id'] }}",
     "@type": "Place",
-    "sname": "{{ data['name'] }}",
+    "name": "{{ data['name'] }}",
     {%- if data['gnis_url'] %}
     "gnis_url": "{{ data['gnis_url'] }}",
     {%- endif %}
