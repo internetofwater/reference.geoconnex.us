@@ -521,26 +521,8 @@ resources:
     keywords:
       - Public Water Systems
       - EPA
-    linked-data:
-      context:
-        - pws_name: https://schema.org/name
-        - state_uri: https://schema.org/geoWithin
-        - sdwis_link: https://schema.org/subjectOf
-        - source_url: https://schema.org/isBasedOn
-        - place_uri: https://schema.org/geoIntersects
-        - schema: https://schema.org/
-          sdwis_link:
-            "@id": schema:subjectOf
-            "@type": "@id"
-          source_url:
-            "@id": schema:isBasedOn
-            "@type": "@id"
-          state_uri:
-            "@id": schema:geoWithin
-            "@type": "@id"
-          place_link:
-            "@id": schema:geoIntersects
-            "@type": "@id"
+    templates: 
+      path: /pygeoapi/pygeoapi/templates/jsonld/pws
     links:
       - <<: *data_link
         title: EPA PWSID List source
