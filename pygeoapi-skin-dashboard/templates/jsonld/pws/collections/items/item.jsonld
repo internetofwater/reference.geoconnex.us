@@ -16,9 +16,6 @@
     "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }},
     "schema:geo": {{ data['schema:geo'] | to_json | safe }},
     {% endif %}
-    {% if "place_uri" in data %}
-    "schema:geoIntersects": {{ data['place_uri'] }},
-    {% endif %}
     {% if "state_uri" in data %}
     "schema:geoWithin": {{ data['state_uri'] }},
     {% endif %}
