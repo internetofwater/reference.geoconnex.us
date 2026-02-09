@@ -1,6 +1,7 @@
 {
     "@context": {
         "@vocab": "https://schema.org/",
+        "schema": "https://schema.org/",
         "gsp": "http://www.opengis.net/ont/geosparql#",
         "census_profile": {
             "@id": "subjectOf",
