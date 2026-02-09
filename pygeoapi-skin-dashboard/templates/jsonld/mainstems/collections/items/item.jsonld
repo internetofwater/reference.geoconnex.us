@@ -2,6 +2,7 @@
     "@context": [
         {
             "@vocab": "https://schema.org/",
+            "schema": "https://schema.org/",
             "gsp": "http://www.opengis.net/ont/geosparql#",
             "wiki": "https://www.wikidata.org/wiki/",
             "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/"
