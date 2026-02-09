@@ -157,6 +157,9 @@ resources:
     links:
       - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
+      - <<: *data_link
+        href: https://water.usgs.gov/themes/hydrologic-units/
+        title: Hydrologic Unit Documentation
     extents: &extents
       spatial:
         bbox: [-170, 15, -51, 72]
@@ -185,6 +188,9 @@ resources:
     links:
       - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
+      - <<: *data_link
+        href: https://water.usgs.gov/themes/hydrologic-units/
+        title: Hydrologic Unit Documentation
     extents: *extents
     providers:
       - <<: *provider_defaults
@@ -207,6 +213,9 @@ resources:
     links:
       - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
+      - <<: *data_link
+        href: https://water.usgs.gov/themes/hydrologic-units/
+        title: Hydrologic Unit Documentation
     extents: *extents
     providers:
       - <<: *provider_defaults
@@ -229,6 +238,9 @@ resources:
     links:
       - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
+      - <<: *data_link
+        href: https://water.usgs.gov/themes/hydrologic-units/
+        title: Hydrologic Unit Documentation
     extents: *extents
     providers:
       - <<: *provider_defaults
@@ -253,6 +265,9 @@ resources:
     links:
       - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
+      - <<: *data_link
+        href: https://water.usgs.gov/themes/hydrologic-units/
+        title: Hydrologic Unit Documentation
     extents: *extents
     providers:
       - <<: *provider_defaults
@@ -267,7 +282,7 @@ resources:
   hu12:
     type: collection
     title: HU12
-    description: Twelve-digit Subwatershed from USGS NHDPlus High Resolution
+    description: Twelve-digit Subwatershed from USGS Water Boundary Dataset (WBD)
     keywords:
       - Subwatershed
       - HU12
@@ -276,7 +291,10 @@ resources:
       path: /pygeoapi/pygeoapi/templates/jsonld/hu12
     links:
       - <<: *data_link
-        href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
+        href: https://doi.org/10.5066/P1HR67C5
+      - <<: *data_link
+        href: https://water.usgs.gov/themes/hydrologic-units/
+        title: Hydrologic Unit Documentation
     extents: *extents
     providers:
       - <<: *provider_defaults
