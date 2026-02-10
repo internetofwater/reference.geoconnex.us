@@ -1,8 +1,10 @@
 {
     "@context": {
         "@vocab": "https://schema.org/",
+        "schema": "https://schema.org/",
         "gsp": "http://www.opengis.net/ont/geosparql#",
         "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "gnis_url": {
             "@id": "subjectOf",
             "@type": "@id"
@@ -12,12 +14,21 @@
     "@type": "Place",
     "name": "{{ data['name'] }}",
     "hyf:containingCatchment": [
-        {"@id": "https://geoconnex.us/ref/hu08/{{ data['id'][0:10] }}"},
+        {"@id": "https://geoconnex.us/ref/hu10/{{ data['id'][0:10] }}"},
         {"@id": "https://geoconnex.us/ref/hu08/{{ data['id'][0:8] }}"},
         {"@id": "https://geoconnex.us/ref/hu06/{{ data['id'][0:6] }}"},
         {"@id": "https://geoconnex.us/ref/hu04/{{ data['id'][0:4] }}"},
         {"@id": "https://geoconnex.us/ref/hu02/{{ data['id'][0:2] }}"}
     ],
+    "hyf:lowerCatchment": {"@id": "https://geoconnex.us/ref/huc12/{{ data['tohuc'] }}"},
+    {% if data['nhdpv2'] or data['nhdphr'] or data['niwaa'] or data['final'] %}
+    "rdfs:seeAlso": [
+        {% if data.nhdpv2 %}{"@id": "{{ data.nhdpv2 }}"}{% if data.nhdphr %},{% endif %}{% endif %}
+        {% if data.nhdphr %}{"@id": "{{ data.nhdphr }}"}{% if data.niwaa %},{% endif %}{% endif %}
+        {% if data.niwaa %}{"@id": "{{ data.niwaa }}"}{% if data.niwaa %},{% endif %}{% endif %}
+        {% if data.final %}{"@id": "{{ data.final }}"}{% endif %}
+    ],
+    {% endif %}
     "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }},
     "geo": {{ data['schema:geo'] | to_json | safe }}
 }
