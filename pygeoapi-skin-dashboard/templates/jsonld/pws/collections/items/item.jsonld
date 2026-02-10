@@ -1,0 +1,46 @@
+{
+    "@context": {
+        "@vocab": "https://schema.org/",
+        "schema": "https://schema.org/",
+        "gsp": "http://www.opengis.net/ont/geosparql#",
+    },
+    "@id": "{{ data['@id'] }}",
+    "@type": "schema:Place",
+    {% if "pws_name" in data %}
+    "schema:name": "{{ data['pws_name'] }}",
+    {% endif %}
+    {% if "pwsid" in data %}
+    "schema:identifier": "{{ data['pwsid'] }}",
+    {% endif %}
+    {% if 'EMPTY' not in data['gsp:hasGeometry']['gsp:asWKT'] %}
+    "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }},
+    "schema:geo": {{ data['schema:geo'] | to_json | safe }},
+    {% endif %}
+    {% if "state_uri" in data %}
+    "schema:geoWithin": {{ data['state_uri'] }},
+    {% endif %}
+    {% if "source_url" in data %}
+    "schema:isBasedOn": {{ data['source_url'] }},
+    {% endif %}
+    "schema:subjectOf": [
+        {
+            "@type": "schema:Dataset,
+            {% if "pws_name" in data %}
+            "schema:name": "{{ data['pws_name'] }}",
+            {% endif %}
+            {% if "sdwis_link" in data %}
+            "schema:distribution": [
+                {
+                    "@type": "schema:DataDownload",
+                    "schema:contentUrl": "{{ data['sdwis_link'] }}",
+                    "schema:encodingFormat": ["text/html"]
+                }
+            ],
+            {% endif %}
+            "schema:provider": {
+                "@type": "schema:GovernmentOrganization",
+                "schema:name": "EPA"
+            }
+        }
+    ]
+}
