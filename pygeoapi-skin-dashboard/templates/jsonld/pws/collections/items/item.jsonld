@@ -12,9 +12,11 @@
     {% if "pwsid" in data %}
     "schema:identifier": "{{ data['pwsid'] }}",
     {% endif %}
-    {% if 'EMPTY' not in data['gsp:hasGeometry']['gsp:asWKT'] %}
+    {% if 'EMPTY' not in data['gsp:hasGeometry']['gsp:asWKT']['@value'] %}
     "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }},
+    {% if data.get('schema:geo') %}
     "schema:geo": {{ data['schema:geo'] | to_json | safe }},
+    {% endif %}
     {% endif %}
     {% if "state_uri" in data and data.state_uri %}
     "schema:geoWithin": "{{ data['state_uri'] }}",
