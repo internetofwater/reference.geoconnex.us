@@ -12,9 +12,13 @@
     {% if "pwsid" in data %}
     "schema:identifier": "{{ data['pwsid'] }}",
     {% endif %}
-    {% if 'EMPTY' not in data['gsp:hasGeometry']['gsp:asWKT'] %}
+    {% if data.get('gsp:hasGeometry') 
+          and data['gsp:hasGeometry'].get('gsp:asWKT') 
+          and 'EMPTY' not in data['gsp:hasGeometry']['gsp:asWKT'] %}
     "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }},
+    {% if data.get('schema:geo') %}
     "schema:geo": {{ data['schema:geo'] | to_json | safe }},
+    {% endif %}
     {% endif %}
     {% if "state_uri" in data %}
     "schema:geoWithin": {{ data['state_uri'] }},
@@ -24,7 +28,7 @@
     {% endif %}
     "schema:subjectOf": [
         {
-            "@type": "schema:Dataset,
+            "@type": "schema:Dataset",
             {% if "pws_name" in data %}
             "schema:name": "{{ data['pws_name'] }}",
             {% endif %}
