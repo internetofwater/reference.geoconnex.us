@@ -18,9 +18,6 @@
     "schema:geo": {{ data['schema:geo'] | to_json | safe }},
     {% endif %}
     {% endif %}
-    {% if "state_uri" in data %}
-    "schema:geoWithin": {{ data['state_uri'] }},
-    {% endif %}
     {% if "state_uri" in data and data.state_uri %}
     "schema:geoWithin": "{{ data['state_uri'] }}",
     {% endif %}
