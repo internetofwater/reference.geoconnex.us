@@ -1,9 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <sitemap>
-    <loc>https://geoconnex.us/sitemap/usgs/hydrologic-unit__0.xml</loc>
-    <lastmod>2020-05-02T07:25:35Z</lastmod>
-</sitemap><sitemap>
     <loc>https://geoconnex.us/sitemap/ca-gage-assessment/ca_gages_pids__0.xml</loc>
     <lastmod>2021-10-18T11:11:07Z</lastmod>
 </sitemap><sitemap>
