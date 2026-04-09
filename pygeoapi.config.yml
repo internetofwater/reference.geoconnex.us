@@ -79,7 +79,7 @@ tile_defaults: &tile_defaults
   name: MVT-PostgresCache
   mvt_table: mvt_tiles
   storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
-  disable_cache_at_z: 8
+  disable_cache_at_z: 10
   options:
     zoom:
       min: 1
@@ -501,6 +501,7 @@ resources:
               )
       - <<: *tile_defaults
         table: mainstems
+        min_pixel: 512
   dams: # updated 2024-04-23
     type: collection
     title: Reference Dams
