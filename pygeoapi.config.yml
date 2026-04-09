@@ -501,7 +501,36 @@ resources:
               )
       - <<: *tile_defaults
         table: mainstems
-        min_pixel: 512
+  mainstems_v3:
+    type: collection
+    hidden: true
+    title: Reference Mainstems V3
+    description: United States Community Contributed Reference Mainstem Rivers
+    keywords:
+      - Mainstem
+      - USGS
+    templates: 
+      path: /pygeoapi/pygeoapi/templates/jsonld/mainstems
+    linked-data:
+      context:
+        - schema: https://schema.org/
+          name_at_outlet: schema:name
+    links:
+      - <<: *data_link
+        href: https://github.com/internetofwater/ref_rivers
+    extents:
+      spatial:
+        bbox: [-125, 26, -66, 50]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - <<: *provider_defaults
+        name: PostgreSQL
+        table: mainstems_v3
+      - <<: *tile_defaults
+        table: mainstems_v3
   dams: # updated 2024-04-23
     type: collection
     title: Reference Dams
