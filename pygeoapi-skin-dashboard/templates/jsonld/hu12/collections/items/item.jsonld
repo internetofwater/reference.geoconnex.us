@@ -22,11 +22,17 @@
     ],
     "hyf:lowerCatchment": {"@id": "https://geoconnex.us/ref/huc12/{{ data['tohuc'] }}"},
     {% if data['nhdpv2'] or data['nhdphr'] or data['niwaa'] or data['final'] %}
+    {% set seeAlso = [] %}
+    
+    {% if data.nhdpv2 %}{% set _ = seeAlso.append(data.nhdpv2) %}{% endif %}
+    {% if data.nhdphr %}{% set _ = seeAlso.append(data.nhdphr) %}{% endif %}
+    {% if data.niwaa %}{% set _ = seeAlso.append(data.niwaa) %}{% endif %}
+    {% if data.final %}{% set _ = seeAlso.append(data.final) %}{% endif %}
+    
     "rdfs:seeAlso": [
-        {% if data.nhdpv2 %}{"@id": "{{ data.nhdpv2 }}"}{% if data.nhdphr %},{% endif %}{% endif %}
-        {% if data.nhdphr %}{"@id": "{{ data.nhdphr }}"}{% if data.niwaa %},{% endif %}{% endif %}
-        {% if data.niwaa %}{"@id": "{{ data.niwaa }}"}{% if data.niwaa %},{% endif %}{% endif %}
-        {% if data.final %}{"@id": "{{ data.final }}"}{% endif %}
+    {% for url in seeAlso %}
+        {"@id": "{{ url }}"}{% if not loop.last %},{% endif %}
+    {% endfor %}
     ],
     {% endif %}
     "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }},
