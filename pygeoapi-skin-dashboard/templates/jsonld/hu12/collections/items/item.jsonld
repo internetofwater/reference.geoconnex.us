@@ -12,7 +12,7 @@
     },
     "@id": "{{ data['@id'] }}",
     "@type": "Place",
-    "name": "{{ data['name'] }}",
+    "name": {{ data['name'] | tojson }},
     "hyf:containingCatchment": [
         {"@id": "https://geoconnex.us/ref/hu10/{{ data['id'][0:10] }}"},
         {"@id": "https://geoconnex.us/ref/hu08/{{ data['id'][0:8] }}"},
