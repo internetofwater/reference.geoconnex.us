@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+    <loc>https://geoconnex.us/iow/homepage</loc>
+    <lastmod> https://internetofwater.org</lastmod>
+</url><url>
+    <loc>https://geoconnex.us/iow/aboutus</loc>
+    <lastmod> https://internetofwater.org/who-we-are/</lastmod>
+</url><url>
+    <loc>https://geoconnex.us/iow/sitemap</loc>
+    <lastmod> https://reference.geoconnex.us/stac/sitemap</lastmod>
+</url><url>
+    <loc>https://geoconnex.us/iow/nldi</loc>
+    <lastmod> https://waterdata.usgs.gov/blog/nldi-intro/</lastmod>
+</url><url>
+    <loc>https://geoconnex.us/iow/nldi/demo</loc>
+    <lastmod> https://storymaps.arcgis.com/stories/0ecb1aaf143b4e1981dbe30f38fceec5</lastmod>
+</url><url>
+    <loc>https://geoconnex.us/iow/map</loc>
+    <lastmod> https://gis.cgs.earth/portal/apps/webappviewer/index.html?id=41e8676b373344dfab9733b4d8f32837</lastmod>
+</url><url>
+    <loc>https://geoconnex.us/iow/cr-demo</loc>
+    <lastmod> https://lincolninstitute.maps.arcgis.com/apps/mapviewer/index.html?webmap=87f4a26d8af24e758b39ec4d137661ac</lastmod>
+</url><url>
+    <loc>https://geoconnex.us/iow/tracker</loc>
+    <lastmod> https://gis.cgs.earth/portal/apps/storymaps/stories/e5a448012b574548a01acbdb7dfd30db</lastmod>
+</url><url>
+    <loc>https://geoconnex.us/iow/hyriver</loc>
+    <lastmod> https://hyriver.readthedocs.io/en/latest/examples/notebooks/geoconnex.html</lastmod>
+</url><url>
+    <loc>https://geoconnex.us/iow/principles</loc>
+    <lastmod> https://internetofwater.org/internet-of-water-principles/</lastmod>
+</url><url>
+    <loc>https://geoconnex.us/iow/api-mockups</loc>
+    <lastmod> https://cgs-earth.github.io/geoconnex-api-mockups/</lastmod>
+</url><url>
+    <loc>https://geoconnex.us/iow/guidance</loc>
+    <lastmod> https://internetofwater.github.io/geoconnex-guidance/</lastmod>
+</url></urlset>
