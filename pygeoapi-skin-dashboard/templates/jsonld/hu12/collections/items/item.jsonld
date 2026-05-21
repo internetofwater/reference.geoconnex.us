@@ -35,6 +35,5 @@
     {% endfor %}
     ],
     {% endif %}
-    "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }},
-    "geo": {{ data['schema:geo'] | to_json | safe }}
+    "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }}
 }
