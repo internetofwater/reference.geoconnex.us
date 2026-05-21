@@ -2,7 +2,7 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:geoconnex="https://geoconnex.us">
 <sitemap>
   <loc>https://geoconnex.us/sitemap/utah/water_systems.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>utah:water_systems</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -12,7 +12,7 @@
   <geoconnex:dataset_documentation_link>https://waterrights.utah.gov/</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/usbr/rise.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>usbr:rise</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -21,9 +21,9 @@
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
   <geoconnex:dataset_documentation_link>https://data.usbr.gov/rise-api</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ca_gage_assessment/ca_gages_pids.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
-  <geoconnex:sitemap_id>ca_gage_assessment:ca_gages_pids</geoconnex:sitemap_id>
+  <loc>https://geoconnex.us/sitemap/ca_gage_assessment/gages.xml</loc>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
+  <geoconnex:sitemap_id>ca_gage_assessment:gages</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>2</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
   <geoconnex:contact_email>kyle.onda@duke.edu</geoconnex:contact_email>
@@ -31,9 +31,9 @@
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
   <geoconnex:dataset_documentation_link>https://github.com/internetofwater/CA-Gages</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/nhdplusv2/hu12/nhdplusv2_huc12.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
-  <geoconnex:sitemap_id>nhdplusv2:hu12:nhdplusv2_huc12</geoconnex:sitemap_id>
+  <loc>https://geoconnex.us/sitemap/nhdplusv2/hu12.xml</loc>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
+  <geoconnex:sitemap_id>nhdplusv2:hu12</geoconnex:sitemap_id>
   <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_description>HUC12 layer from NHDPlusV2</geoconnex:dataset_description>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
@@ -41,9 +41,9 @@
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
   <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/nhdplusv2/hr_hu12/nhdplushr_huc12.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
-  <geoconnex:sitemap_id>nhdplusv2:hr_hu12:nhdplushr_huc12</geoconnex:sitemap_id>
+  <loc>https://geoconnex.us/sitemap/nhdplusv2/hr_hu12.xml</loc>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
+  <geoconnex:sitemap_id>nhdplusv2:hr_hu12</geoconnex:sitemap_id>
   <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_description>HUC12 layer from NHDPlusHR</geoconnex:dataset_description>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
@@ -52,7 +52,7 @@
   <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/wwdh/awdb_forecasts.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>wwdh:awdb_forecasts</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -61,9 +61,9 @@
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
   <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/wwdh/usbr_rise/rise.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
-  <geoconnex:sitemap_id>wwdh:usbr_rise:rise</geoconnex:sitemap_id>
+  <loc>https://geoconnex.us/sitemap/wwdh/usbr/rise.xml</loc>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
+  <geoconnex:sitemap_id>wwdh:usbr:rise</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
   <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
@@ -72,7 +72,7 @@
   <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/wwdh/snotel.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>wwdh:snotel</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -82,7 +82,7 @@
   <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/wwdh/noaa_rfc.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>wwdh:noaa_rfc</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -91,9 +91,9 @@
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
   <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/wwdh/usace/usace_access_to_water.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
-  <geoconnex:sitemap_id>wwdh:usace:usace_access_to_water</geoconnex:sitemap_id>
+  <loc>https://geoconnex.us/sitemap/wwdh/usace/access_to_water.xml</loc>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
+  <geoconnex:sitemap_id>wwdh:usace:access_to_water</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
   <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
@@ -102,7 +102,7 @@
   <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/state_gages/wyseo.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:state_gages:wyseo</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -112,7 +112,7 @@
   <geoconnex:dataset_documentation_link>https://features.internetofwater.dev/collections/wy/gages</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/state_gages/mtdnrc.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:state_gages:mtdnrc</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -122,7 +122,7 @@
   <geoconnex:dataset_documentation_link>https://features.internetofwater.dev/collections/mt/gages</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/state_gages/cdss.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:state_gages:cdss</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -132,7 +132,7 @@
   <geoconnex:dataset_documentation_link>https://features.internetofwater.dev/collections/co/gages</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/state_gages/nednr.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:state_gages:nednr</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -142,7 +142,7 @@
   <geoconnex:dataset_documentation_link>https://features.internetofwater.dev/collections/ne/gages</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/state_gages/ndwr.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:state_gages:ndwr</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -152,7 +152,7 @@
   <geoconnex:dataset_documentation_link>https://features.internetofwater.dev/collections/nv/gages</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/hu02.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:hu02</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -162,7 +162,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu02</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/ua10.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:ua10</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -172,7 +172,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/ua10</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/states.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:states</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -182,7 +182,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/states</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/places.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:places</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -192,7 +192,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/places</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/aiannh.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:aiannh</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
@@ -202,7 +202,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/sec_hydrg_reg.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:sec_hydrg_reg</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -212,7 +212,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/sec_hydrg_reg</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/princi_aq.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:princi_aq</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -222,7 +222,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/princi_aq</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/cbsa.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:cbsa</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -232,7 +232,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/cbsa</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/hu10.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:hu10</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -242,7 +242,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu10</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/hu08.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:hu08</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -252,7 +252,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu08</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/hu12.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:hu12</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -262,7 +262,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu12</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/mainstems.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:mainstems</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -272,7 +272,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/mainstems</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/dams.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:dams</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -282,7 +282,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/dams</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/nat_aq.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:nat_aq</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -292,7 +292,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/nat_aq</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/hu06.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:hu06</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -302,7 +302,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu06</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/hu04.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:hu04</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -312,7 +312,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu04</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/pws.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:pws</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -322,7 +322,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/pws</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/counties.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:counties</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -332,7 +332,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/counties</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/ref/gages.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>ref:gages</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -342,7 +342,7 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/gages</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/bulk/gnis.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>bulk:gnis</geoconnex:sitemap_id>
   <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_description>USGS GNIS Bulk Download</geoconnex:dataset_description>
@@ -352,9 +352,9 @@
   <geoconnex:dataset_documentation_link>https://www.usgs.gov/tools/geographic-names-information-system-gnis</geoconnex:dataset_documentation_link>
   <geoconnex:bulk_container_image>internetofwater/gnis_bulk_rdf:latest</geoconnex:bulk_container_image>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/bulk/usgs/monitoring_locations/monitoring_location.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
-  <geoconnex:sitemap_id>bulk:usgs:monitoring_locations:monitoring_location</geoconnex:sitemap_id>
+  <loc>https://geoconnex.us/sitemap/bulk/usgs/monitoring_locations.xml</loc>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
+  <geoconnex:sitemap_id>bulk:usgs:monitoring_locations</geoconnex:sitemap_id>
   <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_description>USGS Monitoring Locations Bulk Download</geoconnex:dataset_description>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
@@ -364,7 +364,7 @@
   <geoconnex:bulk_container_image>ghcr.io/internetofwater/usgs_monitoring_locations_bulk_rdf:latest</geoconnex:bulk_container_image>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/bulk/usgs/sciencebase.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>bulk:usgs:sciencebase</geoconnex:sitemap_id>
   <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_description>USGS Sciencebase Bulk Download</geoconnex:dataset_description>
@@ -375,7 +375,7 @@
   <geoconnex:bulk_container_image>ghcr.io/internetofwater/sciencebase_bulk_rdf</geoconnex:bulk_container_image>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/epa/hmw/hmw__0.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>epa:hmw:hmw__0</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>2</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -386,7 +386,7 @@
   <geoconnex:dataset_documentation_link>https://mywaterway.epa.gov</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/epa/hmw/hmw__1.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>epa:hmw:hmw__1</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>2</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -397,7 +397,7 @@
   <geoconnex:dataset_documentation_link>https://mywaterway.epa.gov</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/nhdplusv2/huc12pp/huc12pp__1.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>nhdplusv2:huc12pp:huc12pp__1</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -407,7 +407,7 @@
   <geoconnex:dataset_documentation_link>https://api.water.usgs.gov/nldi</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/nhdplusv2/huc12pp/huc12pp__0.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>nhdplusv2:huc12pp:huc12pp__0</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -417,7 +417,7 @@
   <geoconnex:dataset_documentation_link>https://api.water.usgs.gov/nldi</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__1.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__1</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -427,7 +427,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__6.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__6</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -437,7 +437,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__4.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__4</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -447,7 +447,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__5.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__5</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -457,7 +457,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__8.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__8</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -467,7 +467,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__0.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__0</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -477,7 +477,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__16.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__16</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -487,7 +487,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__11.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__11</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -497,7 +497,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__12.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__12</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -507,7 +507,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__2.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__2</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -517,7 +517,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__14.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__14</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -527,7 +527,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__10.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__10</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -537,7 +537,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__3.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__3</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -547,7 +547,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__13.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__13</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -557,7 +557,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__7.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__7</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -567,7 +567,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__17.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__17</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -577,7 +577,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__9.xml</loc>
-  <lastmod>2026-05-20T20:31:07Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__9</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
@@ -587,7 +587,7 @@
   <geoconnex:dataset_documentation_link>https://sta.geoconnex.dev/collections/WQP/Things</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/wqp/stations__15.xml</loc>
-  <lastmod>2026-05-20T20:31:06Z</lastmod>
+  <lastmod>2026-05-21T12:23:55Z</lastmod>
   <geoconnex:sitemap_id>iow:wqp:stations__15</geoconnex:sitemap_id>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
