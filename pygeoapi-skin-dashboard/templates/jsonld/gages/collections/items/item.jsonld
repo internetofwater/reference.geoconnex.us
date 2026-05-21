@@ -9,16 +9,16 @@
   "@type": [
     "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature",
     "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation",
-    "schema:Place
+    "schema:Place"
   ],
-  "name": {{ data.name | to_json | safe  }},
-  "description": {{ data.description | to_json | safe }},
+  "name": {{ data.name | replace("\\\\\\%", "") | to_json | safe  }},
+  "description": {{ data.description | replace("\\\\\\%", "") | to_json | safe }},
 {%- if (data.subjectof or data.nws_url) %}
   "subjectOf": [
 {%- if data.subjectof %}
     {
       "@type": "Dataset",
-      "name": {{ data.description | to_json | safe }},
+      "name": {{ data.description | replace("\\\\\\%", "") | to_json | safe }},
       "url": {{ data.subjectof | to_json | safe }},
       "provider": {
         "@type": "GovernmentOrganization",
