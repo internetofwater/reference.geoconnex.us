@@ -9,7 +9,7 @@
   "@type": [
     "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature",
     "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation",
-    "schema:Place
+    "schema:Place"
   ],
   "name": {{ data.name | to_json | safe  }},
   "description": {{ data.description | to_json | safe }},
