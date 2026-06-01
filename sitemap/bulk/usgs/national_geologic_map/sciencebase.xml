@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>ghcr.io/internetofwater/epa_hows_my_waterway_bulk_rdf:latest</loc>
+        <loc>ghcr.io/internetofwater/usgs_national_geologic_map_bulk_rdf:latest</loc>
     </url>
 </urlset>
