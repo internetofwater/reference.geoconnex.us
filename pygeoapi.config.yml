@@ -48,6 +48,10 @@ provider_defaults: &provider_defaults
   title_field: name
   uri_field: uri
   geom_field: geom
+  crs:
+    - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    - http://www.opengis.net/def/crs/OGC/1.3/CRS83
+    - http://www.opengis.net/def/crs/EPSG/0/3857
 
 sparql_query: &sparql_query
   convert: false
@@ -76,7 +80,7 @@ huc_sparql_query: &huc_sparql_query
 tile_defaults: &tile_defaults
   <<: *provider_defaults
   type: tile
-  name: MVT-PostgresCache
+  name: pygeoapi_plugins.provider.mvt_cache.MVTPostgresCache
   mvt_table: mvt_tiles
   storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
   disable_cache_at_z: 10
@@ -167,6 +171,15 @@ resources:
       temporal:
         begin: null
         end: null
+    flask_cache: &flask-cache
+      ttl_seconds: 3600
+    formatters: &default-formatters
+      - name: CSV
+      - name: pygeoapi_plugins.formatter.JSONFG
+      - name: pygeoapi_plugins.formatter.Shapefile
+      - name: pygeoapi_plugins.formatter.GPKG
+      - name: pygeoapi_plugins.formatter.KML
+      - name: pygeoapi_plugins.formatter.Parquet
     providers:
       - <<: *provider_defaults
         id_field: huc2
@@ -192,6 +205,8 @@ resources:
         href: https://water.usgs.gov/themes/hydrologic-units/
         title: Hydrologic Unit Documentation
     extents: *extents
+    flask_cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         id_field: huc4
@@ -217,6 +232,8 @@ resources:
         href: https://water.usgs.gov/themes/hydrologic-units/
         title: Hydrologic Unit Documentation
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         id_field: huc6
@@ -242,6 +259,8 @@ resources:
         href: https://water.usgs.gov/themes/hydrologic-units/
         title: Hydrologic Unit Documentation
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         id_field: huc8
@@ -269,6 +288,8 @@ resources:
         href: https://water.usgs.gov/themes/hydrologic-units/
         title: Hydrologic Unit Documentation
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -296,6 +317,8 @@ resources:
         href: https://water.usgs.gov/themes/hydrologic-units/
         title: Hydrologic Unit Documentation
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -336,6 +359,8 @@ resources:
       temporal:
         begin: null
         end: null
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -369,6 +394,8 @@ resources:
       temporal:
         begin: null
         end: null
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -404,6 +431,8 @@ resources:
       temporal:
         begin: null
         end: null
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -424,6 +453,8 @@ resources:
       - <<: *data_link
         href: https://github.com/internetofwater/ref_gages
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -452,6 +483,8 @@ resources:
       temporal:
         begin: null
         end: null
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         title_field: name_at_outlet
@@ -525,10 +558,13 @@ resources:
       temporal:
         begin: null
         end: null
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
         table: mainstems_v3
+        title_field: name_at_outlet
       - <<: *tile_defaults
         table: mainstems_v3
   dams: # updated 2024-04-23
@@ -553,6 +589,8 @@ resources:
       - <<: *data_link
         href: https://github.com/internetofwater/ref_dams
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -579,6 +617,8 @@ resources:
         title: Geographic data source
         href: https://github.com/cgs-earth/ref_pws
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -612,6 +652,8 @@ resources:
         title: Census data source
         href: https://data.census.gov/cedsci
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -644,6 +686,8 @@ resources:
         title: Census data source
         href: https://data.census.gov/cedsci
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -669,6 +713,8 @@ resources:
         title: Geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -693,6 +739,8 @@ resources:
         title: Geographic data source
         href: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -720,6 +768,8 @@ resources:
         title: Descriptive data source
         href: https://www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural/2010-urban-rural.html
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
@@ -752,6 +802,8 @@ resources:
         title: Census data source
         href: https://data.census.gov/cedsci
     extents: *extents
+    flask-cache: *flask-cache
+    formatters: *default-formatters
     providers:
       - <<: *provider_defaults
         name: PostgreSQL
