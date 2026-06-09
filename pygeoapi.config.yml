@@ -80,8 +80,9 @@ huc_sparql_query: &huc_sparql_query
 tile_defaults: &tile_defaults
   <<: *provider_defaults
   type: tile
-  name: pygeoapi_plugins.provider.mvt_cache.MVTPostgresCache
-  mvt_table: mvt_tiles
+  name: pygeoapi_plugins.provider.mvt_cache.${PYGEOAPI_TILE_CACHE_PROVIDER:-MVTPostgresFilesystem}
+  cache_directory: ${PYGEOAPI_TILE_CACHE_DIR:-/tmp/pygeoapi_cache}
+  mvt_table: ${PYGEOAPI_TILE_CACHE_TABLE:-mvt_cache}
   storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
   disable_cache_at_z: 10
   options:
