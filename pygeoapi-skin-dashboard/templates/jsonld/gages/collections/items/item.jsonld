@@ -1,29 +1,32 @@
 {
   "@context": {
-    "@vocab": "https://schema.org/",
     "schema": "https://schema.org/",
-    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "geo": "http://www.opengis.net/ont/geosparql#",
     "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/"
   },
   "@id": "{{ data['@id'] }}",
   "@type": [
-    "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydrometricFeature",
-    "https://www.opengis.net/def/schema/hy_features/hyf/HY_HydroLocation",
+    "hyf:HY_HydrometricFeature",
+    "hyf:HY_HydroLocation",
     "schema:Place"
   ],
-  "name": {{ data.name | replace("\\\\\\%", "") | to_json | safe  }},
-  "description": {{ data.description | replace("\\\\\\%", "") | to_json | safe }},
+  "hyf:HY_HydroLocationType": "hydrometricStation",
+  "schema:name": {{ data.name | replace("\\\\\\%", "") | to_json | safe  }},
+  "schema:description": {{ data.description | replace("\\\\\\%", "") | to_json | safe }},
+{%- if data.provider %}
+  "schema:provider": "{{ data.provider }}",
+{%- endif %} 
 {%- if (data.subjectof or data.nws_url) %}
-  "subjectOf": [
+  "schema:subjectOf": [
 {%- if data.subjectof %}
     {
       "@type": "Dataset",
-      "name": {{ data.description | replace("\\\\\\%", "") | to_json | safe }},
-      "url": {{ data.subjectof | to_json | safe }},
-      "provider": {
+      "schema:name": {{ data.description | replace("\\\\\\%", "") | to_json | safe }},
+      "schema:url": {{ data.subjectof | to_json | safe }},
+      "schema:provider": {
         "@type": "GovernmentOrganization",
-        "name": "USGS",
-        "url": "{{ data.provider }}"
+        "schema:name": "USGS",
+        "schema:url": "{{ data.provider }}"
       }
     }
 {%- endif %}
@@ -33,19 +36,16 @@
 {%- if data.nws_url %}
     {
       "@type": "WebPage",
-      "url": "{{ data.nws_url | safe }}",
-      "provider": {
+      "schema:url": "{{ data.nws_url | safe }}",
+      "schema:provider": {
         "@type": "GovernmentOrganization",
-        "name": "NOAA",
-        "url": "https://water.noaa.gov/"
+        "schema:name": "NOAA",
+        "schema:url": "https://water.noaa.gov/"
       }
     }
 {%- endif %}
   ],
 {%- endif %}
-{%- if data.provider %}
-  "provider": "{{ data.provider }}",
-{%- endif %} 
 {%- if (data.nhdpv2_reachcode or data.mainstem_uri) %}    
   "hyf:referencedPosition": [
 {%- if data.nhdpv2_reachcode %}  
@@ -76,8 +76,6 @@
   }
 {%- endif %} 
   ],     
-{%- endif %}    
-  "hyf:HY_HydroLocationType": "hydrometricStation",
-  "geo": {{ data['schema:geo'] | to_json | safe }},
+{%- endif %}
   "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }}
 }

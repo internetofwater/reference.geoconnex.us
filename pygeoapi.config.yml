@@ -152,13 +152,8 @@ resources:
       - Hydrologic Regions
       - HU02
       - USGS
-    linked-data:
-      context:
-        - schema: https://schema.org/
-          name: schema:name
-          gnis_url:
-            "@id": schema:subjectOf
-            "@type": "@id"
+    templates: 
+      path: /pygeoapi/pygeoapi/templates/jsonld/hu02
     links:
       - <<: *data_link
         href: https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products
@@ -337,16 +332,8 @@ resources:
     keywords:
       - National Aquifers
       - USGS
-    linked-data:
-      context:
-        - schema: https://schema.org/
-          aq_name: schema:name
-          link:
-            "@id": schema:subjectOf
-            "@type": "@id"
-          sameas:
-            "@id": schema:sameAs
-            "@type": "@id"
+    templates: 
+      path: /pygeoapi/pygeoapi/templates/jsonld/nat_aq
     links:
       - <<: *data_link
         href: https://cida.usgs.gov/ngwmn/
@@ -378,13 +365,8 @@ resources:
     keywords:
       - Principal Aquifers
       - USGS
-    linked-data:
-      context:
-        - schema: https://schema.org/
-          aq_name: schema:name
-          sameas:
-            "@id": schema:sameAs
-            "@type": "@id"
+    templates: 
+      path: /pygeoapi/pygeoapi/templates/jsonld/principal_aq
     links:
       - <<: *data_link
         href: https://water.usgs.gov/GIS/metadata/usgswrd/XML/aquifers_us.xml
@@ -414,10 +396,8 @@ resources:
     keywords:
       - Hydrogeologic Regions
       - USGS
-    linked-data:
-      context:
-        - schema: https://schema.org/
-          shr: schema:name
+    templates: 
+      path: /pygeoapi/pygeoapi/templates/jsonld/sec_hydrg_reg
     links:
       - <<: *data_link
         href: https://doi.org/10.5066/F7F76BSS
@@ -470,10 +450,6 @@ resources:
       - USGS
     templates: 
       path: /pygeoapi/pygeoapi/templates/jsonld/mainstems
-    linked-data:
-      context:
-        - schema: https://schema.org/
-          name_at_outlet: schema:name
     links:
       - <<: *data_link
         href: https://github.com/internetofwater/ref_rivers
@@ -545,10 +521,6 @@ resources:
       - USGS
     templates: 
       path: /pygeoapi/pygeoapi/templates/jsonld/mainstems
-    linked-data:
-      context:
-        - schema: https://schema.org/
-          name_at_outlet: schema:name
     links:
       - <<: *data_link
         href: https://github.com/internetofwater/ref_rivers
@@ -575,17 +547,6 @@ resources:
     keywords:
       - Dams
       - Community
-    linked-data:
-      context:
-        - schema: https://schema.org/
-          name: schema:name
-          description: schema:description
-          provider:
-            "@id": schema:provider
-            "@type": schema:url
-          subjectOf:
-            "@id": schema:subjectOf
-            "@type": schema:url
     links:
       - <<: *data_link
         href: https://github.com/internetofwater/ref_dams
@@ -638,13 +599,8 @@ resources:
     keywords:
       - States
       - Census
-    linked-data:
-      context:
-        - schema: https://schema.org/
-          name: schema:name
-          census_profile:
-            "@id": schema:subjectOf
-            "@type": "@id"
+    templates: 
+      path: /pygeoapi/pygeoapi/templates/jsonld/states
     links:
       - <<: *data_link
         title: Geographic data source
@@ -672,13 +628,6 @@ resources:
       - Census
     templates: 
       path: /pygeoapi/pygeoapi/templates/jsonld/counties
-    linked-data:
-      context:
-        - schema: https://schema.org/
-          name: schema:name
-          census_profile:
-            "@id": schema:subjectOf
-            "@type": "@id"
     links:
       - <<: *data_link
         title: Geographic data source
@@ -706,9 +655,8 @@ resources:
       - Alaska Native Areas
       - Hawaiian Home Lands
       - Census
-    linked-data:
-      context:
-        - name: https://schema.org/name
+    templates: 
+      path: /pygeoapi/pygeoapi/templates/jsonld/aiannh
     links:
       - <<: *data_link
         title: Geographic data source
@@ -732,9 +680,8 @@ resources:
     keywords:
       - CBSA
       - Census
-    linked-data:
-      context:
-        - name: https://schema.org/name
+    templates: 
+      path: /pygeoapi/pygeoapi/templates/jsonld/cbsa
     links:
       - <<: *data_link
         title: Geographic data source
@@ -758,9 +705,8 @@ resources:
     keywords:
       - Urban Areas
       - Census
-    linked-data:
-      context:
-        - name10: https://schema.org/name
+    templates: 
+      path: /pygeoapi/pygeoapi/templates/jsonld/ua10
     links:
       - <<: *data_link
         title: Geographic data source
@@ -788,13 +734,8 @@ resources:
     keywords:
       - Places
       - Census
-    linked-data:
-      context:
-        - schema: https://schema.org/
-          name: schema:name
-          census_profile:
-            "@id": schema:subjectOf
-            "@type": "@id"
+    templates: 
+      path: /pygeoapi/pygeoapi/templates/jsonld/places
     links:
       - <<: *data_link
         title: Geographic data source

@@ -1,0 +1,11 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "gsp": "http://www.opengis.net/ont/geosparql#"
+    },
+    "@id": "{{ data['@id'] }}",
+    "@type": ["schema:Place", "schema:Landform"],
+    "schema:name": "{{ data.aq_name }}",
+    "schema:sameAs": {"@id": "{{ data.sameas }}"},
+    "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }}
+}

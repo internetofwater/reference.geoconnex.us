@@ -1,39 +1,37 @@
 {
     "@context": {
-        "@vocab": "https://schema.org/",
         "schema": "https://schema.org/",
         "gsp": "http://www.opengis.net/ont/geosparql#",
-        "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/",
-        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "gnis_url": {
-            "@id": "subjectOf",
-            "@type": "@id"
-        }
+        "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/"
     },
     "@id": "{{ data['@id'] }}",
-    "@type": "Place",
-    "name": {{ data['name'] | tojson }},
+    "@type": ["hyf:HY_Catchment", "schema:Place"],
+    "schema:name": "{{ data.name.strip() }}",
     "hyf:containingCatchment": [
-        {"@id": "https://geoconnex.us/ref/hu10/{{ data['id'][0:10] }}"},
-        {"@id": "https://geoconnex.us/ref/hu08/{{ data['id'][0:8] }}"},
-        {"@id": "https://geoconnex.us/ref/hu06/{{ data['id'][0:6] }}"},
-        {"@id": "https://geoconnex.us/ref/hu04/{{ data['id'][0:4] }}"},
-        {"@id": "https://geoconnex.us/ref/hu02/{{ data['id'][0:2] }}"}
+        {"@id": "https://geoconnex.us/ref/hu10/{{ data.id[0:10] }}"},
+        {"@id": "https://geoconnex.us/ref/hu08/{{ data.id[0:8] }}"},
+        {"@id": "https://geoconnex.us/ref/hu06/{{ data.id[0:6] }}"},
+        {"@id": "https://geoconnex.us/ref/hu04/{{ data.id[0:4] }}"},
+        {"@id": "https://geoconnex.us/ref/hu02/{{ data.id[0:2] }}"}
     ],
-    "hyf:lowerCatchment": {"@id": "https://geoconnex.us/ref/huc12/{{ data['tohuc'] }}"},
-    {% if data['nhdpv2'] or data['nhdphr'] or data['niwaa'] or data['final'] %}
-    {% set seeAlso = [] %}
-    
-    {% if data.nhdpv2 %}{% set _ = seeAlso.append(data.nhdpv2) %}{% endif %}
-    {% if data.nhdphr %}{% set _ = seeAlso.append(data.nhdphr) %}{% endif %}
-    {% if data.niwaa %}{% set _ = seeAlso.append(data.niwaa) %}{% endif %}
-    {% if data.final %}{% set _ = seeAlso.append(data.final) %}{% endif %}
-    
-    "rdfs:seeAlso": [
-    {% for url in seeAlso %}
+    {%- if data.tohuc | int(0) %}
+    "hyf:lowerCatchment": {"@id": "https://geoconnex.us/ref/huc12/{{ data.tohuc }}"},
+    {%- elif data.tohuc == 'CLOSED BASIN' %}
+    "@type": ["hyf:HY_Catchment", "hyf:HY_InteriorCatchment", "schema:Place"],
+    {%- else %}
+    "hyf:outflow": {"@id": "https://dbpedia.org/page/{{ data.tohuc | capitalize }}"},
+    {%- endif %}
+    {%- if data.nhdpv2 or data.nhdphr or data.niwaa or data.final %}
+    {%- set seeAlso = [] %}
+    {%- if data.nhdpv2 %}{% set _ = seeAlso.append(data.nhdpv2) %}{% endif %}
+    {%- if data.nhdphr %}{% set _ = seeAlso.append(data.nhdphr) %}{% endif %}
+    {%- if data.niwaa %}{% set _ = seeAlso.append(data.niwaa) %}{% endif %}
+    {%- if data.final %}{% set _ = seeAlso.append(data.final) %}{% endif %}
+    "schema:subjectOf": [
+    {%- for url in seeAlso %}
         {"@id": "{{ url }}"}{% if not loop.last %},{% endif %}
-    {% endfor %}
+    {%- endfor %}
     ],
-    {% endif %}
+    {%- endif %}
     "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }}
 }

@@ -7,6 +7,8 @@
     "@id": "{{ data['@id'] }}",
     "@type": ["hyf:HY_Catchment", "schema:Place"],
     "schema:name": "{{ data.name }}",
-    "hyf:containingCatchment": {"@id": "https://geoconnex.us/ref/hu02/{{ data.id[0:2] }}"},
+    {%- if data.gnis_url %}
+    "schema:subjectOf": {"@id": "{{ data.gnis_url }}"},
+    {%- endif %}
     "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }}
 }

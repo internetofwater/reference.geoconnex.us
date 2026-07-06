@@ -4,15 +4,10 @@
         "gsp": "http://www.opengis.net/ont/geosparql#"
     },
     "@id": "{{ data['@id'] }}",
-    "@type": ["schema:Place", "schema:AdministrativeArea"],
-    "schema:name": "{{ data['name'] }}",
-    "schema:geoWithin": {
-        "@id": "https://geoconnex.us/ref/states/{{ data['statefp'] }}"
-    },
-    {%- if data.census_profile %}
+    "@type": ["schema:Place", "schema:AdministrativeArea", "schema:State"],
+    "schema:name": "{{ data.name }}",
     "schema:subjectOf": {
         "@id": "{{ data.census_profile }}"
     },
-    {%- endif %}
     "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }}
 }
