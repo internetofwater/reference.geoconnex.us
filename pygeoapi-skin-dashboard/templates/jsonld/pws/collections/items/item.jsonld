@@ -1,11 +1,10 @@
 {
     "@context": {
-        "@vocab": "https://schema.org/",
         "schema": "https://schema.org/",
         "gsp": "http://www.opengis.net/ont/geosparql#"
     },
     "@id": "{{ data['@id'] }}",
-    "@type": "schema:Place",
+    "@type": ["schema:Place", "AdministrativeArea"],
     {% if "pws_name" in data %}
     "schema:name": "{{ data['pws_name'] }}",
     {% endif %}
@@ -14,9 +13,6 @@
     {% endif %}
     {% if 'EMPTY' not in data['gsp:hasGeometry']['gsp:asWKT']['@value'] %}
     "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }},
-    {% if data.get('schema:geo') %}
-    "schema:geo": {{ data['schema:geo'] | to_json | safe }},
-    {% endif %}
     {% endif %}
     {% if "state_uri" in data and data.state_uri %}
     "schema:geoWithin": "{{ data['state_uri'] }}",

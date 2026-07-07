@@ -5,14 +5,7 @@
     },
     "@id": "{{ data['@id'] }}",
     "@type": ["schema:Place", "schema:AdministrativeArea"],
-    "schema:name": "{{ data['name'] }}",
-    "schema:geoWithin": {
-        "@id": "https://geoconnex.us/ref/states/{{ data['statefp'] }}"
-    },
-    {%- if data.census_profile %}
-    "schema:subjectOf": {
-        "@id": "{{ data.census_profile }}"
-    },
-    {%- endif %}
+    "schema:name": "{{ data.name }}",
+    "schema:subjectOf": {"@id": "{{ data.census_profile }}"},
     "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }}
 }
