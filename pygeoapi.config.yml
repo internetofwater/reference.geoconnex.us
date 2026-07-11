@@ -87,7 +87,7 @@ tile_defaults: &tile_defaults
   disable_cache_at_z: 10
   options:
     zoom:
-      min: 1
+      min: 0
       max: 16
   format:
     name: pbf
@@ -325,6 +325,7 @@ resources:
         table: reference_huc12
         layer: hu12
         min_pixel: 1024
+
   nat_aq:
     type: collection
     title: USGS National Aquifers
@@ -358,6 +359,7 @@ resources:
       - <<: *tile_defaults
         id_field: nat_aqfr_cd
         table: nat_aq
+
   principal_aq:
     type: collection
     title: USGS Principal Aquifers
@@ -389,6 +391,7 @@ resources:
         id_field: aq_code
         table: princi_aq
         layer: principal_aq
+
   sec_hydrg_reg:
     type: collection
     title: USGS Secondary Hydrogeologic Regions
@@ -421,6 +424,7 @@ resources:
         table: sec_hydrg_reg
       - <<: *tile_defaults
         table: sec_hydrg_reg
+
   gages: # updated 2025-08-15
     type: collection
     title: Reference Gages
@@ -441,6 +445,13 @@ resources:
         name: PostgreSQL
         title_field: description
         table: ref_gages
+      - <<: *tile_defaults
+        title_field: description
+        table: ref_gages
+        layer: gages
+        simplify_method: ST_SnapToGrid
+        disable_at_z: 0
+
   mainstems:
     type: collection
     title: Reference Mainstems
@@ -511,6 +522,9 @@ resources:
               )
       - <<: *tile_defaults
         table: mainstems
+        simplify_method: ST_SimplifyVW
+        min_pixel: 1024
+
   mainstems_v3:
     type: collection
     hidden: true
@@ -540,6 +554,9 @@ resources:
         title_field: name_at_outlet
       - <<: *tile_defaults
         table: mainstems_v3
+        simplify_method: ST_SimplifyVW
+        min_pixel: 1024
+
   dams: # updated 2024-04-23
     type: collection
     title: Reference Dams
@@ -561,7 +578,9 @@ resources:
       - <<: *tile_defaults
         table: ref_dams
         layer: dams
-        disable_at_z: 1
+        disable_at_z: 0
+        simplify_method: ST_SnapToGrid
+
   pws: #updated 2024-07-02
     type: collection
     title: Public Water Systems
@@ -619,6 +638,7 @@ resources:
       - <<: *tile_defaults
         id_field: geoid
         table: states
+
   counties:
     type: collection
     title: Counties
@@ -646,6 +666,7 @@ resources:
       - <<: *tile_defaults
         id_field: geoid
         table: counties
+
   aiannh:
     type: collection
     title: American Indian/Alaska Native Areas/Hawaiian Home Lands
@@ -673,6 +694,7 @@ resources:
         id_field: geoid
         table: aiannh
         disable_at_z: 0
+
   cbsa:
     type: collection
     title: Core-based statistical areas
@@ -698,6 +720,7 @@ resources:
         id_field: geoid
         table: cbsa
         disable_at_z: 0
+
   ua10:
     type: collection
     title: Urban Areas
@@ -727,6 +750,7 @@ resources:
         id_field: geoid10
         table: ua10
         disable_at_z: 0
+
   places:
     type: collection
     title: Places
@@ -755,10 +779,12 @@ resources:
         id_field: geoid
         table: places
         disable_at_z: 0
+
   intersector:
     type: process
     processor:
       name: pygeoapi_plugins.process.intersect.IntersectionProcessor
+
   sitemap:
     type: stac-collection
     title: sitemap
