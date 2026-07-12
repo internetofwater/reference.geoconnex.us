@@ -451,6 +451,7 @@ resources:
         layer: gages
         simplify_method: ST_SnapToGrid
         disable_at_z: 0
+        tile_limit: 15000
 
   mainstems:
     type: collection
@@ -580,6 +581,7 @@ resources:
         layer: dams
         disable_at_z: 0
         simplify_method: ST_SnapToGrid
+        tile_limit: 15000
 
   pws: #updated 2024-07-02
     type: collection
