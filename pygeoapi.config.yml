@@ -425,7 +425,7 @@ resources:
       - <<: *tile_defaults
         table: sec_hydrg_reg
 
-  gages: # updated 2025-08-15
+  gages: # updated 2026-07-20
     type: collection
     title: Reference Gages
     description: United States Community Contributed Reference Stream Gages
