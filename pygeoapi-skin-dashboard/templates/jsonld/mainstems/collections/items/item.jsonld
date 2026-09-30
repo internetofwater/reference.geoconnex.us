@@ -11,7 +11,7 @@
     ],
     "@id": "{{ data['@id'] }}",
 	"@type": [
-		"hyf:HY_FlowPath",
+		"hyf:HY_Flowpath",
 		"hyf:HY_WaterBody",
         "schema:Place"
 	],
