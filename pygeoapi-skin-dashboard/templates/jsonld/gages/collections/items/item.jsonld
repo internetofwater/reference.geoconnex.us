@@ -1,7 +1,7 @@
 {
   "@context": {
     "schema": "https://schema.org/",
-    "geo": "http://www.opengis.net/ont/geosparql#",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
     "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/"
   },
   "@id": "{{ data['@id'] }}",
