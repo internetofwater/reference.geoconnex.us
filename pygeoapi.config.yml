@@ -476,51 +476,9 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
+        name: PostgreSQL
         title_field: name_at_outlet
         table: mainstems
-        sparql_query:
-          <<: *sparql_query
-          bind:
-            name: uri
-            variable: "?mainstem"
-          select: "?mainstem ?datasets"
-          where:
-            - "?monitoringLocation hyf:HydroLocationType ?type"
-            - "?monitoringLocation hyf:referencedPosition/hyf:HY_IndirectPosition/hyf:linearElement ?mainstem"
-            - "?monitoringLocation schema:subjectOf ?dataset"
-            - "?monitoringLocation gsp:hasGeometry/gsp:asWKT ?wkt"
-            - "?dataset schema:variableMeasured ?var"
-            - "?dataset schema:url ?url"
-            - "?dataset schema:distribution ?distribution"
-            - "?dataset schema:description ?datasetDescription"
-            - "?dataset schema:temporalCoverage ?temporalCoverage"
-            - "?dataset schema:name ?siteName"
-            - "?var schema:name ?variableMeasured"
-            - "?var schema:unitText ?variableUnit"
-            - "?var schema:measurementTechnique ?measurementTechnique"
-            - "?distribution schema:name ?distributionName"
-            - "?distribution schema:contentUrl ?distributionURL"
-            - "?distribution schema:encodingFormat ?distributionFormat"
-          limit: 100000
-          filter:
-            - |
-              BIND(
-                CONCAT(
-                  '{"monitoringLocation":"', STR(?monitoringLocation),
-                  '","siteName":"', STR(?siteName),
-                  '","datasetDescription":"', STR(?datasetDescription),
-                  '","type":"', STR(?type),
-                  '","url":"', STR(?url),
-                  '","variableMeasured":"', STR(?variableMeasured),
-                  '","variableUnit":"', STR(?variableUnit),
-                  '","measurementTechnique":"', STR(?measurementTechnique),
-                  '","temporalCoverage":"', STR(?temporalCoverage),
-                  '","distributionName":"', STR(?distributionName),
-                  '","distributionURL":"', STR(?distributionURL),
-                  '","distributionFormat":"', STR(?distributionFormat),
-                  '","wkt":"', STR(?wkt), '"}'
-                ) AS ?datasets
-              )
       - <<: *tile_defaults
         table: mainstems
         simplify_method: ST_SimplifyVW
