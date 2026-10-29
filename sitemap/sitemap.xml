@@ -1,31 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:geoconnex="https://geoconnex.us">
 <sitemap>
-  <loc>https://geoconnex.us/sitemap/utah/water_systems.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>utah:water_systems</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>Utah Water Systems</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains water system records spanning Utah's Division of Water Rights (DWRi), Division of Drinking Water (DDW), and other state water agencies.</geoconnex:dataset_description>
-  <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>aabdallah@utah.gov</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://waterrights.utah.gov/</geoconnex:dataset_documentation_link>
-</sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ca_gage_assessment/gages.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ca_gage_assessment:gages</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>California Streamgage Network Assessment</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains a catalog assessing the California streamgage network's coverage and conditions, maintained as part of the CA-Gages project.</geoconnex:dataset_description>
-  <geoconnex:add_s2>True</geoconnex:add_s2>
-  <geoconnex:max_request_concurrency>2</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>kyle.onda@duke.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://github.com/internetofwater/CA-Gages</geoconnex:dataset_documentation_link>
-</sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/usbr/rise.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
   <geoconnex:sitemap_id>usbr:rise</geoconnex:sitemap_id>
   <geoconnex:dataset_name>USBR RISE Locations</geoconnex:dataset_name>
   <geoconnex:dataset_description>Contains location records from the U.S. Bureau of Reclamation's Reservoir Information System (RISE) API.</geoconnex:dataset_description>
@@ -36,32 +13,31 @@
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
   <geoconnex:dataset_documentation_link>https://data.usbr.gov/rise-api</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/iow/state_gages/cdss.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>iow:state_gages:cdss</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>Colorado State Gages</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains streamgage locations for Colorado, served from the Internet of Water features API and sourced from Colorado's Decision Support Systems (CDSS).</geoconnex:dataset_description>
+  <loc>https://geoconnex.us/sitemap/ca_gage_assessment/gages.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ca_gage_assessment:gages</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>California Streamgage Network Assessment</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains a catalog assessing the California streamgage network's coverage and conditions, maintained as part of the CA-Gages project.</geoconnex:dataset_description>
   <geoconnex:add_s2>True</geoconnex:add_s2>
-  <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
+  <geoconnex:max_request_concurrency>2</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>ewiggans@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:contact_email>kyle.onda@duke.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://features.internetofwater.dev/collections/co/gages</geoconnex:dataset_documentation_link>
+  <geoconnex:dataset_documentation_link>https://github.com/internetofwater/CA-Gages</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/iow/state_gages/wyseo.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>iow:state_gages:wyseo</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>Wyoming State Gages</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains streamgage locations for Wyoming, served from the Internet of Water features API and sourced from the Wyoming State Engineer's Office (WYSEO).</geoconnex:dataset_description>
-  <geoconnex:add_s2>True</geoconnex:add_s2>
+  <loc>https://geoconnex.us/sitemap/utah/water_systems.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>utah:water_systems</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>Utah Water Systems</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains water system records spanning Utah's Division of Water Rights (DWRi), Division of Drinking Water (DDW), and other state water agencies.</geoconnex:dataset_description>
   <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>ewiggans@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:contact_email>aabdallah@utah.gov</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://features.internetofwater.dev/collections/wy/gages</geoconnex:dataset_documentation_link>
+  <geoconnex:dataset_documentation_link>https://waterrights.utah.gov/</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/state_gages/mtdnrc.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
   <geoconnex:sitemap_id>iow:state_gages:mtdnrc</geoconnex:sitemap_id>
   <geoconnex:dataset_name>Montana State Gages</geoconnex:dataset_name>
   <geoconnex:dataset_description>Contains streamgage locations for Montana, served from the Internet of Water features API and sourced from the Montana Department of Natural Resources and Conservation (DNRC).</geoconnex:dataset_description>
@@ -72,8 +48,20 @@
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
   <geoconnex:dataset_documentation_link>https://features.internetofwater.dev/collections/mt/gages</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/iow/state_gages/cdss.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>iow:state_gages:cdss</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>Colorado State Gages</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains streamgage locations for Colorado, served from the Internet of Water features API and sourced from Colorado's Decision Support Systems (CDSS).</geoconnex:dataset_description>
+  <geoconnex:add_s2>True</geoconnex:add_s2>
+  <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>ewiggans@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://features.internetofwater.dev/collections/co/gages</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/state_gages/ndwr.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
   <geoconnex:sitemap_id>iow:state_gages:ndwr</geoconnex:sitemap_id>
   <geoconnex:dataset_name>Nevada State Gages</geoconnex:dataset_name>
   <geoconnex:dataset_description>Contains streamgage locations for Nevada, served from the Internet of Water features API and sourced from the Nevada Division of Water Resources (NDWR).</geoconnex:dataset_description>
@@ -85,7 +73,7 @@
   <geoconnex:dataset_documentation_link>https://features.internetofwater.dev/collections/nv/gages</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/iow/state_gages/nednr.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
   <geoconnex:sitemap_id>iow:state_gages:nednr</geoconnex:sitemap_id>
   <geoconnex:dataset_name>Nebraska State Gages</geoconnex:dataset_name>
   <geoconnex:dataset_description>Contains streamgage locations for Nebraska, served from the Internet of Water features API and sourced from the Nebraska Department of Natural Resources.</geoconnex:dataset_description>
@@ -96,80 +84,220 @@
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
   <geoconnex:dataset_documentation_link>https://features.internetofwater.dev/collections/ne/gages</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/wwdh/awdb_forecasts.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>wwdh:awdb_forecasts</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>US Department of Agriculture AWDB Forecast Locations</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains seasonal water supply forecast data from the Air and Water Database (AWDB), accessed through a proxied version of the API hosted within the USBR / Internet of Water Western Water Datahub rather than queried directly from the original AWDB service.</geoconnex:dataset_description>
+  <loc>https://geoconnex.us/sitemap/iow/state_gages/wyseo.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>iow:state_gages:wyseo</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>Wyoming State Gages</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains streamgage locations for Wyoming, served from the Internet of Water features API and sourced from the Wyoming State Engineer's Office (WYSEO).</geoconnex:dataset_description>
   <geoconnex:add_s2>True</geoconnex:add_s2>
+  <geoconnex:max_request_concurrency>4</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>ewiggans@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://features.internetofwater.dev/collections/wy/gages</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/ref/princi_aq.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:princi_aq</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>USGS Principal Aquifers</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains principal aquifer boundaries for the United States from the 2003 USGS data release, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/princi_aq</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/wwdh/usace/access_to_water.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>wwdh:usace:access_to_water</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>US Army Corps of Engineers Access2Water API Locations</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains U.S. Army Corps of Engineers reservoir and water control data from the Access2Water API, accessed through a proxied version of the API hosted within the USBR / Internet of Water Western Water Datahub rather than queried directly from USACE.</geoconnex:dataset_description>
-  <geoconnex:add_s2>True</geoconnex:add_s2>
+  <loc>https://geoconnex.us/sitemap/ref/hu02.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:hu02</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>HUC02 Hydrologic Regions</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains two-digit hydrologic region boundaries derived from USGS NHDPlus High Resolution, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu02</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/ref/aiannh.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:aiannh</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>American Indian/Alaska Native Areas and Hawaiian Home Lands</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains American Indian/Alaska Native Area and Hawaiian Home Land boundaries as defined by the Bureau of Indian Affairs and delineated by the U.S. Census Boundary and Annexation Survey, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/aiannh</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/ref/places.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:places</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>U.S. Places</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains legally incorporated and Census-designated place boundaries for the United States, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/places</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/wwdh/snotel.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>wwdh:snotel</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>US Department of Agriculture SNOTEL Locations</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains snowpack telemetry (SNOTEL) station data, accessed through a proxied version of the API hosted within the USBR / Internet of Water Western Water Datahub rather than queried directly from the original SNOTEL service.</geoconnex:dataset_description>
-  <geoconnex:add_s2>True</geoconnex:add_s2>
+  <loc>https://geoconnex.us/sitemap/ref/hu04.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:hu04</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>HUC04 Hydrologic Regions</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains four-digit hydrologic region boundaries derived from USGS NHDPlus High Resolution, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu04</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/ref/counties.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:counties</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>U.S. Counties</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains county boundaries from the United States Census Bureau Cartographic Boundary files, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/counties</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/wwdh/noaa_rfc.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>wwdh:noaa_rfc</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>NOAA River Forecast Center Locations</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains river and water supply forecast data from NOAA's River Forecast Centers, accessed through a proxied version of the API hosted within the USBR / Internet of Water Western Water Datahub rather than queried directly from NOAA.</geoconnex:dataset_description>
-  <geoconnex:add_s2>True</geoconnex:add_s2>
+  <loc>https://geoconnex.us/sitemap/ref/pws.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:pws</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>EPA Public Water Systems</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains EPA Safe Drinking Water Act public water system service area data, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/pws</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/wwdh/usbr/rise.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>wwdh:usbr:rise</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>US Bureau of Reclamation RISE API Locations</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains U.S. Bureau of Reclamation location and reservoir data from the RISE API, accessed through a proxied version of the API hosted within the USBR / Internet of Water Western Water Datahub rather than queried directly from the original RISE API.</geoconnex:dataset_description>
-  <geoconnex:add_s2>True</geoconnex:add_s2>
+  <loc>https://geoconnex.us/sitemap/ref/hu06.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:hu06</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>HUC06 Hydrologic Regions</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains six-digit hydrologic region boundaries derived from USGS NHDPlus High Resolution, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu06</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/ref/states.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:states</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>U.S. States</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains U.S. state boundaries as described by the Profile web pages from the U.S. Census Center for Enterprise Dissemination Services and Consumer Innovation (CEDSCI), served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/states</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/ref/hu10.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:hu10</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>HUC10 Hydrologic Regions</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains ten-digit hydrologic region boundaries derived from USGS NHDPlus High Resolution, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu10</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/bulk/geoconnex/ontology.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>geoconnex:ontology</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>Geoconnex Ontology</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains the OWL-based RDF ontology that defines the classes and properties used throughout the Geoconnex knowledge graph.</geoconnex:dataset_description>
-  <geoconnex:contact_email>ssteward@lincolninst.edu</geoconnex:contact_email>
+  <loc>https://geoconnex.us/sitemap/ref/hu08.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:hu08</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>HUC08 Hydrologic Regions</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains eight-digit hydrologic region boundaries derived from USGS NHDPlus High Resolution, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu08</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/ref/dams.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:dams</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>Reference Dams</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains community-contributed dam locations for the United States, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/dams</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/ref/nat_aq.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:nat_aq</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>USGS National Aquifers</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains national aquifer boundaries for the United States from the USGS National Water Information System National Aquifer code list, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/nat_aq</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/ref/ua10.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:ua10</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>US Census Bureau Urbanized Areas (2010)</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains urbanized area boundaries as defined by the U.S. Census Bureau based on the 2010 Decennial Census, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/ua10</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/ref/sec_hydrg_reg.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:sec_hydrg_reg</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>Secondary Hydrogeologic Regions</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains secondary hydrogeologic region boundaries for the conterminous United States from the 2018 USGS data release, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/sec_hydrg_reg</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/ref/cbsa.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:cbsa</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>Core Based Statistical Areas</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains Core Based Statistical Area boundaries as defined by the Office of Management and Budget, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
+  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
+  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/cbsa</geoconnex:dataset_documentation_link>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/bulk/usgs/gnis.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>usgs:gnis</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>USGS Geographic Names (GNIS)</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains named geographic feature records from the USGS Geographic Names Information System.</geoconnex:dataset_description>
+  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
   <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
-  <geoconnex:source_code_link>https://github.com/internetofwater/ontologies.geoconnex.us/</geoconnex:source_code_link>
-  <geoconnex:dataset_documentation_link>https://github.com/internetofwater/ontologies.geoconnex.us/</geoconnex:dataset_documentation_link>
-  <geoconnex:bulk_container_image>ghcr.io/internetofwater/geoconnex_ontology_loader:latest</geoconnex:bulk_container_image>
+  <geoconnex:source_code_link>https://github.com/internetofwater/gnis_bulk_rdf</geoconnex:source_code_link>
+  <geoconnex:dataset_documentation_link>https://www.usgs.gov/tools/geographic-names-information-system-gnis</geoconnex:dataset_documentation_link>
+  <geoconnex:bulk_container_image>internetofwater/gnis_bulk_rdf:latest</geoconnex:bulk_container_image>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/bulk/usgs/sciencebase.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>usgs:sciencebase</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>USGS ScienceBase Catalog</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains all scientific studies contained within the USGS ScienceBase data catalog. Each feature's geospatial coordinates represents the spatial extent of the scientific study.</geoconnex:dataset_description>
+  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
+  <geoconnex:source_code_link>https://github.com/internetofwater/sciencebase_bulk_rdf</geoconnex:source_code_link>
+  <geoconnex:dataset_documentation_link>https://www.sciencebase.gov/catalog/</geoconnex:dataset_documentation_link>
+  <geoconnex:bulk_container_image>ghcr.io/internetofwater/sciencebase_bulk_rdf</geoconnex:bulk_container_image>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/bulk/usgs/monitoring_locations.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
   <geoconnex:sitemap_id>usgs:monitoring_locations</geoconnex:sitemap_id>
   <geoconnex:dataset_name>USGS Monitoring Locations</geoconnex:dataset_name>
   <geoconnex:dataset_description>Contains the list of all USGS water monitoring locations, derived from the USGS OGC API Features endpoint.</geoconnex:dataset_description>
@@ -181,20 +309,8 @@
   <geoconnex:dataset_documentation_link>https://api.waterdata.usgs.gov/ogcapi/v0/collections/monitoring-locations</geoconnex:dataset_documentation_link>
   <geoconnex:bulk_container_image>ghcr.io/internetofwater/usgs_monitoring_locations_bulk_rdf:latest</geoconnex:bulk_container_image>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/bulk/usgs/sciencebase.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>usgs:sciencebase</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>USGS ScienceBase Catalog</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains all scientific studies contained within the USGS ScienceBase data catalog. Each feature's geospatial coordinates represents the spatial extent of the scientific study.</geoconnex:dataset_description>
-  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
-  <geoconnex:source_code_link>https://github.com/internetofwater/sciencebase_bulk_rdf</geoconnex:source_code_link>
-  <geoconnex:dataset_documentation_link>https://www.sciencebase.gov/catalog/</geoconnex:dataset_documentation_link>
-  <geoconnex:bulk_container_image>ghcr.io/internetofwater/sciencebase_bulk_rdf</geoconnex:bulk_container_image>
-</sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/bulk/usgs/national_geologic_map.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
   <geoconnex:sitemap_id>usgs:national_geologic_map</geoconnex:sitemap_id>
   <geoconnex:dataset_name>National Geologic Map Database</geoconnex:dataset_name>
   <geoconnex:dataset_description>Contains geospatial data describing mapped geologic units and features from within the USGS National Geologic Map Database.</geoconnex:dataset_description>
@@ -205,20 +321,8 @@
   <geoconnex:dataset_documentation_link>https://ngmdb.usgs.gov/Prodesc/proddesc_118545.htm</geoconnex:dataset_documentation_link>
   <geoconnex:bulk_container_image>ghcr.io/internetofwater/usgs_national_geologic_map_bulk_rdf:latest</geoconnex:bulk_container_image>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/bulk/usgs/gnis.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>usgs:gnis</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>USGS Geographic Names (GNIS)</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains named geographic feature records from the USGS Geographic Names Information System.</geoconnex:dataset_description>
-  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
-  <geoconnex:source_code_link>https://github.com/internetofwater/gnis_bulk_rdf</geoconnex:source_code_link>
-  <geoconnex:dataset_documentation_link>https://www.usgs.gov/tools/geographic-names-information-system-gnis</geoconnex:dataset_documentation_link>
-  <geoconnex:bulk_container_image>internetofwater/gnis_bulk_rdf:latest</geoconnex:bulk_container_image>
-</sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/bulk/usgs/nhdplusv2/huc12pp.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
   <geoconnex:sitemap_id>usgs:nhdplusv2:huc12pp</geoconnex:sitemap_id>
   <geoconnex:dataset_name>HUC12 Pour Points</geoconnex:dataset_name>
   <geoconnex:dataset_description>Contains outlet pour points for twelve-digit hydrologic unit catchments, derived from NHDPlus V2.1 flow direction rasters, linking each HUC12 to its downstream destination.</geoconnex:dataset_description>
@@ -230,7 +334,7 @@
   <geoconnex:bulk_container_image>ghcr.io/internetofwater/nhdplusv2_huc12_bulk_rdf:latest</geoconnex:bulk_container_image>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/bulk/ref/gages.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
   <geoconnex:sitemap_id>ref:gages</geoconnex:sitemap_id>
   <geoconnex:dataset_name>Reference Stream Gages</geoconnex:dataset_name>
   <geoconnex:dataset_description>Contains community-contributed stream gage locations served from the Geoconnex reference feature server.</geoconnex:dataset_description>
@@ -242,20 +346,8 @@
   <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/gages</geoconnex:dataset_documentation_link>
   <geoconnex:bulk_container_image>ghcr.io/internetofwater/ref_gages_bulk_rdf:latest</geoconnex:bulk_container_image>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/bulk/ref/hu12.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:hu12</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>HUC12 Hydrologic Units</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains twelve-digit hydrologic unit boundaries derived from USGS NHDPlus High Resolution, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
-  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:source_code_link>https://github.com/internetofwater/geoconnex_bulk_runners/tree/main/ref%3Ahu12</geoconnex:source_code_link>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu12</geoconnex:dataset_documentation_link>
-  <geoconnex:bulk_container_image>ghcr.io/internetofwater/ref_hu12_bulk_rdf:latest</geoconnex:bulk_container_image>
-</sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/bulk/ref/mainstems.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
   <geoconnex:sitemap_id>ref:mainstems</geoconnex:sitemap_id>
   <geoconnex:dataset_name>Reference Mainstems</geoconnex:dataset_name>
   <geoconnex:dataset_description>Contains the Geoconnex v3 reference mainstem river network. Reference mainstems give every river in the United States a stable identifier that persists across the datasets used to represent it. A monitoring site, model output, a water-related permit, or a photograph of a river can be referenced to a mainstem once, and that reference will remain valid even when the underlying hydrography is replaced. A mainstem identifier is for a river, not a particular set of flowlines. The mainstem registry currently holds about 850,000 mainstem identifiers covering the conterminous United States and the parts of Canada and Mexico needed to cover transboundary networks. Each identifier is defined by a headwater location, an outlet location, and a network dataset in which the path between them can be traced.</geoconnex:dataset_description>
@@ -267,8 +359,32 @@
   <geoconnex:dataset_documentation_link>https://doi.org/10.5066/P13LNDDQ</geoconnex:dataset_documentation_link>
   <geoconnex:bulk_container_image>ghcr.io/internetofwater/mainstems_v3_bulk_rdf:latest</geoconnex:bulk_container_image>
 </sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/bulk/ref/hu12.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>ref:hu12</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>HUC12 Hydrologic Units</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains twelve-digit hydrologic unit boundaries derived from USGS NHDPlus High Resolution, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
+  <geoconnex:source_code_link>https://github.com/internetofwater/geoconnex_bulk_runners/tree/main/ref%3Ahu12</geoconnex:source_code_link>
+  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu12</geoconnex:dataset_documentation_link>
+  <geoconnex:bulk_container_image>ghcr.io/internetofwater/ref_hu12_bulk_rdf:latest</geoconnex:bulk_container_image>
+</sitemap><sitemap>
+  <loc>https://geoconnex.us/sitemap/bulk/geoconnex/ontology.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>geoconnex:ontology</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>Geoconnex Ontology</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains the OWL-based RDF ontology that defines the classes and properties used throughout the Geoconnex knowledge graph.</geoconnex:dataset_description>
+  <geoconnex:contact_email>ssteward@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
+  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
+  <geoconnex:source_code_link>https://github.com/internetofwater/ontologies.geoconnex.us/</geoconnex:source_code_link>
+  <geoconnex:dataset_documentation_link>https://github.com/internetofwater/ontologies.geoconnex.us/</geoconnex:dataset_documentation_link>
+  <geoconnex:bulk_container_image>ghcr.io/internetofwater/geoconnex_ontology_loader:latest</geoconnex:bulk_container_image>
+</sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/bulk/epa/hmw.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
   <geoconnex:sitemap_id>epa:hmw</geoconnex:sitemap_id>
   <geoconnex:dataset_name>EPA How's My Waterway</geoconnex:dataset_name>
   <geoconnex:dataset_description>Contains assessment and water quality condition data for waterbodies across the United States. Contains no geometry; links via RDF associations to the proper HUC</geoconnex:dataset_description>
@@ -280,7 +396,7 @@
   <geoconnex:bulk_container_image>ghcr.io/internetofwater/epa_hows_my_waterway_bulk_rdf:latest</geoconnex:bulk_container_image>
 </sitemap><sitemap>
   <loc>https://geoconnex.us/sitemap/bulk/epa/wqp.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
   <geoconnex:sitemap_id>epa:wqp</geoconnex:sitemap_id>
   <geoconnex:dataset_name>EPA Water Quality Portal</geoconnex:dataset_name>
   <geoconnex:dataset_description>Contains water quality monitoring data submitted by multiple organizations to the EPA/USGS Water Quality Portal.</geoconnex:dataset_description>
@@ -292,179 +408,76 @@
   <geoconnex:dataset_documentation_link>https://www.waterqualitydata.us/</geoconnex:dataset_documentation_link>
   <geoconnex:bulk_container_image>ghcr.io/internetofwater/wqp_bulk_rdf:latest</geoconnex:bulk_container_image>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/hu04.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:hu04</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>HUC04 Hydrologic Regions</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains four-digit hydrologic region boundaries derived from USGS NHDPlus High Resolution, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
-  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <loc>https://geoconnex.us/sitemap/bulk/nacc/barriers.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>nacc:barriers</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>National Aquatic Barriers</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains dams and assessed road/stream crossings from the National Aquatic Barrier Prioritization, maintained by the Southeast Aquatic Resources Partnership (SARP) and served at https://aquaticbarriers.org. The dataset is described under the National Aquatic Connectivity Collaborative (NACC), a program of the National Fish Habitat Partnership.</geoconnex:dataset_description>
+  <geoconnex:add_s2>True</geoconnex:add_s2>
+  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu04</geoconnex:dataset_documentation_link>
+  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
+  <geoconnex:source_code_link>https://github.com/internetofwater/geoconnex_bulk_runners/tree/main/aquaticbarriers</geoconnex:source_code_link>
+  <geoconnex:dataset_documentation_link>https://aquaticbarriers.org/</geoconnex:dataset_documentation_link>
+  <geoconnex:bulk_container_image>ghcr.io/internetofwater/aquaticbarriers_bulk_rdf:latest</geoconnex:bulk_container_image>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/dams.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:dams</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>Reference Dams</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains community-contributed dam locations for the United States, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <loc>https://geoconnex.us/sitemap/wwdh/snotel.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>wwdh:snotel</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>US Department of Agriculture SNOTEL Locations</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains snowpack telemetry (SNOTEL) station data, accessed through a proxied version of the API hosted within the USBR / Internet of Water Western Water Datahub rather than queried directly from the original SNOTEL service.</geoconnex:dataset_description>
+  <geoconnex:add_s2>True</geoconnex:add_s2>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/dams</geoconnex:dataset_documentation_link>
+  <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/places.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:places</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>U.S. Places</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains legally incorporated and Census-designated place boundaries for the United States, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <loc>https://geoconnex.us/sitemap/wwdh/awdb_forecasts.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>wwdh:awdb_forecasts</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>US Department of Agriculture AWDB Forecast Locations</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains seasonal water supply forecast data from the Air and Water Database (AWDB), accessed through a proxied version of the API hosted within the USBR / Internet of Water Western Water Datahub rather than queried directly from the original AWDB service.</geoconnex:dataset_description>
+  <geoconnex:add_s2>True</geoconnex:add_s2>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/places</geoconnex:dataset_documentation_link>
+  <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/cbsa.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:cbsa</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>Core Based Statistical Areas</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains Core Based Statistical Area boundaries as defined by the Office of Management and Budget, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <loc>https://geoconnex.us/sitemap/wwdh/usbr/rise.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>wwdh:usbr:rise</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>US Bureau of Reclamation RISE API Locations</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains U.S. Bureau of Reclamation location and reservoir data from the RISE API, accessed through a proxied version of the API hosted within the USBR / Internet of Water Western Water Datahub rather than queried directly from the original RISE API.</geoconnex:dataset_description>
+  <geoconnex:add_s2>True</geoconnex:add_s2>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/cbsa</geoconnex:dataset_documentation_link>
+  <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/hu02.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:hu02</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>HUC02 Hydrologic Regions</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains two-digit hydrologic region boundaries derived from USGS NHDPlus High Resolution, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
-  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu02</geoconnex:dataset_documentation_link>
-</sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/pws.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:pws</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>EPA Public Water Systems</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains EPA Safe Drinking Water Act public water system service area data, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <loc>https://geoconnex.us/sitemap/wwdh/noaa_rfc.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>wwdh:noaa_rfc</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>NOAA River Forecast Center Locations</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains river and water supply forecast data from NOAA's River Forecast Centers, accessed through a proxied version of the API hosted within the USBR / Internet of Water Western Water Datahub rather than queried directly from NOAA.</geoconnex:dataset_description>
+  <geoconnex:add_s2>True</geoconnex:add_s2>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/pws</geoconnex:dataset_documentation_link>
+  <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
 </sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/sec_hydrg_reg.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:sec_hydrg_reg</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>Secondary Hydrogeologic Regions</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains secondary hydrogeologic region boundaries for the conterminous United States from the 2018 USGS data release, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
+  <loc>https://geoconnex.us/sitemap/wwdh/usace/access_to_water.xml</loc>
+  <lastmod>2026-10-29T15:06:03Z</lastmod>
+  <geoconnex:sitemap_id>wwdh:usace:access_to_water</geoconnex:sitemap_id>
+  <geoconnex:dataset_name>US Army Corps of Engineers Access2Water API Locations</geoconnex:dataset_name>
+  <geoconnex:dataset_description>Contains U.S. Army Corps of Engineers reservoir and water control data from the Access2Water API, accessed through a proxied version of the API hosted within the USBR / Internet of Water Western Water Datahub rather than queried directly from USACE.</geoconnex:dataset_description>
+  <geoconnex:add_s2>True</geoconnex:add_s2>
   <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
   <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
+  <geoconnex:contact_email>cloftus@lincolninst.edu</geoconnex:contact_email>
   <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/sec_hydrg_reg</geoconnex:dataset_documentation_link>
-</sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/aiannh.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:aiannh</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>American Indian/Alaska Native Areas and Hawaiian Home Lands</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains American Indian/Alaska Native Area and Hawaiian Home Land boundaries as defined by the Bureau of Indian Affairs and delineated by the U.S. Census Boundary and Annexation Survey, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
-  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/aiannh</geoconnex:dataset_documentation_link>
-</sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/princi_aq.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:princi_aq</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>USGS Principal Aquifers</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains principal aquifer boundaries for the United States from the 2003 USGS data release, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
-  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/princi_aq</geoconnex:dataset_documentation_link>
-</sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/counties.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:counties</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>U.S. Counties</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains county boundaries from the United States Census Bureau Cartographic Boundary files, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
-  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/counties</geoconnex:dataset_documentation_link>
-</sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/states.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:states</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>U.S. States</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains U.S. state boundaries as described by the Profile web pages from the U.S. Census Center for Enterprise Dissemination Services and Consumer Innovation (CEDSCI), served from the Geoconnex reference feature server.</geoconnex:dataset_description>
-  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/states</geoconnex:dataset_documentation_link>
-</sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/hu10.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:hu10</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>HUC10 Hydrologic Regions</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains ten-digit hydrologic region boundaries derived from USGS NHDPlus High Resolution, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
-  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu10</geoconnex:dataset_documentation_link>
-</sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/hu08.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:hu08</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>HUC08 Hydrologic Regions</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains eight-digit hydrologic region boundaries derived from USGS NHDPlus High Resolution, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
-  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu08</geoconnex:dataset_documentation_link>
-</sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/nat_aq.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:nat_aq</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>USGS National Aquifers</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains national aquifer boundaries for the United States from the USGS National Water Information System National Aquifer code list, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
-  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/nat_aq</geoconnex:dataset_documentation_link>
-</sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/ua10.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:ua10</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>US Census Bureau Urbanized Areas (2010)</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains urbanized area boundaries as defined by the U.S. Census Bureau based on the 2010 Decennial Census, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
-  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>True</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/ua10</geoconnex:dataset_documentation_link>
-</sitemap><sitemap>
-  <loc>https://geoconnex.us/sitemap/ref/hu06.xml</loc>
-  <lastmod>2026-10-20T16:41:32Z</lastmod>
-  <geoconnex:sitemap_id>ref:hu06</geoconnex:sitemap_id>
-  <geoconnex:dataset_name>HUC06 Hydrologic Regions</geoconnex:dataset_name>
-  <geoconnex:dataset_description>Contains six-digit hydrologic region boundaries derived from USGS NHDPlus High Resolution, served from the Geoconnex reference feature server.</geoconnex:dataset_description>
-  <geoconnex:max_request_concurrency>5</geoconnex:max_request_concurrency>
-  <geoconnex:add_associated_mainstems>False</geoconnex:add_associated_mainstems>
-  <geoconnex:contact_email>internetofwater@lincolninst.edu</geoconnex:contact_email>
-  <geoconnex:dataset_has_html_landing_pages>True</geoconnex:dataset_has_html_landing_pages>
-  <geoconnex:dataset_documentation_link>https://reference.geoconnex.us/collections/hu06</geoconnex:dataset_documentation_link>
+  <geoconnex:dataset_documentation_link>https://api.wwdh.internetofwater.app/</geoconnex:dataset_documentation_link>
 </sitemap></sitemapindex>
