@@ -76,6 +76,7 @@ huc_sparql_query: &huc_sparql_query
       object: "?huc"
   filter:
     - 'BIND(REPLACE(STR(?containedCatchment), "^.*ref/(hu[c0-9]+)/.*$", "$1") AS ?hucLevel)'
+    - 'FILTER(STRSTARTS(STR(?containedCatchment), "https://geoconnex.us/ref"))'
 
 tile_defaults: &tile_defaults
   <<: *provider_defaults
