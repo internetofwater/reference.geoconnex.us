@@ -76,7 +76,6 @@ huc_sparql_query: &huc_sparql_query
       object: "?huc"
   filter:
     - 'BIND(REPLACE(STR(?containedCatchment), "^.*ref/(hu[c0-9]+)/.*$", "$1") AS ?hucLevel)'
-    - 'FILTER(STRSTARTS(STR(?containedCatchment), "https://geoconnex.us/ref"))'
 
 tile_defaults: &tile_defaults
   <<: *provider_defaults
@@ -487,7 +486,7 @@ resources:
 
   mainstems_v3:
     type: collection
-    visibility: hidden
+    hidden: true
     title: Reference Mainstems V3
     description: United States Community Contributed Reference Mainstem Rivers
     keywords:
