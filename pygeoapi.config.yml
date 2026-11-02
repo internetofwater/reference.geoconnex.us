@@ -68,14 +68,15 @@ huc_sparql_query: &huc_sparql_query
   bind:
     name: uri
     variable: "?huc"
-  select: '?huc ?hucLevel (GROUP_CONCAT(?containedCatchment; SEPARATOR="|") AS ?hucs)'
+  select: '?huc ?hucLevel (GROUP_CONCAT(STR(?containedCatchment); SEPARATOR="|") AS ?hucs)'
   groupby: "?huc ?hucLevel"
   where:
     - subject: "?containedCatchment"
       predicate: hyf:containingCatchment
       object: "?huc"
   filter:
-    - 'BIND(REPLACE(STR(?containedCatchment), "^.*ref/(hu[0-9]+)/.*$", "$1") AS ?hucLevel)'
+    - 'BIND(REPLACE(STR(?containedCatchment), "^.*ref/(hu[c0-9]+)/.*$", "$1") AS ?hucLevel)'
+    - 'FILTER(STRSTARTS(STR(?containedCatchment), "https://geoconnex.us/ref"))'
 
 tile_defaults: &tile_defaults
   <<: *provider_defaults
@@ -263,7 +264,7 @@ resources:
         table: hu08
         sparql_query:
           <<: *huc_sparql_query
-          select: '?huc (GROUP_CONCAT(?containedCatchment; SEPARATOR="|") AS ?hucs)'
+          select: '?huc (GROUP_CONCAT(STR(?containedCatchment); SEPARATOR="|") AS ?hucs)'
       - <<: *tile_defaults
         id_field: huc8
         table: hu08
