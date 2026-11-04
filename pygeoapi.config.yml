@@ -487,7 +487,7 @@ resources:
 
   mainstems_v3:
     type: collection
-    hidden: true
+    visibility: hidden
     title: Reference Mainstems V3
     description: United States Community Contributed Reference Mainstem Rivers
     keywords:
