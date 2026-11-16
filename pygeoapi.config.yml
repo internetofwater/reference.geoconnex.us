@@ -37,8 +37,7 @@ data_link: &data_link
 
 provider_defaults: &provider_defaults
   type: feature
-  name: pygeoapi_plugins.provider.sparql.SPARQLProvider
-  sparql_provider: PostgreSQL
+  name: pygeoapi_plugins.provider.PostgreSQLGeoJSON
   data:
     host: ${POSTGRES_HOST}
     dbname: ${POSTGRES_DB}
@@ -52,6 +51,11 @@ provider_defaults: &provider_defaults
     - http://www.opengis.net/def/crs/OGC/1.3/CRS84
     - http://www.opengis.net/def/crs/OGC/1.3/CRS83
     - http://www.opengis.net/def/crs/EPSG/0/3857
+
+sparql_defaults: &sparql_defaults
+  <<: *provider_defaults
+  name: pygeoapi_plugins.provider.sparql.SPARQLProvider
+  sparql_provider: pygeoapi_plugins.provider.PostgreSQLGeoJSON
 
 sparql_query: &sparql_query
   convert: false
@@ -172,13 +176,14 @@ resources:
       ttl_seconds: 3600
     formatters: &default-formatters
       - name: CSV
+      - name: pygeoapi_plugins.formatter.JSON
       - name: pygeoapi_plugins.formatter.JSONFG
       - name: pygeoapi_plugins.formatter.Shapefile
       - name: pygeoapi_plugins.formatter.GPKG
       - name: pygeoapi_plugins.formatter.KML
       - name: pygeoapi_plugins.formatter.Parquet
     providers:
-      - <<: *provider_defaults
+      - <<: *sparql_defaults
         id_field: huc2
         table: hu02
         sparql_query: *huc_sparql_query
@@ -205,7 +210,7 @@ resources:
     flask_cache: *flask-cache
     formatters: *default-formatters
     providers:
-      - <<: *provider_defaults
+      - <<: *sparql_defaults
         id_field: huc4
         table: hu04
         sparql_query: *huc_sparql_query
@@ -232,7 +237,7 @@ resources:
     flask-cache: *flask-cache
     formatters: *default-formatters
     providers:
-      - <<: *provider_defaults
+      - <<: *sparql_defaults
         id_field: huc6
         table: hu06
         sparql_query: *huc_sparql_query
@@ -259,12 +264,10 @@ resources:
     flask-cache: *flask-cache
     formatters: *default-formatters
     providers:
-      - <<: *provider_defaults
+      - <<: *sparql_defaults
         id_field: huc8
         table: hu08
-        sparql_query:
-          <<: *huc_sparql_query
-          select: '?huc (GROUP_CONCAT(STR(?containedCatchment); SEPARATOR="|") AS ?hucs)'
+        sparql_query: *huc_sparql_query
       - <<: *tile_defaults
         id_field: huc8
         table: hu08
@@ -288,10 +291,12 @@ resources:
     flask-cache: *flask-cache
     formatters: *default-formatters
     providers:
-      - <<: *provider_defaults
-        name: PostgreSQL
+      - <<: *sparql_defaults
         id_field: huc10
         table: hu10
+        sparql_query:
+          <<: *huc_sparql_query
+          select: '?huc (GROUP_CONCAT(STR(?containedCatchment); SEPARATOR="|") AS ?hucs)'
       - <<: *tile_defaults
         id_field: huc10
         table: hu10
@@ -317,10 +322,12 @@ resources:
     flask-cache: *flask-cache
     formatters: *default-formatters
     providers:
-      - <<: *provider_defaults
-        name: PostgreSQL
+      - <<: *sparql_defaults
+        name: pygeoapi_plugins.provider.PostgreSQLGeoJSON
         id_field: huc12
         table: reference_huc12
+        title_field: uri
+        count: false
       - <<: *tile_defaults
         id_field: huc12
         table: reference_huc12
@@ -353,7 +360,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         id_field: nat_aqfr_cd
         title_field: aq_name
         table: nat_aq
@@ -384,7 +390,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         id_field: aq_code
         title_field: aq_name
         table: princi_aq
@@ -420,7 +425,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         title_field: shr
         table: sec_hydrg_reg
       - <<: *tile_defaults
@@ -443,7 +447,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         title_field: description
         table: ref_gages
       - <<: *tile_defaults
@@ -477,7 +480,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         title_field: name_at_outlet
         table: mainstems
       - <<: *tile_defaults
@@ -509,9 +511,9 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         table: mainstems_v3
         title_field: name_at_outlet
+        count: false
       - <<: *tile_defaults
         table: mainstems_v3
         simplify_method: ST_SimplifyVW
@@ -532,7 +534,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         title_field: description
         table: ref_dams
       - <<: *tile_defaults
@@ -563,7 +564,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         id_field: pwsid
         title_field: pws_name
         table: ref_pws
@@ -593,7 +593,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         id_field: geoid
         table: states
       - <<: *tile_defaults
@@ -621,7 +620,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         id_field: geoid
         table: counties
       - <<: *tile_defaults
@@ -648,7 +646,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         id_field: geoid
         table: aiannh
       - <<: *tile_defaults
@@ -674,7 +671,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         id_field: geoid
         table: cbsa
       - <<: *tile_defaults
@@ -703,7 +699,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         id_field: geoid10
         title_field: name10
         table: ua10
@@ -733,7 +728,6 @@ resources:
     formatters: *default-formatters
     providers:
       - <<: *provider_defaults
-        name: PostgreSQL
         id_field: geoid
         table: places
       - <<: *tile_defaults
